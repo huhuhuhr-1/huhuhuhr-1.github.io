@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>huhuhuhr</title>
+  
+  <subtitle>学习记录与技术分享</subtitle>
+  <link href="https://blog.huhuhuhr.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.huhuhuhr.top/"/>
+  <updated>2025-11-30T04:42:44.799Z</updated>
+  <id>https://blog.huhuhuhr.top/</id>
+  
+  <author>
+    <name>huhuhuhr</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人博客搭建</title>
+    <link href="https://blog.huhuhuhr.top/2025/11/30/ge-ren-bo-ke-da-jian/"/>
+    <id>https://blog.huhuhuhr.top/2025/11/30/ge-ren-bo-ke-da-jian/</id>
+    <published>2025-11-30T03:43:37.000Z</published>
+    <updated>2025-11-30T04:42:44.799Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南&quot;&gt;&lt;a href=&quot;#基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://blog.huhuhuhr.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Qwen Code" scheme="https://blog.huhuhuhr.top/tags/Qwen-Code/"/>
+    
+    <category term="Hexo" scheme="https://blog.huhuhuhr.top/tags/Hexo/"/>
+    
+    <category term="博客搭建" scheme="https://blog.huhuhuhr.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="AI工具" scheme="https://blog.huhuhuhr.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+</feed>

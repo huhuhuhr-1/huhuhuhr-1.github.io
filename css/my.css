@@ -1,0 +1,673 @@
+/* Here is your custom css styles. */
+
+/* 优化首页布局，减少顶部Banner占用的空间，让内容卡片更多显示 */
+/* 调整所有页面背景覆盖高度，保持一致性 */
+.bg-cover {
+    height: 40vh !important; /* 统一设置为40vh，平衡首页和其他页面高度 */
+}
+
+/* 调整首页大屏高度，与其他页面保持一致 */
+.index-cover {
+    height: 40vh !important; /* 与其他页面保持一致 */
+}
+
+/* 确保文章详情页等其他页面的横幅高度也与此协调 */
+.post-cover {
+    height: 30vh !important; /* 文章页面的横幅高度 */
+}
+
+/* 调整首页内容区域的位置，使其与其他页面对齐 */
+.index-main {
+    margin-top: 0 !important; /* 确保首页内容区域与其它页面对齐 */
+}
+
+/* 调整首页的容器样式，保证内容与其他页面对齐 */
+.index-container .index-center .index-info {
+    padding-top: 0 !important; /* 减少首页内容的顶部填充 */
+}
+
+/* 确保所有页面的内容区域对齐 */
+.main-container {
+    padding-top: 0 !important; /* 统一设置内容区域的顶部填充 */
+}
+
+/* 为首页内容区域设置更紧凑的样式 */
+.index-post .index-center .post-body {
+    margin-top: 10px !important; /* 减小上边距 */
+}
+
+.post-body .article-title {
+    font-size: 1.4rem !important; /* 稍微减小标题大小 */
+    line-height: 1.4 !important;
+    margin: 0.3rem 0 !important; /* 减小标题上下边距 */
+}
+
+/* 优化文章卡片间距，让页面显示更多内容 */
+.card {
+    margin: 0.5rem 0 !important; /* 减小卡片垂直间距 */
+}
+
+/* 优化文章列表的布局 */
+.container .row {
+    margin: 0 -0.5rem !important; /* 减小行间距 */
+}
+
+/* 调整首页文章摘要显示 */
+.article .summary {
+    font-size: 0.9rem !important; /* 稍微减小摘要字体大小 */
+    margin: 0.3rem 0 !important; /* 减小摘要间距 */
+    line-height: 1.4 !important;
+}
+
+/* 调整文章元信息显示 */
+.article .post-meta {
+    font-size: 0.8rem !important; /* 减小元信息字体大小 */
+    margin: 0.2rem 0 !important;
+}
+
+/* 隐藏顶部banner中的多余元素，节省空间 */
+.index-cover .description {
+    display: none !important; /* 隐藏描述文字 */
+}
+
+/* 隐藏首页的"我的梦想"内容 */
+.dream {
+    display: none !important;
+}
+
+/* 隐藏首页的推荐文章部分 */
+.recommend .title,
+.recommend .recommended-posts {
+    display: none !important;
+}
+
+/* 首页搜索框样式 */
+.search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #4fc08d;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.search-header:focus-within {
+    border-color: #0f9d58;
+    box-shadow: 0 2px 16px rgba(15, 157, 88, 0.2);
+}
+
+.search-header .title {
+    margin-right: 1rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+.search-clear {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.search-clear:hover {
+    color: #999;
+    cursor: pointer;
+}
+
+.search-result-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-title {
+    display: block;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.search-result-title:hover {
+    color: #0f9d58;
+}
+
+.search-result-content {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.search-keyword {
+    color: #0f9d58;
+    font-weight: bold;
+    background-color: rgba(15, 157, 88, 0.1);
+}
+
+/* 友情链接页面隐藏搜索按钮 */
+.friends .navbar-nav .search {
+    display: none !important;
+}
+
+/* 修复文章卡片高度不一致的问题 */
+.card {
+    height: auto !important;
+    min-height: 320px; /* 设置最小高度确保卡片一致 */
+}
+
+.card .card-content {
+    height: calc(100% - 150px); /* 调整内容区域高度以保持一致 */
+    overflow: hidden;
+}
+
+/* 调整卡片内容布局 */
+.card .card-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.card .card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 为文章标题设置固定高度 */
+.card .card-content .card-title {
+    height: 40px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 为文章摘要设置固定高度 */
+.card .card-content .summary {
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 调整文章信息显示区域 */
+.card .card-content .publish-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem !important;
+    font-size: 1rem;
+    border: 2px solid #4fc08d !important;
+    border-radius: 50px !important;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+
+.search-input:focus {
+    border-color: #0f9d58 !important;
+    box-shadow: 0 2px 16px rgba(15, 157, 88, 0.2) !important;
+}
+
+.search-icon {
+    position: absolute !important;
+    left: 1.2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #999 !important;
+    font-size: 1.2rem !important;
+    z-index: 10 !important;
+}
+
+
+
+/* 隐藏首页的"友链"部分 */
+#friends {
+    display: none !important;
+}
+
+/* 调整首页文章卡片的样式，让卡片间距离更紧凑 */
+.index-card {
+    margin: 0.8rem 0 !important; /* 减少卡片垂直间距 */
+}
+
+/* 调整每篇文章卡片的样式，让卡片更紧凑 */
+.card {
+    margin: 0.3rem 0 !important; /* 进一步减少卡片垂直间距 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* 更轻的阴影效果 */
+    border-radius: 8px !important; /* 更小的圆角 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 添加平滑过渡效果 */
+}
+
+.card:hover {
+    transform: translateY(-5px) !important; /* 悬停时轻微上浮 */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important; /* 悬停时加强阴影 */
+}
+
+/* 调整文章卡片内的元素间距 */
+.card .card-content {
+    padding: 0.8rem !important; /* 减少卡片内容内边距 */
+}
+
+/* 调整文章标题样式 */
+.card .card-content .card-title {
+    font-size: 1.3rem !important; /* 减小标题字体 */
+    line-height: 1.3 !important;
+    margin: 0.3rem 0 !important; /* 减小标题上下间距 */
+}
+
+/* 调整文章摘要样式 */
+.archive-content {
+    font-size: 0.85rem !important; /* 减小摘要字体 */
+    margin: 0.2rem 0 !important; /* 减小摘要间距 */
+    line-height: 1.4 !important;
+}
+
+/* 调整文章元信息样式 */
+.card .card-content .post-meta {
+    font-size: 0.75rem !important; /* 减小元信息字体 */
+    margin: 0.2rem 0 !important; /* 减小元信息间距 */
+}
+
+/* 调整文章特色图片容器 */
+.card .card-image {
+    height: 100px !important; /* 统一设置图片高度 */
+    overflow: hidden !important;
+}
+
+/* 代码块相关样式 */
+pre[class*="language-"],
+code[class*="language-"] {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.6;
+    font-size: 0.95em; /* 适当缩小字体尺寸 */
+}
+
+pre[class*="language-"] {
+    padding: 1rem 0.8rem !important; /* 减小内边距 */
+    overflow-x: auto; /* 允许水平滚动 */
+    max-width: 100% !important; /* 强制限制最大宽度 */
+    width: 100% !important; /* 强制宽度为容器的100% */
+}
+
+/* 修复表格形式的代码块 - 使用更高优先级 */
+figure.highlight {
+    margin: 1rem 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    position: relative !important;
+    border-radius: 0.35rem !important;
+    max-width: 100% !important; /* 限制代码块最大宽度 */
+    width: 100% !important; /* 固定宽度与页面文字宽度一致 */
+    display: block !important;
+}
+
+figure.highlight table {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important; /* 限制表格最大宽度 */
+    table-layout: fixed !important; /* 确保表格能够适当缩放 */
+    border-collapse: collapse !important;
+    word-break: break-word !important; /* 确保单词可以折行 */
+    display: table !important;
+}
+
+figure.highlight tbody {
+    display: table-row-group !important;
+}
+
+figure.highlight tr {
+    display: table-row !important;
+}
+
+figure.highlight td {
+    display: table-cell !important;
+    padding: 0 !important;
+    line-height: 1.6rem !important;
+    vertical-align: top !important; /* 确保单元格内容垂直对齐 */
+}
+
+/* 隐藏行号列 - 不显示行号 */
+figure.highlight .gutter {
+    display: none !important; /* 隐藏行号列 */
+}
+
+/* 调整代码列以占据全部宽度 */
+figure.highlight .code {
+    padding-left: 0.5rem !important;
+    width: 100% !important; /* 调整代码区域宽度为全部 */
+    word-break: break-word !important; /* 确保代码内容可以折行 */
+    white-space: pre-wrap !important; /* 允许预格式化文本折行 */
+    vertical-align: top !important;
+    overflow-wrap: break-word !important;
+}
+
+figure.highlight .code .line {
+    padding: 0 0.4rem !important;
+    line-height: 1.6rem !important;
+    word-break: break-word !important; /* 确保长行折断 */
+    white-space: pre-wrap !important; /* 保持格式化的同时允许折行 */
+    max-width: 100% !important; /* 限制单行最大宽度 */
+    display: inline-block !important;
+    min-width: 100% !important;
+}
+
+/* 针对命令行代码块的特殊处理 */
+pre.language-bash,
+pre.language-sh,
+pre.language-shell,
+code.language-bash,
+code.language-sh,
+code.language-shell {
+    word-break: break-all !important; /* 对于命令行，强制折行 */
+    white-space: pre-wrap !important;
+    max-width: 100% !important;
+}
+
+/* 针对行号较少的代码块优化 */
+.highlight:not(.line-numbers) {
+    overflow-x: auto !important;
+}
+
+.highlight:not(.line-numbers) pre {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+
+/* 针对不同屏幕尺寸进行优化 */
+@media only screen and (max-width: 600px) {
+    figure.highlight {
+        margin: 0.8rem -1rem !important; /* 在小屏幕上扩展到边缘 */
+        border-radius: 0 !important; /* 小屏幕上移除边框圆角 */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    figure.highlight .code {
+        padding-left: 0.3rem !important;
+    }
+
+    pre[class*="language-"] {
+        padding: 0.8rem 0.5rem !important;
+        font-size: 0.85em !important;
+    }
+}
+
+/* 确保所有代码块都能正确折行 */
+code {
+    font-size: 0.95em !important; /* 保持代码字体大小一致 */
+    max-width: 100% !important; /* 限制代码最大宽度 */
+    overflow-wrap: break-word !important; /* 允允长单词折行 */
+}
+
+/* 针对没有使用表格结构的简单pre块 */
+pre:not(.line-numbers) {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+}
+
+/* 专门针对命令行代码块的处理 */
+.highlight.bash .code,
+.highlight.shell .code,
+.highlight.sh .code {
+    max-width: 100% !important;
+    word-break: break-word !important;
+}
+
+/* 强制所有代码元素的宽度 */
+code[class*="language-"],
+pre[class*="language-"],
+figure.highlight,
+figure.highlight table,
+figure.highlight .code {
+    width: 100% !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+
+/* 隐藏首页的"我的梦想"内容 */
+.dream {
+    display: none !important;
+}
+
+/* 隐藏首页的推荐文章部分 */
+.recommend .title,
+.recommend .recommended-posts {
+    display: none !important;
+}
+
+/* 友情链接页面隐藏搜索按钮 */
+.friends .navbar-nav .search {
+    display: none !important;
+}
+
+/* 修复文章卡片高度不一致的问题 */
+.card {
+    height: auto !important;
+    min-height: 320px; /* 设置最小高度确保卡片一致 */
+}
+
+.card .card-content {
+    height: calc(100% - 150px); /* 调整内容区域高度以保持一致 */
+    overflow: hidden;
+}
+
+/* 调整卡片内容布局 */
+.card .card-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.card .card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 为文章标题设置固定高度 */
+.card .card-content .card-title {
+    height: 40px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 为文章摘要设置固定高度 */
+.card .card-content .summary {
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 调整文章信息显示区域 */
+.card .card-content .publish-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+/* 首页大图高度调整 */
+.bg-cover {
+    height: 30vh;
+}
+
+.index-cover {
+    height: 40vh;
+}
+
+/* 首页搜索框样式 */
+.home-search-box {
+    margin: 1.2rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: none; /* 移除边框 */
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.search-input-container:focus-within {
+    border-color: #0f9d58; /* 焦点时改变边框颜色 */
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin-left: 0; /* 移除左侧边距，因为没有图标了 */
+}
+
+.search-icon {
+    color: #999;
+    position: absolute;
+    left: 2rem; /* 固定位置确保图标与文字对齐 */
+}
+
+.search-clear {
+    position: absolute;
+    right: 2rem; /* 固定位置确保右对齐 */
+    color: #ccc;
+    cursor: pointer;
+    display: none;
+}
+
+.search-clear:hover {
+    color: #999;
+}
+
+.home-search-result {
+    position: absolute;
+    left: 0;
+    width: 87.5%; /* 下拉框宽度小于搜索框 */
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* 默认隐藏，由JavaScript控制显示 */
+    display: none;
+    margin: 1.2rem auto;
+}
+
+.home-search-result.show {
+    display: block;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-title {
+    display: block;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.search-result-title:hover {
+    color: #0f9d58;
+}
+
+.search-result-content {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.search-keyword {
+    color: #0f9d58;
+    font-weight: bold;
+    background-color: rgba(15, 157, 88, 0.1);
+}
