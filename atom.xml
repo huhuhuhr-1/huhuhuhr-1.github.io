@@ -6,7 +6,7 @@
   <link href="https://blog.huhuhuhr.top/atom.xml" rel="self"/>
   
   <link href="https://blog.huhuhuhr.top/"/>
-  <updated>2025-12-07T14:21:48.150Z</updated>
+  <updated>2025-12-07T14:24:47.303Z</updated>
   <id>https://blog.huhuhuhr.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>sealos-问答记录</title>
+    <title>sealos问答记录</title>
     <link href="https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/"/>
     <id>https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/</id>
     <published>2025-12-07T13:30:00.000Z</published>
-    <updated>2025-12-07T14:21:48.150Z</updated>
+    <updated>2025-12-07T14:24:47.303Z</updated>
     
     
       
@@ -46,11 +46,11 @@
   </entry>
   
   <entry>
-    <title>0004.sealos实战</title>
+    <title>sealos实战</title>
     <link href="https://blog.huhuhuhr.top/2025/12/07/0004-sealos-shi-zhan/"/>
     <id>https://blog.huhuhuhr.top/2025/12/07/0004-sealos-shi-zhan/</id>
     <published>2025-12-07T12:45:53.000Z</published>
-    <updated>2025-12-07T14:16:23.884Z</updated>
+    <updated>2025-12-07T14:24:24.022Z</updated>
     
     
       
@@ -97,13 +97,13 @@
     
     <category term="k8s" scheme="https://blog.huhuhuhr.top/tags/k8s/"/>
     
-    <category term="sealos" scheme="https://blog.huhuhuhr.top/tags/sealos/"/>
-    
-    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
-    
     <category term="docker" scheme="https://blog.huhuhuhr.top/tags/docker/"/>
     
+    <category term="sealos" scheme="https://blog.huhuhuhr.top/tags/sealos/"/>
+    
     <category term="kubectl" scheme="https://blog.huhuhuhr.top/tags/kubectl/"/>
+    
+    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
