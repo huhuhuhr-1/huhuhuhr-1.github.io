@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人博客搭建, AI, ETL, 大数据, 技术, 学习, 编程">
-    <meta name="description" content="基于Qwen Code、hexo-theme-matery和GitHub Pages的个人技术博客搭建完整指南">
+    <meta name="keywords" content="本地安装sealos记录, AI, ETL, 大数据, 技术, 学习, 编程">
+    <meta name="description" content="Sealos和Kubernetes本地安装记录目的本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。
+环境要求
+Ubuntu 22.04 LTS">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人博客搭建 | huhuhuhr</title>
+    <title>本地安装sealos记录 | huhuhuhr</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -52,9 +54,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
 </head>
 
 
@@ -337,12 +339,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人博客搭建</h1>
+                    <h1 class="description center-align post-title">本地安装sealos记录</h1>
                 </div>
             </div>
         </div>
@@ -366,35 +368,30 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Qwen-Code/">
-                                <span class="chip bg-color">Qwen Code</span>
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
                             </a>
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Kubernetes/">
+                                <span class="chip bg-color">Kubernetes</span>
                             </a>
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                <span class="chip bg-color">博客搭建</span>
+                            <a href="/tags/Sealos/">
+                                <span class="chip bg-color">Sealos</span>
                             </a>
                         
-                            <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">AI工具</span>
+                            <a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">
+                                <span class="chip bg-color">本地部署</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                                <span class="chip bg-color">容器化</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                技术
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -403,7 +400,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-30
+                    2025-12-07
                 </div>
                 
 
@@ -412,14 +409,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    9 分
                 </div>
                 
 
@@ -447,112 +444,153 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南"><a href="#基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南" class="headerlink" title="基于Qwen Code + hexo-theme-matery + GitHub Pages的个人技术博客搭建指南"></a>基于Qwen Code + hexo-theme-matery + GitHub Pages的个人技术博客搭建指南</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>随着技术知识的快速发展和信息爆炸式增长，建立个人技术博客成为知识沉淀和分享的重要途径。本指南详细阐述如何利用Qwen Code的AI能力、hexo-theme-matery主题和GitHub Pages服务，构建一个高效、美观且功能完善的技术博客平台。</p>
-<h2 id="1-搭建环境与工具准备"><a href="#1-搭建环境与工具准备" class="headerlink" title="1. 搭建环境与工具准备"></a>1. 搭建环境与工具准备</h2><h3 id="1-1-基础环境依赖"><a href="#1-1-基础环境依赖" class="headerlink" title="1.1 基础环境依赖"></a>1.1 基础环境依赖</h3><ul>
-<li><strong>Node.js</strong>（版本 ≥ 14.0.0）</li>
-<li><strong>Git</strong>（版本控制）</li>
-<li><strong>Hexo CLI</strong>（博客框架命令行工具）</li>
+                <h1 id="Sealos和Kubernetes本地安装记录"><a href="#Sealos和Kubernetes本地安装记录" class="headerlink" title="Sealos和Kubernetes本地安装记录"></a>Sealos和Kubernetes本地安装记录</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。</p>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li>Ubuntu 22.04 LTS 或更高版本</li>
+<li>至少4GB RAM和2个CPU核心</li>
+<li>至少40GB可用磁盘空间</li>
+<li>能够访问网络以下载组件</li>
+<li>root权限或sudo权限</li>
 </ul>
-<h3 id="1-2-Qwen-Code-介绍"><a href="#1-2-Qwen-Code-介绍" class="headerlink" title="1.2 Qwen Code 介绍"></a>1.2 Qwen Code 介绍</h3><p>Qwen Code是集成于开发环境的AI助手，具备以下核心功能：</p>
+<h2 id="系统准备"><a href="#系统准备" class="headerlink" title="系统准备"></a>系统准备</h2><h3 id="1-更新系统包"><a href="#1-更新系统包" class="headerlink" title="1. 更新系统包"></a>1. 更新系统包</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-安装必要工具"><a href="#2-安装必要工具" class="headerlink" title="2. 安装必要工具"></a>2. 安装必要工具</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y curl wget apt-transport-https ca-certificates</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="安装Sealos"><a href="#安装Sealos" class="headerlink" title="安装Sealos"></a>安装Sealos</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y uidmap fuse-overlayfs</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-下载并安装Sealos"><a href="#2-下载并安装Sealos" class="headerlink" title="2. 下载并安装Sealos"></a>2. 下载并安装Sealos</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 方式1: 从官方源下载</span></span><br><span class="line">wget https://github.com/labring/sealos/releases/download/v5.0.0/sealos_5.0.0_linux_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装deb包</span></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i sealos_5.0.0_linux_amd64.deb</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-验证安装"><a href="#3-验证安装" class="headerlink" title="3. 验证安装"></a>3. 验证安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos version</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果成功，应该能看到Sealos的版本信息。</p>
+<h2 id="安装Kubernetes"><a href="#安装Kubernetes" class="headerlink" title="安装Kubernetes"></a>安装Kubernetes</h2><h3 id="1-配置系统参数"><a href="#1-配置系统参数" class="headerlink" title="1. 配置系统参数"></a>1. 配置系统参数</h3><p>由于Sealos运行Kubernetes需要纯净环境，我们需要确保系统配置正确：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 关闭交换分区（Kubernetes要求）</span></span><br><span class="line"><span class="built_in">sudo</span> swapoff -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 永久禁用交换分区（添加到fstab注释）</span></span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'/ swap / s/^\(.*\)$/#\1/g'</span> /etc/fstab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用内核模块</span></span><br><span class="line"><span class="built_in">sudo</span> modprobe overlay</span><br><span class="line"><span class="built_in">sudo</span> modprobe br_netfilter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置内核参数</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/modules-load.d/k8s.conf</span></span><br><span class="line"><span class="string">overlay</span></span><br><span class="line"><span class="string">br_netfilter</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置系统参数</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables  = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward                 = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用系统参数</span></span><br><span class="line"><span class="built_in">sudo</span> sysctl --system</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-安装Containerd（如果系统没有默认安装）"><a href="#2-安装Containerd（如果系统没有默认安装）" class="headerlink" title="2. 安装Containerd（如果系统没有默认安装）"></a>2. 安装Containerd（如果系统没有默认安装）</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装containerd</span></span><br><span class="line"><span class="built_in">sudo</span> apt install -y containerd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置containerd</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/containerd</span><br><span class="line">containerd config default | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改设置以使用systemd作为cgroup驱动</span></span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'s/SystemdCgroup = false/SystemdCgroup = true/'</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启containerd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart containerd</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> containerd</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-使用Sealos部署单节点Kubernetes集群"><a href="#3-使用Sealos部署单节点Kubernetes集群" class="headerlink" title="3. 使用Sealos部署单节点Kubernetes集群"></a>3. 使用Sealos部署单节点Kubernetes集群</h3><p>获取本机IP地址（这将是控制节点的IP）：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">MASTER_IP=$(hostname -I | awk <span class="string">'{print $1}'</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Master IP: <span class="variable">$MASTER_IP</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用Sealos创建单节点集群：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 运行Kubernetes集群</span></span><br><span class="line"><span class="built_in">sudo</span> sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters <span class="variable">$MASTER_IP</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这将：</p>
 <ul>
-<li><strong>代码生成</strong>：根据自然语言描述生成代码</li>
-<li><strong>文档编写</strong>：辅助技术文档创作</li>
-<li><strong>问题诊断</strong>：快速定位和修复问题</li>
-<li><strong>运维优化</strong>：自动化重复性任务处理</li>
+<li>拉取并安装Kubernetes v1.28.15</li>
+<li>安装Calico网络插件</li>
+<li>创建单节点集群</li>
 </ul>
-<h2 id="2-Hexo-博客框架搭建"><a href="#2-Hexo-博客框架搭建" class="headerlink" title="2. Hexo 博客框架搭建"></a>2. Hexo 博客框架搭建</h2><h3 id="2-1-Hexo-安装与初始化"><a href="#2-1-Hexo-安装与初始化" class="headerlink" title="2.1 Hexo 安装与初始化"></a>2.1 Hexo 安装与初始化</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init your-blog-name</span><br><span class="line"><span class="built_in">cd</span> your-blog-name</span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="配置kubectl"><a href="#配置kubectl" class="headerlink" title="配置kubectl"></a>配置kubectl</h2><h3 id="1-配置访问凭证"><a href="#1-配置访问凭证" class="headerlink" title="1. 配置访问凭证"></a>1. 配置访问凭证</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.kube</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> $(<span class="built_in">id</span> -u):$(<span class="built_in">id</span> -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="2-2-验证安装"><a href="#2-2-验证安装" class="headerlink" title="2.2 验证安装"></a>2.2 验证安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line"><span class="comment"># 访问 http://localhost:4000 确认环境正常</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-验证集群状态"><a href="#2-验证集群状态" class="headerlink" title="2. 验证集群状态"></a>2. 验证集群状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get nodes</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="3-hexo-theme-matery-主题配置"><a href="#3-hexo-theme-matery-主题配置" class="headerlink" title="3. hexo-theme-matery 主题配置"></a>3. hexo-theme-matery 主题配置</h2><h3 id="3-1-主题安装"><a href="#3-1-主题安装" class="headerlink" title="3.1 主题安装"></a>3.1 主题安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blinkfox/hexo-theme-matery.git themes/hexo-theme-matery</span><br></pre></td></tr></tbody></table></figure>
+<p>如果一切正常，您应该看到类似以下输出：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">NAME     STATUS   ROLES           AGE   VERSION</span><br><span class="line">&lt;hostname&gt;   Ready    control-plane   2m    v1.28.15</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="3-2-主题启用"><a href="#3-2-主题启用" class="headerlink" title="3.2 主题启用"></a>3.2 主题启用</h3><p>修改根目录 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">hexo-theme-matery</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-验证所有系统Pod运行状态"><a href="#3-验证所有系统Pod运行状态" class="headerlink" title="3. 验证所有系统Pod运行状态"></a>3. 验证所有系统Pod运行状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get pods -A</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="3-3-主题特性概述"><a href="#3-3-主题特性概述" class="headerlink" title="3.3 主题特性概述"></a>3.3 主题特性概述</h3><p>hexo-theme-matery主题主要特性：</p>
+<h2 id="配置单节点集群"><a href="#配置单节点集群" class="headerlink" title="配置单节点集群"></a>配置单节点集群</h2><p>在单节点集群中，我们需要允许Pod在控制平面上运行：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl taint nodes --all node-role.kubernetes.io/control-plane-</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h2><h3 id="如果Sealos安装失败"><a href="#如果Sealos安装失败" class="headerlink" title="如果Sealos安装失败"></a>如果Sealos安装失败</h3><p>如果Sealos无法正常部署Kubernetes，您可以使用kubeadm手动部署：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 安装kubeadm、kubelet和kubectl</span></span><br><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /'</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install -y kubelet kubeadm kubectl</span><br><span class="line"><span class="built_in">sudo</span> apt-mark hold kubelet kubeadm kubectl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 初始化集群</span></span><br><span class="line"><span class="built_in">sudo</span> kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<span class="variable">$MASTER_IP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 配置kubectl</span></span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.kube</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> $(<span class="built_in">id</span> -u):$(<span class="built_in">id</span> -g) <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 安装网络插件（Flannel作为示例）</span></span><br><span class="line">kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="如果遇到容器运行时错误"><a href="#如果遇到容器运行时错误" class="headerlink" title="如果遇到容器运行时错误"></a>如果遇到容器运行时错误</h3><p>如果出现与containerd相关的错误，尝试重新启动服务：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart containerd</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart kubelet</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><h3 id="1-检查集群信息"><a href="#1-检查集群信息" class="headerlink" title="1. 检查集群信息"></a>1. 检查集群信息</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl cluster-info</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-创建测试Pod"><a href="#2-创建测试Pod" class="headerlink" title="2. 创建测试Pod"></a>2. 创建测试Pod</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create deployment nginx --image=nginx</span><br><span class="line">kubectl get pods</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-检查集群组件状态"><a href="#3-检查集群组件状态" class="headerlink" title="3. 检查集群组件状态"></a>3. 检查集群组件状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get componentstatuses</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="清理和重置"><a href="#清理和重置" class="headerlink" title="清理和重置"></a>清理和重置</h2><p>如果需要重新开始，可以使用以下命令清理环境：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Sealos重置集群</span></span><br><span class="line"><span class="built_in">sudo</span> sealos reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用kubeadm重置</span></span><br><span class="line"><span class="built_in">sudo</span> kubeadm reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理iptables规则</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -F &amp;&amp; <span class="built_in">sudo</span> iptables -t nat -F &amp;&amp; <span class="built_in">sudo</span> iptables -t mangle -F &amp;&amp; <span class="built_in">sudo</span> iptables -X</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="过程中的问题与解决"><a href="#过程中的问题与解决" class="headerlink" title="过程中的问题与解决"></a>过程中的问题与解决</h2><p>在实际安装过程中，我遇到了以下几个关键问题，记录如下：</p>
+<h3 id="1-Sealos环境冲突问题"><a href="#1-Sealos环境冲突问题" class="headerlink" title="1. Sealos环境冲突问题"></a>1. Sealos环境冲突问题</h3><p>在使用<code>sudo sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters 192.168.1.18</code>命令时，遇到错误：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Error: failed to run checker: containerd is installed on 192.168.1.18:22 please uninstall it first</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>解决方案</strong>：Sealos要求纯净环境，不允许存在预安装的containerd。我执行了以下命令：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl stop containerd &amp;&amp; <span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> containerd</span><br><span class="line"><span class="built_in">sudo</span> apt remove containerd.io containerd -y</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-镜像仓库访问问题"><a href="#2-镜像仓库访问问题" class="headerlink" title="2. 镜像仓库访问问题"></a>2. 镜像仓库访问问题</h3><p>在尝试使用Sealos安装时，遇到了网络插件镜像无法拉取的问题：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Error: error parsing image name "//labring/calico:v3.26.2": reading manifest v3.26.2 in docker.io/labring/calico: manifest unknown</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>解决方案</strong>：切换到使用kubeadm手动安装，这是备选方案。</p>
+<h3 id="3-GPG密钥问题"><a href="#3-GPG密钥问题" class="headerlink" title="3. GPG密钥问题"></a>3. GPG密钥问题</h3><p>在使用kubeadm安装过程中，执行添加Kubernetes GPG密钥的命令时遇到问题：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span><br></pre></td></tr></tbody></table></figure>
+<p>出现 <code>gpg: cannot open '/dev/tty': 没有那个设备或地址</code> 错误。</p>
+<p><strong>解决方案</strong>：改用apt-key命令：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> apt-key add -</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4-容器运行时重新配置"><a href="#4-容器运行时重新配置" class="headerlink" title="4. 容器运行时重新配置"></a>4. 容器运行时重新配置</h3><p>由于之前移除了containerd，Kubernetes无法启动，因为CRI（容器运行时接口）不可用。</p>
+<p><strong>解决方案</strong>：下载并安装containerd二进制文件：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">wget https://github.com/containerd/containerd/releases/download/v1.7.20/containerd-1.7.20-linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> tar Cxzf /usr/local containerd-1.7.20-linux-amd64.tar.gz</span><br></pre></td></tr></tbody></table></figure>
+
+<p>然后创建systemd服务文件并启动containerd。</p>
+<h3 id="5-节点状态问题"><a href="#5-节点状态问题" class="headerlink" title="5. 节点状态问题"></a>5. 节点状态问题</h3><p>在kubeadm初始化集群后，节点显示为<code>NotReady</code>状态，而不是预期的<code>Ready</code>。</p>
+<p><strong>解决方案</strong>：</p>
 <ul>
-<li><strong>Material Design</strong>：遵循Google Material Design设计规范</li>
-<li><strong>响应式布局</strong>：适配桌面端、平板、移动端</li>
-<li><strong>瀑布流展示</strong>：博客文章列表的动态布局</li>
-<li><strong>时间轴归档</strong>：按时间维度的文章归档展示</li>
-<li><strong>多评论系统</strong>：支持Gitalk、Valine、Disqus等</li>
-<li><strong>数据可视化</strong>：技能雷达图、项目展示等功能</li>
+<li>安装Flannel网络插件解决CNI问题</li>
+<li>移除节点的污点以允许Pod在单节点集群上调度：</li>
 </ul>
-<h2 id="4-博客页面结构构建"><a href="#4-博客页面结构构建" class="headerlink" title="4. 博客页面结构构建"></a>4. 博客页面结构构建</h2><h3 id="4-1-必要页面创建"><a href="#4-1-必要页面创建" class="headerlink" title="4.1 必要页面创建"></a>4.1 必要页面创建</h3><p>创建分类、标签、关于等基础页面：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo new page <span class="string">"categories"</span></span><br><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"about"</span></span><br><span class="line">hexo new page <span class="string">"contact"</span></span><br><span class="line">hexo new page <span class="string">"friends"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>然后配置页面Front-matter：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># categories/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment"># about/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">about</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"about"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"about"</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="4-2-菜单导航配置"><a href="#4-2-菜单导航配置" class="headerlink" title="4.2 菜单导航配置"></a>4.2 菜单导航配置</h3><p>在主题配置文件中配置导航菜单：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Index:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">Tags:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/tags</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">Categories:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/categories</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-bookmark</span></span><br><span class="line">  <span class="attr">Archives:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/archives</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="attr">About:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/about</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-user-circle</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="5-AI辅助开发与运维"><a href="#5-AI辅助开发与运维" class="headerlink" title="5. AI辅助开发与运维"></a>5. AI辅助开发与运维</h2><h3 id="5-1-Qwen-Code在博客搭建中的应用"><a href="#5-1-Qwen-Code在博客搭建中的应用" class="headerlink" title="5.1 Qwen Code在博客搭建中的应用"></a>5.1 Qwen Code在博客搭建中的应用</h3><p><strong>配置生成</strong>：通过自然语言描述快速生成复杂配置文件</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：生成包含AI、ETL、大数据标签的hexo配置文件</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>内容创作</strong>：辅助技术文章编写和优化</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：为大数据处理技术文章生成大纲和内容要点</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>代码优化</strong>：改进代码质量和性能</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：优化hexo主题的JavaScript性能</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="5-2-自动化运维脚本"><a href="#5-2-自动化运维脚本" class="headerlink" title="5.2 自动化运维脚本"></a>5.2 自动化运维脚本</h3><p>创建部署脚本，实现一键发布：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># deploy.sh</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"博客已成功部署！"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="6-个性化配置与优化"><a href="#6-个性化配置与优化" class="headerlink" title="6. 个性化配置与优化"></a>6. 个性化配置与优化</h2><h3 id="6-1-站点信息配置"><a href="#6-1-站点信息配置" class="headerlink" title="6.1 站点信息配置"></a>6.1 站点信息配置</h3><p>在根配置文件中设置站点信息：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 站点基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'学习记录与技术分享'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'这里是huhuhuhr的技术博客，记录学习历程和技术心得'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'AI, ETL, 大数据, 技术, 学习, 编程'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://your-domain.com</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="6-2-主题个性化"><a href="#6-2-主题个性化" class="headerlink" title="6.2 主题个性化"></a>6.2 主题个性化</h3><p>配置主题的个人信息：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 主题配置文件</span></span><br><span class="line"><span class="attr">profile:</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">/medias/avatar.jpg</span></span><br><span class="line">  <span class="attr">career:</span> <span class="string">'系统架构师'</span></span><br><span class="line">  <span class="attr">introduction:</span> <span class="string">'热爱技术，专注AI、ETL和大数据领域，通过博客记录学习历程和技术心得。'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">socialLink:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">https://github.com/your-username</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">your-email@example.com</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="7-GitHub-Pages-部署"><a href="#7-GitHub-Pages-部署" class="headerlink" title="7. GitHub Pages 部署"></a>7. GitHub Pages 部署</h2><h3 id="7-1-部署插件安装"><a href="#7-1-部署插件安装" class="headerlink" title="7.1 部署插件安装"></a>7.1 部署插件安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-2-部署配置"><a href="#7-2-部署配置" class="headerlink" title="7.2 部署配置"></a>7.2 部署配置</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-3-部署执行"><a href="#7-3-部署执行" class="headerlink" title="7.3 部署执行"></a>7.3 部署执行</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo deploy -g  <span class="comment"># 生成并部署</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="8-自定义域名配置"><a href="#8-自定义域名配置" class="headerlink" title="8. 自定义域名配置"></a>8. 自定义域名配置</h2><h3 id="8-1-CNAME文件创建"><a href="#8-1-CNAME文件创建" class="headerlink" title="8.1 CNAME文件创建"></a>8.1 CNAME文件创建</h3><p>在 <code>source</code> 目录下创建 <code>CNAME</code> 文件：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">your-domain.com</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="8-2-DNS记录配置"><a href="#8-2-DNS记录配置" class="headerlink" title="8.2 DNS记录配置"></a>8.2 DNS记录配置</h3><p>在域名提供商处添加DNS记录：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl taint nodes --all node-role.kubernetes.io/control-plane-</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>A记录：指向GitHub Pages IP地址</li>
-<li>CNAME记录：子域名指向 GitHub 仓库</li>
+<li>等待一段时间使所有组件就绪</li>
 </ul>
-<h3 id="8-3-GitHub仓库设置"><a href="#8-3-GitHub仓库设置" class="headerlink" title="8.3 GitHub仓库设置"></a>8.3 GitHub仓库设置</h3><p>在仓库的 “Settings” -&gt; “Pages” 中配置自定义域名。</p>
-<h2 id="9-性能优化与SEO配置"><a href="#9-性能优化与SEO配置" class="headerlink" title="9. 性能优化与SEO配置"></a>9. 性能优化与SEO配置</h2><h3 id="9-1-搜索插件配置"><a href="#9-1-搜索插件配置" class="headerlink" title="9.1 搜索插件配置"></a>9.1 搜索插件配置</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="9-2-SEO优化配置"><a href="#9-2-SEO优化配置" class="headerlink" title="9.2 SEO优化配置"></a>9.2 SEO优化配置</h3><p>启用sitemap、keywords等SEO相关配置：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 文章字数统计</span></span><br><span class="line"><span class="attr">postInfo:</span></span><br><span class="line">  <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">update:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">wordCount:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="10-内容创作最佳实践"><a href="#10-内容创作最佳实践" class="headerlink" title="10. 内容创作最佳实践"></a>10. 内容创作最佳实践</h2><h3 id="10-1-文章Front-matter规范"><a href="#10-1-文章Front-matter规范" class="headerlink" title="10.1 文章Front-matter规范"></a>10.1 文章Front-matter规范</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章标题</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30 12:00:00</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术标签1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术标签2</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术分类</span></span><br><span class="line"><span class="attr">summary:</span> <span class="string">文章摘要</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="10-2-内容结构化"><a href="#10-2-内容结构化" class="headerlink" title="10.2 内容结构化"></a>10.2 内容结构化</h3><ul>
-<li><strong>问题引入</strong>：阐述文章要解决的问题</li>
-<li><strong>解决方案</strong>：详细描述解决过程和方法</li>
-<li><strong>技术总结</strong>：提炼关键知识点和经验</li>
-<li><strong>后续思考</strong>：提出进一步的研究方向</li>
-</ul>
-<h2 id="11-维护与更新策略"><a href="#11-维护与更新策略" class="headerlink" title="11. 维护与更新策略"></a>11. 维护与更新策略</h2><h3 id="11-1-定期维护任务"><a href="#11-1-定期维护任务" class="headerlink" title="11.1 定期维护任务"></a>11.1 定期维护任务</h3><ul>
-<li><strong>内容审核</strong>：定期检查内容的准确性和时效性</li>
-<li><strong>技术更新</strong>：跟进技术发展，更新过时内容</li>
-<li><strong>性能监控</strong>：检查网站加载速度和可用性</li>
-</ul>
-<h3 id="11-2-AI辅助维护"><a href="#11-2-AI辅助维护" class="headerlink" title="11.2 AI辅助维护"></a>11.2 AI辅助维护</h3><p>利用Qwen Code进行：</p>
-<ul>
-<li>语法和逻辑检查</li>
-<li>内容改写和优化</li>
-<li>SEO友好的标题和描述生成</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过本指南的实施，我们成功构建了一个基于现代技术栈的个人技术博客：利用Hexo框架的高效静态生成能力、hexo-theme-matery主题的精美设计、GitHub Pages的稳定托管服务，以及Qwen Code的AI辅助能力，实现了技术博客的快速搭建和高效运维。</p>
-<p>这种技术选型的优势在于：</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这次安装实践，我成功搭建了本地的Kubernetes环境，主要收获如下：</p>
 <ol>
-<li><strong>成本效益</strong>：利用免费服务降低运营成本</li>
-<li><strong>技术先进</strong>：采用现代前端技术和设计理念</li>
-<li><strong>易于维护</strong>：简单配置和自动化部署</li>
-<li><strong>可扩展性</strong>：支持功能模块的灵活扩展</li>
+<li><strong>Sealos和Kubernetes环境</strong>：成功安装了Sealos CLI工具和单节点Kubernetes集群</li>
+<li><strong>kubectl配置</strong>：正确配置了kubectl命令行工具，可以正常管理集群</li>
+<li><strong>网络插件</strong>：成功部署了Flannel网络插件，使Pod间可以正常通信</li>
+<li><strong>问题解决经验</strong>：在过程中解决了多个典型问题，包括环境冲突、容器运行时配置和节点状态问题</li>
 </ol>
-<p>在知识经济时代，个人技术博客不仅是知识沉淀的工具，更是技术影响力的载体。通过系统化的搭建和精细化的运营，将为个人技术品牌建设奠定坚实基础。</p>
+<h3 id="经验教训"><a href="#经验教训" class="headerlink" title="经验教训"></a>经验教训</h3><ol>
+<li><strong>环境准备的重要性</strong>：在部署Kubernetes前，确保系统环境符合要求至关重要</li>
+<li><strong>备选方案的准备</strong>：当首选方案（Sealos）遇到问题时，kubeadm是一个可靠的备选方案</li>
+<li><strong>网络插件必不可少</strong>：集群初始化后必须安装CNI网络插件，否则Pod无法正常通信</li>
+<li><strong>单节点集群的特殊配置</strong>：需要移除master节点的污点才能在单节点上调度Pod</li>
+</ol>
+<p>这次安装过程虽然遇到了一些挑战，但也提供了宝贵的实践经验，对理解和部署Kubernetes环境有很大帮助。</p>
+<h2 id="Docker与Containerd的共存关系"><a href="#Docker与Containerd的共存关系" class="headerlink" title="Docker与Containerd的共存关系"></a>Docker与Containerd的共存关系</h2><p>在安装过程中，我发现了一个有趣的现象：系统上同时存在Docker容器和服务以及Kubernetes集群。</p>
+<h3 id="共存机制"><a href="#共存机制" class="headerlink" title="共存机制"></a>共存机制</h3><p>实际上，Docker和Kubernetes可以共存，因为它们都使用了containerd作为容器运行时：</p>
+<ol>
+<li><strong>双重命名空间</strong>：containerd支持多客户端，Docker使用’moby’命名空间，而Kubernetes使用’k8s.io’命名空间</li>
+<li><strong>共享容器运行时</strong>：Docker和Kubernetes共享同一个containerd实例，但通过不同的命名空间隔离</li>
+<li><strong>进程结构</strong>：Docker daemon通过<code>--containerd=/run/containerd/containerd.sock</code>连接到containerd，而Kubernetes的kubelet也连接到同一个containerd</li>
+</ol>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>虽然技术上可行，但这种配置在生产环境中不推荐，因为：</p>
+<ul>
+<li>容器资源竞争</li>
+<li>网络和存储配置可能冲突</li>
+<li>安全性和隔离性可能受到影响</li>
+</ul>
+<h2 id="运维命令"><a href="#运维命令" class="headerlink" title="运维命令"></a>运维命令</h2><h3 id="kubectl运维命令"><a href="#kubectl运维命令" class="headerlink" title="kubectl运维命令"></a>kubectl运维命令</h3><p>kubectl的配置文件通常存储在<code>$HOME/.kube/config</code>，这是访问Kubernetes集群的凭证文件。</p>
+<p>常用运维命令：</p>
+<ul>
+<li><code>kubectl get nodes</code> - 查看集群节点状态</li>
+<li><code>kubectl get pods -A</code> - 查看所有命名空间中的Pod</li>
+<li><code>kubectl get services -A</code> - 查看所有服务</li>
+<li><code>kubectl get deployments -A</code> - 查看所有部署</li>
+<li><code>kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</code> - 查看Pod详细信息</li>
+<li><code>kubectl logs &lt;pod-name&gt; -n &lt;namespace&gt;</code> - 查看Pod日志</li>
+<li><code>kubectl apply -f &lt;file.yaml&gt;</code> - 部署资源</li>
+<li><code>kubectl delete -f &lt;file.yaml&gt;</code> - 删除资源</li>
+<li><code>kubectl scale deployment &lt;name&gt; --replicas=&lt;number&gt;</code> - 扩缩容部署</li>
+<li><code>kubectl cluster-info</code> - 查看集群信息</li>
+<li><code>kubectl top nodes/pods</code> - 查看资源使用情况</li>
+</ul>
+<h3 id="Sealos运维命令"><a href="#Sealos运维命令" class="headerlink" title="Sealos运维命令"></a>Sealos运维命令</h3><p>虽然我们最终没有使用Sealos完成安装，但其基本运维命令包括：</p>
+<ul>
+<li><code>sealos run &lt;image&gt;</code> - 部署集群</li>
+<li><code>sealos destroy</code> - 销毁集群</li>
+<li><code>sealos reset</code> - 重置集群</li>
+<li><code>sealos version</code> - 查看版本</li>
+<li><code>sealos status</code> - 查看集群状态</li>
+<li><code>sealos exec &lt;command&gt;</code> - 在集群上执行命令</li>
+</ul>
+<p>这些命令提供了管理Kubernetes集群的便捷方式，通过容器镜像封装了Kubernetes组件。</p>
 
                 
             </div>
@@ -579,7 +617,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.huhuhuhr.top/2025/11/30/0001.ge-ren-bo-ke-da-jian/">https://blog.huhuhuhr.top/2025/11/30/0001.ge-ren-bo-ke-da-jian/</a>
+                    <a href="https://blog.huhuhuhr.top/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/">https://blog.huhuhuhr.top/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -617,20 +655,24 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Qwen-Code/">
-                                    <span class="chip bg-color">Qwen Code</span>
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
                                 </a>
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Kubernetes/">
+                                    <span class="chip bg-color">Kubernetes</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                    <span class="chip bg-color">博客搭建</span>
+                                <a href="/tags/Sealos/">
+                                    <span class="chip bg-color">Sealos</span>
                                 </a>
                             
-                                <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">AI工具</span>
+                                <a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">
+                                    <span class="chip bg-color">本地部署</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                                    <span class="chip bg-color">容器化</span>
                                 </a>
                             
                         </div>
@@ -712,13 +754,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/12/07/0002.ben-di-an-zhuang-sealos-ji-lu/">
+                <a href="/2025/12/07/0003-k8s-ming-ling-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="本地安装sealos记录">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="k8s命令集合">
                         
-                        <span class="card-title">本地安装sealos记录</span>
+                        <span class="card-title">k8s命令集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -742,24 +784,24 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kubernetes/">
-                        <span class="chip bg-color">Kubernetes</span>
+                    <a href="/tags/k8s/">
+                        <span class="chip bg-color">k8s</span>
                     </a>
                     
-                    <a href="/tags/Sealos/">
-                        <span class="chip bg-color">Sealos</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">
-                        <span class="chip bg-color">本地部署</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
-                        <span class="chip bg-color">容器化</span>
+                    <a href="/tags/sealos/">
+                        <span class="chip bg-color">sealos</span>
                     </a>
                     
                     <a href="/tags/%E8%BF%90%E7%BB%B4/">
                         <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/kubectl/">
+                        <span class="chip bg-color">kubectl</span>
                     </a>
                     
                 </div>
@@ -770,10 +812,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/11/30/0001.ge-ren-bo-ke-da-jian/">
+                <a href="/2025/11/30/0001-ge-ren-bo-ke-da-jian/">
                     <div class="card-image">
                         
                         <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="个人博客搭建">
@@ -803,7 +845,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
