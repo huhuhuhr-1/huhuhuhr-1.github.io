@@ -1,0 +1,1520 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="k8s命令集合, AI, ETL, 大数据, 技术, 学习, 编程">
+    <meta name="description" content="Docker 命令集合1. 系统信息查看命令命令格式：
+docker versiondocker info
+
+功能说明：
+
+docker version: 查看Docker客户端和服务器的版本信息
+docker info: 显示Docker">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>k8s命令集合 | huhuhuhr</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">huhuhuhr</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <!-- <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li> -->
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">huhuhuhr</div>
+        <div class="logo-desc">
+            
+            这里是huhuhuhr的技术博客，记录学习历程和技术心得
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huhuhuhr-1" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huhuhuhr-1" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">k8s命令集合</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
+                            </a>
+                        
+                            <a href="/tags/k8s/">
+                                <span class="chip bg-color">k8s</span>
+                            </a>
+                        
+                            <a href="/tags/sealos/">
+                                <span class="chip bg-color">sealos</span>
+                            </a>
+                        
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                            <a href="/tags/kubectl/">
+                                <span class="chip bg-color">kubectl</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-12-07
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Docker-命令集合"><a href="#Docker-命令集合" class="headerlink" title="Docker 命令集合"></a>Docker 命令集合</h1><h2 id="1-系统信息查看命令"><a href="#1-系统信息查看命令" class="headerlink" title="1. 系统信息查看命令"></a>1. 系统信息查看命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker version</span><br><span class="line">docker info</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker version</code>: 查看Docker客户端和服务器的版本信息</li>
+<li><code>docker info</code>: 显示Docker系统详细信息，包括容器、镜像数量，存储驱动，网络配置等</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>检查Docker安装是否成功</li>
+<li>查看Docker版本及系统配置</li>
+<li>排查Docker相关问题时获取系统信息</li>
+</ul>
+<h2 id="2-镜像管理命令"><a href="#2-镜像管理命令" class="headerlink" title="2. 镜像管理命令"></a>2. 镜像管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker images           <span class="comment"># 列出本地镜像</span></span><br><span class="line">docker pull &lt;镜像名&gt;    <span class="comment"># 下载镜像</span></span><br><span class="line">docker search &lt;镜像名&gt;  <span class="comment"># 搜索镜像</span></span><br><span class="line">docker rmi &lt;镜像ID或名称&gt; <span class="comment"># 删除镜像</span></span><br><span class="line">docker commit &lt;容器ID&gt; &lt;新镜像名&gt; <span class="comment"># 从容器创建新镜像</span></span><br><span class="line">docker save -o &lt;文件名&gt; &lt;镜像名&gt; <span class="comment"># 保存镜像为tar文件</span></span><br><span class="line">docker load -i &lt;文件名&gt; <span class="comment"># 从tar文件加载镜像</span></span><br><span class="line">docker build -t &lt;镜像名&gt; . <span class="comment"># 从Dockerfile构建镜像</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker images</code>: 列出本地所有镜像</li>
+<li><code>docker pull</code>: 从仓库下载镜像</li>
+<li><code>docker search</code>: 在Docker Hub搜索镜像</li>
+<li><code>docker rmi</code>: 删除本地镜像</li>
+<li><code>docker commit</code>: 从容器创建新镜像</li>
+<li><code>docker save/load</code>: 镜像的导入导出</li>
+<li><code>docker build</code>: 从Dockerfile构建镜像</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>下载和管理Docker镜像</li>
+<li>构建和分享自定义镜像</li>
+<li>镜像的备份和迁移</li>
+</ul>
+<h2 id="3-容器管理命令"><a href="#3-容器管理命令" class="headerlink" title="3. 容器管理命令"></a>3. 容器管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run [OPTIONS] &lt;镜像名&gt; [命令] <span class="comment"># 运行容器</span></span><br><span class="line">docker ps [-a] <span class="comment"># 列出容器</span></span><br><span class="line">docker start &lt;容器ID或名称&gt; <span class="comment"># 启动容器</span></span><br><span class="line">docker stop &lt;容器ID或名称&gt; <span class="comment"># 停止容器</span></span><br><span class="line">docker restart &lt;容器ID或名称&gt; <span class="comment"># 重启容器</span></span><br><span class="line">docker <span class="built_in">kill</span> &lt;容器ID或名称&gt; <span class="comment"># 强制停止容器</span></span><br><span class="line">docker <span class="built_in">rm</span> &lt;容器ID或名称&gt; <span class="comment"># 删除容器</span></span><br><span class="line">docker pause &lt;容器ID&gt; <span class="comment"># 暂停容器</span></span><br><span class="line">docker unpause &lt;容器ID&gt; <span class="comment"># 恢复容器</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker run</code>: 创建并运行容器</li>
+<li><code>docker ps</code>: 列出正在运行的容器，-a显示所有容器</li>
+<li><code>docker start/stop/restart</code>: 容器的基本操作</li>
+<li><code>docker kill</code>: 立即终止容器</li>
+<li><code>docker rm</code>: 删除已停止的容器</li>
+<li><code>docker pause/unpause</code>: 暂停/恢复容器</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>启动、停止和管理容器</li>
+<li>部署和运行应用程序</li>
+<li>容器生命周期管理</li>
+</ul>
+<h2 id="4-容器交互命令"><a href="#4-容器交互命令" class="headerlink" title="4. 容器交互命令"></a>4. 容器交互命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> [OPTIONS] &lt;容器ID或名称&gt; &lt;命令&gt;</span><br><span class="line">docker attach &lt;容器ID或名称&gt;</span><br><span class="line">docker logs &lt;容器ID或名称&gt;</span><br><span class="line">docker top &lt;容器ID或名称&gt;</span><br><span class="line">docker stats &lt;容器ID或名称&gt; <span class="comment"># 查看容器资源使用情况</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker exec</code>: 在运行的容器中执行命令</li>
+<li><code>docker attach</code>: 连接到正在运行的容器</li>
+<li><code>docker logs</code>: 查看容器日志</li>
+<li><code>docker top</code>: 显示容器内的进程</li>
+<li><code>docker stats</code>: 实时监控容器资源使用</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>进入容器内部进行调试</li>
+<li>查看容器运行状态和日志</li>
+<li>监控容器内进程和资源使用</li>
+</ul>
+<h2 id="5-网络和存储命令"><a href="#5-网络和存储命令" class="headerlink" title="5. 网络和存储命令"></a>5. 网络和存储命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br><span class="line">docker network create &lt;网络名&gt;</span><br><span class="line">docker network <span class="built_in">rm</span> &lt;网络名&gt;</span><br><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line">docker volume create &lt;卷名&gt;</span><br><span class="line">docker volume <span class="built_in">rm</span> &lt;卷名&gt;</span><br><span class="line">docker volume prune <span class="comment"># 清理未使用的卷</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker network</code>: 管理Docker网络</li>
+<li><code>docker volume</code>: 管理Docker数据卷</li>
+<li><code>docker volume prune</code>: 清理未使用的卷</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>创建和管理容器网络</li>
+<li>数据持久化存储</li>
+<li>容器间通信配置</li>
+</ul>
+<h2 id="6-其他重要运维命令"><a href="#6-其他重要运维命令" class="headerlink" title="6. 其他重要运维命令"></a>6. 其他重要运维命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker inspect &lt;容器ID或镜像ID&gt; <span class="comment"># 查看详细配置信息</span></span><br><span class="line">docker <span class="built_in">cp</span> &lt;源&gt; &lt;目标&gt; <span class="comment"># 在容器和主机间复制文件</span></span><br><span class="line">docker tag &lt;源镜像&gt; &lt;目标镜像&gt; <span class="comment"># 为镜像打标签</span></span><br><span class="line">docker system <span class="built_in">df</span> <span class="comment"># 查看Docker磁盘使用情况</span></span><br><span class="line">docker system prune <span class="comment"># 清理未使用的资源</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker inspect</code>: 查看对象（容器、镜像、网络等）的详细配置</li>
+<li><code>docker cp</code>: 文件在容器和主机间复制</li>
+<li><code>docker tag</code>: 为镜像添加标签</li>
+<li><code>docker system df</code>: 查看Docker磁盘使用情况</li>
+<li><code>docker system prune</code>: 清理未使用的资源</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>监控容器性能</li>
+<li>查看和调试容器、镜像配置</li>
+<li>数据备份和迁移</li>
+<li>系统资源管理和清理</li>
+</ul>
+<h2 id="7-安全和登录命令"><a href="#7-安全和登录命令" class="headerlink" title="7. 安全和登录命令"></a>7. 安全和登录命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker login [SERVER]</span><br><span class="line">docker <span class="built_in">logout</span> [SERVER]</span><br><span class="line">docker events</span><br><span class="line">docker run --<span class="built_in">rm</span> -it alpine:latest <span class="comment"># 临时运行容器</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>docker login</code>: 登录Docker仓库</li>
+<li><code>docker logout</code>: 退出Docker仓库</li>
+<li><code>docker events</code>: 获取实时事件</li>
+<li>在运行命令中使用<code>--rm</code>选项自动删除容器</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>推送镜像到私有仓库</li>
+<li>安全认证</li>
+<li>监控Docker活动</li>
+<li>临时任务执行</li>
+</ul>
+<h1 id="Sealos-命令集合"><a href="#Sealos-命令集合" class="headerlink" title="Sealos 命令集合"></a>Sealos 命令集合</h1><h2 id="1-集群管理命令"><a href="#1-集群管理命令" class="headerlink" title="1. 集群管理命令"></a>1. 集群管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos run &lt;镜像名&gt; [可选参数] <span class="comment"># 运行集群镜像，快速部署应用</span></span><br><span class="line">sealos apply -f Clusterfile <span class="comment"># 使用Clusterfile运行集群镜像</span></span><br><span class="line">sealos reset <span class="comment"># 重置集群中的所有内容</span></span><br><span class="line">sealos status <span class="comment"># 查看Sealos集群的状态</span></span><br><span class="line">sealos cert <span class="comment"># 更新Kubernetes API服务器的证书</span></span><br><span class="line">sealos gen <span class="comment"># 生成具有所有默认设置的Clusterfile</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>sealos run</code>: 轻松运行云原生应用，是部署集群的常用方式</li>
+<li><code>sealos apply</code>: 使用Clusterfile在Kubernetes集群内运行集群镜像</li>
+<li><code>sealos reset</code>: 完全清理集群，重置到初始状态</li>
+<li><code>sealos status</code>: 检查当前集群的状态</li>
+<li><code>sealos cert</code>: 更新集群API服务器的证书</li>
+<li><code>sealos gen</code>: 生成集群配置文件模板</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>部署和初始化Kubernetes集群</li>
+<li>集群状态检查和维护</li>
+<li>证书更新和管理</li>
+<li>集群配置文件创建</li>
+</ul>
+<h2 id="2-节点管理命令"><a href="#2-节点管理命令" class="headerlink" title="2. 节点管理命令"></a>2. 节点管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos add --masters &lt;IP列表&gt; <span class="comment"># 添加master节点到集群</span></span><br><span class="line">sealos add --nodes &lt;IP列表&gt; <span class="comment"># 添加node节点到集群</span></span><br><span class="line">sealos delete --masters &lt;IP列表&gt; <span class="comment"># 从集群中删除master节点</span></span><br><span class="line">sealos delete --nodes &lt;IP列表&gt; <span class="comment"># 从集群中删除node节点</span></span><br><span class="line">sealos <span class="built_in">exec</span> -m <span class="string">"command"</span> <span class="comment"># 在所有master节点上执行命令</span></span><br><span class="line">sealos <span class="built_in">exec</span> -n <span class="string">"command"</span> <span class="comment"># 在所有node节点上执行命令</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>sealos add</code>: 向集群中添加master或node节点</li>
+<li><code>sealos delete</code>: 从集群中删除master或node节点</li>
+<li><code>sealos exec</code>: 在特定类型的节点上执行命令</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>集群水平扩展，增加节点</li>
+<li>节点维护或故障后移除节点</li>
+<li>在集群节点上执行维护任务</li>
+</ul>
+<h2 id="3-远程操作命令"><a href="#3-远程操作命令" class="headerlink" title="3. 远程操作命令"></a>3. 远程操作命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos <span class="built_in">exec</span> --hosts &lt;IP地址&gt; <span class="string">"command"</span> <span class="comment"># 在指定节点上执行命令</span></span><br><span class="line">sealos scp &lt;本地文件&gt; &lt;节点IP:远程路径&gt; <span class="comment"># 将文件复制到指定节点</span></span><br><span class="line">sealos scp &lt;节点IP:远程文件&gt; &lt;本地路径&gt; <span class="comment"># 从指定节点复制文件</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>sealos exec</code>: 在远程节点上执行shell命令或脚本</li>
+<li><code>sealos scp</code>: 在本地与节点之间复制文件</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>在远程节点上执行诊断或管理任务</li>
+<li>向节点传输配置文件或脚本</li>
+<li>远程收集日志或配置文件</li>
+</ul>
+<h2 id="4-容器和镜像命令"><a href="#4-容器和镜像命令" class="headerlink" title="4. 容器和镜像命令"></a>4. 容器和镜像命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos images <span class="comment"># 列出本地存储中的镜像</span></span><br><span class="line">sealos pull &lt;镜像名&gt; <span class="comment"># 从指定位置拉取镜像</span></span><br><span class="line">sealos push &lt;镜像名&gt; &lt;目标地址&gt; <span class="comment"># 将镜像推送到指定的目标</span></span><br><span class="line">sealos rmi &lt;镜像名或ID&gt; <span class="comment"># 从本地存储中删除一个或多个镜像</span></span><br><span class="line">sealos save -o &lt;文件名&gt; &lt;镜像名&gt; <span class="comment"># 将镜像保存到存档文件中</span></span><br><span class="line">sealos load -i &lt;文件名&gt; <span class="comment"># 从文件中加载镜像</span></span><br><span class="line">sealos tag &lt;源镜像&gt; &lt;目标镜像&gt; <span class="comment"># 为本地镜像添加一个附加名称</span></span><br><span class="line">sealos build -t &lt;镜像名&gt; . <span class="comment"># 构建自定义集群镜像</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>sealos images/pull/push/rmi/save/load/tag</code>: 镜像的基本操作</li>
+<li><code>sealos build</code>: 使用Sealfile或Kubefile构建集群镜像</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>集群镜像管理</li>
+<li>构建和推送自定义集群镜像</li>
+<li>镜像的备份和迁移</li>
+</ul>
+<h2 id="5-其他辅助命令"><a href="#5-其他辅助命令" class="headerlink" title="5. 其他辅助命令"></a>5. 其他辅助命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos completion &lt;shell&gt; <span class="comment"># 为指定的shell生成自动补全脚本</span></span><br><span class="line">sealos version <span class="comment"># 打印版本信息</span></span><br><span class="line">sealos <span class="built_in">env</span> <span class="comment"># 打印Sealos使用的所有环境信息</span></span><br><span class="line">sealos login &lt;仓库地址&gt; <span class="comment"># 登录到容器仓库</span></span><br><span class="line">sealos <span class="built_in">logout</span> <span class="comment"># 登出容器仓库</span></span><br><span class="line">sealos inspect &lt;镜像名&gt; <span class="comment"># 检查容器或镜像的配置</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>sealos completion</code>: 配置命令行自动补全功能</li>
+<li><code>sealos version/env</code>: 检查版本和环境信息</li>
+<li><code>sealos login/logout</code>: 容器仓库认证</li>
+<li><code>sealos inspect</code>: 查看镜像或容器的详细配置</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>提高命令行操作效率</li>
+<li>检查Sealos安装和配置</li>
+<li>仓库访问认证</li>
+<li>镜像详细信息查看</li>
+</ul>
+<h1 id="Kubectl-命令集合"><a href="#Kubectl-命令集合" class="headerlink" title="Kubectl 命令集合"></a>Kubectl 命令集合</h1><h2 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1. 基础语法"></a>1. 基础语法</h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">kubectl [command] [TYPE] [NAME] [flags]</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><strong>command</strong>：指定要对一个或多个资源执行的操作，如create、get、describe和delete</li>
+<li><strong>TYPE</strong>：指定资源类型，不区分大小写，可以为单数、复数或缩写形式</li>
+<li><strong>NAME</strong>：指定资源的名称，区分大小写，若省略则显示所有资源</li>
+<li><strong>flags</strong>：指定可选参数，如-s或–server参数指定Kubernetes API服务器的地址和端口</li>
+</ul>
+<h2 id="2-资源查看与查询命令"><a href="#2-资源查看与查询命令" class="headerlink" title="2. 资源查看与查询命令"></a>2. 资源查看与查询命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get pods -A                    <span class="comment"># 列出所有命名空间中的Pod</span></span><br><span class="line">kubectl get nodes                      <span class="comment"># 获取所有节点信息</span></span><br><span class="line">kubectl get deployments -n namespace   <span class="comment"># 获取指定命名空间下的部署信息</span></span><br><span class="line">kubectl get services                   <span class="comment"># 获取服务信息</span></span><br><span class="line">kubectl get pv,pvc                     <span class="comment"># 获取持久卷和持久卷申领信息</span></span><br><span class="line">kubectl get all -n namespace           <span class="comment"># 获取指定命名空间下所有资源</span></span><br><span class="line">kubectl get pods --watch               <span class="comment"># 实时监控Pod状态变化</span></span><br><span class="line">kubectl get events                     <span class="comment"># 查看集群事件</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl get</code>: 获取资源对象的基本信息</li>
+<li>支持各种资源类型（pods, services, deployments等）</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>检查集群整体运行状况</li>
+<li>查看节点健康状态</li>
+<li>检查应用部署状态</li>
+<li>查看服务暴露情况</li>
+</ul>
+<h2 id="3-资源创建与管理命令"><a href="#3-资源创建与管理命令" class="headerlink" title="3. 资源创建与管理命令"></a>3. 资源创建与管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create -f resource.yaml                    <span class="comment"># 从配置文件创建资源</span></span><br><span class="line">kubectl apply -f resource.yaml                    <span class="comment"># 应用资源配置(创建或更新)</span></span><br><span class="line">kubectl apply -f &lt;directory&gt;                      <span class="comment"># 应用目录下所有配置文件</span></span><br><span class="line">kubectl delete pod pod_name                       <span class="comment"># 删除指定Pod</span></span><br><span class="line">kubectl delete -f resource.yaml                   <span class="comment"># 从配置文件删除资源</span></span><br><span class="line">kubectl scale deployment deployment_name --replicas=N  <span class="comment"># 扩缩容部署副本数</span></span><br><span class="line">kubectl expose deployment deployment_name --port=port   <span class="comment"># 暴露服务</span></span><br><span class="line">kubectl label pods pod_name key=value             <span class="comment"># 为Pod添加标签</span></span><br><span class="line">kubectl annotate pods pod_name key=value          <span class="comment"># 为Pod添加注解</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl create/apply</code>: 创建或更新资源对象</li>
+<li><code>kubectl delete</code>: 删除资源对象</li>
+<li><code>kubectl scale</code>: 调整应用副本数量</li>
+<li><code>kubectl expose</code>: 创建Service关联Deployment</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>从配置文件创建资源</li>
+<li>生产环境推荐使用apply进行更新</li>
+<li>动态调整应用负载能力</li>
+<li>删除异常或不需要的资源</li>
+</ul>
+<h2 id="4-资源描述与调试命令"><a href="#4-资源描述与调试命令" class="headerlink" title="4. 资源描述与调试命令"></a>4. 资源描述与调试命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl describe pod pod_name                       <span class="comment"># 显示Pod详细信息和事件</span></span><br><span class="line">kubectl describe node node_name                   <span class="comment"># 显示节点详细信息</span></span><br><span class="line">kubectl describe deployment deployment_name       <span class="comment"># 显示部署详细信息</span></span><br><span class="line">kubectl logs pod_name                             <span class="comment"># 查看Pod日志</span></span><br><span class="line">kubectl logs pod_name -f                          <span class="comment"># 实时查看Pod日志流</span></span><br><span class="line">kubectl logs pod_name --<span class="built_in">tail</span>=100                  <span class="comment"># 查看Pod最后100行日志</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it pod_name -- bash                 <span class="comment"># 进入Pod执行交互命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it pod_name -- sh                   <span class="comment"># 进入Pod执行sh命令</span></span><br><span class="line">kubectl port-forward pod_name local_port:pod_port <span class="comment"># 端口转发到本地</span></span><br><span class="line">kubectl <span class="built_in">cp</span> /path/to/file &lt;pod&gt;:/path/to/file      <span class="comment"># 在Pod和本地间复制文件</span></span><br><span class="line">kubectl top nodes                                 <span class="comment"># 显示节点资源使用情况</span></span><br><span class="line">kubectl top pods -n namespace                     <span class="comment"># 显示Pod资源使用情况</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl describe</code>: 显示资源的详细配置和状态信息</li>
+<li><code>kubectl logs</code>: 查看容器日志</li>
+<li><code>kubectl exec</code>: 在Pod中执行命令</li>
+<li><code>kubectl port-forward</code>: 端口转发用于调试</li>
+<li><code>kubectl top</code>: 显示资源使用情况</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>排查Pod启动失败问题</li>
+<li>查看应用运行状态和资源使用</li>
+<li>调试容器内部环境</li>
+<li>实时监控应用输出</li>
+<li>本地调试集群内服务</li>
+</ul>
+<h2 id="5-配置与更新命令"><a href="#5-配置与更新命令" class="headerlink" title="5. 配置与更新命令"></a>5. 配置与更新命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl <span class="built_in">set</span> image deployment/deployment_name container_name=image:newtag  <span class="comment"># 更新部署的镜像</span></span><br><span class="line">kubectl patch deployment deployment_name -p <span class="string">'{"spec":{"replicas":3}}'</span>    <span class="comment"># 部分更新资源</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment deployment_name                        <span class="comment"># 查看部署历史</span></span><br><span class="line">kubectl rollout undo deployment deployment_name                           <span class="comment"># 回滚到上一个版本</span></span><br><span class="line">kubectl rollout undo deployment deployment_name --to-revision=N           <span class="comment"># 回滚到指定版本</span></span><br><span class="line">kubectl rollout status deployment deployment_name                         <span class="comment"># 查看滚动更新状态</span></span><br><span class="line">kubectl <span class="built_in">set</span> <span class="built_in">env</span> deployment/deployment_name ENV_NAME=ENV_VALUE            <span class="comment"># 设置环境变量</span></span><br><span class="line">kubectl <span class="built_in">set</span> resources deployment/deployment_name --limits=cpu=200m      <span class="comment"># 设置资源限制</span></span><br><span class="line">kubectl patch pod pod_name -p <span class="string">'{"spec":{"activeDeadlineSeconds":100}}'</span>   <span class="comment"># 部分更新Pod</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl set image</code>: 更新部署的镜像</li>
+<li><code>kubectl patch</code>: 部分更新资源配置</li>
+<li><code>kubectl rollout</code>: 管理部署的滚动更新和回滚</li>
+<li><code>kubectl set env/resources</code>: 设置环境变量和资源限制</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>灰度发布新版本</li>
+<li>回滚故障更新</li>
+<li>监控更新进度</li>
+<li>修改资源配置</li>
+</ul>
+<h2 id="6-节点与集群管理命令"><a href="#6-节点与集群管理命令" class="headerlink" title="6. 节点与集群管理命令"></a>6. 节点与集群管理命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl cordon node_name                    <span class="comment"># 标记节点不可调度</span></span><br><span class="line">kubectl uncordon node_name                  <span class="comment"># 标记节点可调度</span></span><br><span class="line">kubectl drain node_name                     <span class="comment"># 安全排空节点</span></span><br><span class="line">kubectl taint nodes node_name key=value:NoSchedule  <span class="comment"># 给节点添加污点</span></span><br><span class="line">kubectl cluster-info                        <span class="comment"># 显示主控节点和服务信息</span></span><br><span class="line">kubectl config view                         <span class="comment"># 查看kubeconfig配置</span></span><br><span class="line">kubectl config get-contexts                 <span class="comment"># 列出kubeconfig中的上下文</span></span><br><span class="line">kubectl config use-context context-name     <span class="comment"># 切换当前上下文</span></span><br><span class="line">kubectl version                             <span class="comment"># 显示客户端和服务端版本</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl cordon/uncordon</code>: 标记节点可调度或不可调度</li>
+<li><code>kubectl drain</code>: 安全驱逐节点上的Pod</li>
+<li><code>kubectl taint</code>: 给节点添加污点</li>
+<li><code>kubectl cluster-info/config</code>: 查看集群和配置信息</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>维护前排空节点</li>
+<li>恢复节点调度</li>
+<li>节点维护前安全驱逐Pod</li>
+<li>集群配置管理</li>
+</ul>
+<h2 id="7-配置管理与网络命令"><a href="#7-配置管理与网络命令" class="headerlink" title="7. 配置管理与网络命令"></a>7. 配置管理与网络命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create configmap name --from-file=file         <span class="comment"># 创建ConfigMap</span></span><br><span class="line">kubectl create configmap name --from-literal=key=val   <span class="comment"># 创建键值对ConfigMap</span></span><br><span class="line">kubectl create secret generic name --from-literal=key=val <span class="comment"># 创建Secret</span></span><br><span class="line">kubectl create secret generic name --from-file=file    <span class="comment"># 从文件创建Secret</span></span><br><span class="line">kubectl get configmaps -n namespace                   <span class="comment"># 获取ConfigMap</span></span><br><span class="line">kubectl get secrets -n namespace                      <span class="comment"># 获取Secret</span></span><br><span class="line">kubectl get ingress                                   <span class="comment"># 获取入口资源</span></span><br><span class="line">kubectl get networkpolicy                             <span class="comment"># 获取网络策略</span></span><br><span class="line">kubectl create -f service-account.yaml                <span class="comment"># 创建服务账户</span></span><br><span class="line">kubectl get serviceaccount -n namespace               <span class="comment"># 获取服务账户</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl create configmap/secret</code>: 创建配置和密钥</li>
+<li><code>kubectl get ingress/networkpolicy</code>: 获取网络相关资源</li>
+<li><code>kubectl create/get serviceaccount</code>: 管理服务账户</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>管理配置文件和敏感信息</li>
+<li>控制应用网络访问</li>
+<li>权限管理</li>
+</ul>
+<h2 id="8-调试和排错命令"><a href="#8-调试和排错命令" class="headerlink" title="8. 调试和排错命令"></a>8. 调试和排错命令</h2><p><strong>命令格式：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl debug node/node_name -it --image=busybox    <span class="comment"># 调试节点</span></span><br><span class="line">kubectl debug pod_name -it --image=busybox          <span class="comment"># 调试Pod</span></span><br><span class="line">kubectl get componentstatuses                     <span class="comment"># 查看集群组件状态</span></span><br><span class="line">kubectl get pods --field-selector status.phase!=Running <span class="comment"># 查找非运行状态Pod</span></span><br><span class="line">kubectl get pods --field-selector spec.nodeName=&lt;node-name&gt; <span class="comment"># 查找节点上Pod</span></span><br><span class="line">kubectl events --<span class="keyword">for</span> pod/pod_name                 <span class="comment"># 查看Pod事件</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>功能说明：</strong></p>
+<ul>
+<li><code>kubectl debug</code>: 创建调试Pod用于排错</li>
+<li><code>kubectl get componentstatuses</code>: 检查集群组件状态</li>
+<li>字段选择器: 通过字段筛选资源</li>
+</ul>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>调试集群节点和Pod</li>
+<li>排查集群组件问题</li>
+<li>查找特定状态的资源</li>
+</ul>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>本文档全面总结了Docker、Sealos和Kubectl三个重要工具的运维命令，涵盖了从基础操作到高级管理的各个方面。这些命令是云原生运维工程师必须掌握的核心技能，熟练使用这些命令可以有效提高日常运维效率，保障应用的稳定运行。</p>
+<h2 id="常用运维流程示例"><a href="#常用运维流程示例" class="headerlink" title="常用运维流程示例"></a>常用运维流程示例</h2><h3 id="1-应用部署流程"><a href="#1-应用部署流程" class="headerlink" title="1. 应用部署流程"></a>1. 应用部署流程</h3><ol>
+<li>使用Docker构建应用镜像</li>
+<li>使用Sealos部署Kubernetes集群</li>
+<li>使用Kubectl部署应用到集群</li>
+</ol>
+<h3 id="2-问题排查流程"><a href="#2-问题排查流程" class="headerlink" title="2. 问题排查流程"></a>2. 问题排查流程</h3><ol>
+<li>使用kubectl get pods检查Pod状态</li>
+<li>使用kubectl describe pod查看详情</li>
+<li>使用kubectl logs查看日志</li>
+<li>使用kubectl exec进入Pod调试</li>
+</ol>
+<h3 id="3-集群维护流程"><a href="#3-集群维护流程" class="headerlink" title="3. 集群维护流程"></a>3. 集群维护流程</h3><ol>
+<li>使用kubectl cordon标记节点不可调度</li>
+<li>使用kubectl drain安全排空节点</li>
+<li>维护完成后使用kubectl uncordon恢复节点调度</li>
+<li>使用sealos exec在节点上执行维护命令</li>
+</ol>
+<p>掌握这些命令和流程，可以有效提升Kubernetes集群和应用的管理效率。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">huhuhuhr</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.huhuhuhr.top/2025/12/07/0003.k8s-ming-ling-ji-he/">https://blog.huhuhuhr.top/2025/12/07/0003.k8s-ming-ling-ji-he/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">huhuhuhr</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
+                                </a>
+                            
+                                <a href="/tags/k8s/">
+                                    <span class="chip bg-color">k8s</span>
+                                </a>
+                            
+                                <a href="/tags/sealos/">
+                                    <span class="chip bg-color">sealos</span>
+                                </a>
+                            
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
+                                </a>
+                            
+                                <a href="/tags/kubectl/">
+                                    <span class="chip bg-color">kubectl</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/12/07/0004-sealos-shi-zhan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="0004.sealos实战">
+                        
+                        <span class="card-title">0004.sealos实战</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            huhuhuhr
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                        <span class="chip bg-color">容器化</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                    <a href="/tags/k8s/">
+                        <span class="chip bg-color">k8s</span>
+                    </a>
+                    
+                    <a href="/tags/sealos/">
+                        <span class="chip bg-color">sealos</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/12/07/0002.ben-di-an-zhuang-sealos-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="本地安装sealos记录">
+                        
+                        <span class="card-title">本地安装sealos记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            huhuhuhr
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Kubernetes/">
+                        <span class="chip bg-color">Kubernetes</span>
+                    </a>
+                    
+                    <a href="/tags/Sealos/">
+                        <span class="chip bg-color">Sealos</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">本地部署</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                        <span class="chip bg-color">容器化</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <a href="/about" target="_blank">huhuhuhr</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">14.7k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/huhuhuhr-1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:757033301@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

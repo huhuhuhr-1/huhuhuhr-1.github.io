@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人博客搭建, AI, ETL, 大数据, 技术, 学习, 编程">
-    <meta name="description" content="基于Qwen Code、hexo-theme-matery和GitHub Pages的个人技术博客搭建完整指南">
+    <meta name="keywords" content="0005.sealos-问答记录, AI, ETL, 大数据, 技术, 学习, 编程">
+    <meta name="description" content="Sealos运维问答记录1. 概念理解1.1 Kubernetes架构相关问题：一个Pod可以包含一个或多个紧密相关的容器，什么意思？例如我一个docker compose说明了服务依赖postgresql等等服务，这一组服务一个pod？
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人博客搭建 | huhuhuhr</title>
+    <title>0005.sealos-问答记录 | huhuhuhr</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -52,9 +53,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1">
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
 </head>
 
 
@@ -337,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人博客搭建</h1>
+                    <h1 class="description center-align post-title">0005.sealos-问答记录</h1>
                 </div>
             </div>
         </div>
@@ -366,35 +367,26 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Qwen-Code/">
-                                <span class="chip bg-color">Qwen Code</span>
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
                             </a>
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/k8s/">
+                                <span class="chip bg-color">k8s</span>
                             </a>
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                <span class="chip bg-color">博客搭建</span>
+                            <a href="/tags/sealos/">
+                                <span class="chip bg-color">sealos</span>
                             </a>
                         
-                            <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">AI工具</span>
+                            <a href="/tags/%E9%97%AE%E7%AD%94/">
+                                <span class="chip bg-color">问答</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                技术
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -403,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-30
+                    2025-12-07
                 </div>
                 
 
@@ -419,7 +411,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    5 分
                 </div>
                 
 
@@ -447,112 +439,71 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南"><a href="#基于Qwen-Code-hexo-theme-matery-GitHub-Pages的个人技术博客搭建指南" class="headerlink" title="基于Qwen Code + hexo-theme-matery + GitHub Pages的个人技术博客搭建指南"></a>基于Qwen Code + hexo-theme-matery + GitHub Pages的个人技术博客搭建指南</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>随着技术知识的快速发展和信息爆炸式增长，建立个人技术博客成为知识沉淀和分享的重要途径。本指南详细阐述如何利用Qwen Code的AI能力、hexo-theme-matery主题和GitHub Pages服务，构建一个高效、美观且功能完善的技术博客平台。</p>
-<h2 id="1-搭建环境与工具准备"><a href="#1-搭建环境与工具准备" class="headerlink" title="1. 搭建环境与工具准备"></a>1. 搭建环境与工具准备</h2><h3 id="1-1-基础环境依赖"><a href="#1-1-基础环境依赖" class="headerlink" title="1.1 基础环境依赖"></a>1.1 基础环境依赖</h3><ul>
-<li><strong>Node.js</strong>（版本 ≥ 14.0.0）</li>
-<li><strong>Git</strong>（版本控制）</li>
-<li><strong>Hexo CLI</strong>（博客框架命令行工具）</li>
-</ul>
-<h3 id="1-2-Qwen-Code-介绍"><a href="#1-2-Qwen-Code-介绍" class="headerlink" title="1.2 Qwen Code 介绍"></a>1.2 Qwen Code 介绍</h3><p>Qwen Code是集成于开发环境的AI助手，具备以下核心功能：</p>
+                <h1 id="Sealos运维问答记录"><a href="#Sealos运维问答记录" class="headerlink" title="Sealos运维问答记录"></a>Sealos运维问答记录</h1><h2 id="1-概念理解"><a href="#1-概念理解" class="headerlink" title="1. 概念理解"></a>1. 概念理解</h2><h3 id="1-1-Kubernetes架构相关"><a href="#1-1-Kubernetes架构相关" class="headerlink" title="1.1 Kubernetes架构相关"></a>1.1 Kubernetes架构相关</h3><p><strong>问题：一个Pod可以包含一个或多个紧密相关的容器，什么意思？例如我一个docker compose说明了服务依赖postgresql等等服务，这一组服务一个pod？</strong></p>
+<p><strong>回答：</strong> 不是的，您对Pod的理解有些偏差。Pod是Kubernetes中最小的部署单元，它包含一个或多个”紧密相关”的容器。这里的”紧密相关”是指这些容器需要共享存储和网络，共同完成一个任务。</p>
+<p>在Docker Compose中的多个服务（如Java应用+PostgreSQL）在Kubernetes中应该对应多个Pod + Service，而不是一个Pod。Pod中多个容器的”紧密相关”是指它们协同完成一个单一任务，而不是运行不同的服务组件。</p>
+<p><strong>问题：服务和实际的运行的服务我还是搞不清楚</strong></p>
+<p><strong>回答：</strong> Kubernetes中的Service（服务）和实际运行的服务（应用程序）有以下区别：</p>
 <ul>
-<li><strong>代码生成</strong>：根据自然语言描述生成代码</li>
-<li><strong>文档编写</strong>：辅助技术文档创作</li>
-<li><strong>问题诊断</strong>：快速定位和修复问题</li>
-<li><strong>运维优化</strong>：自动化重复性任务处理</li>
+<li><strong>Service</strong>：是Kubernetes的一个API对象，是一个网络抽象，为一组Pod提供稳定的网络端点（IP地址和DNS名称）</li>
+<li><strong>实际运行的服务</strong>：是运行在Pod中的实际应用程序</li>
 </ul>
-<h2 id="2-Hexo-博客框架搭建"><a href="#2-Hexo-博客框架搭建" class="headerlink" title="2. Hexo 博客框架搭建"></a>2. Hexo 博客框架搭建</h2><h3 id="2-1-Hexo-安装与初始化"><a href="#2-1-Hexo-安装与初始化" class="headerlink" title="2.1 Hexo 安装与初始化"></a>2.1 Hexo 安装与初始化</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init your-blog-name</span><br><span class="line"><span class="built_in">cd</span> your-blog-name</span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-2-验证安装"><a href="#2-2-验证安装" class="headerlink" title="2.2 验证安装"></a>2.2 验证安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line"><span class="comment"># 访问 http://localhost:4000 确认环境正常</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-hexo-theme-matery-主题配置"><a href="#3-hexo-theme-matery-主题配置" class="headerlink" title="3. hexo-theme-matery 主题配置"></a>3. hexo-theme-matery 主题配置</h2><h3 id="3-1-主题安装"><a href="#3-1-主题安装" class="headerlink" title="3.1 主题安装"></a>3.1 主题安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blinkfox/hexo-theme-matery.git themes/hexo-theme-matery</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-2-主题启用"><a href="#3-2-主题启用" class="headerlink" title="3.2 主题启用"></a>3.2 主题启用</h3><p>修改根目录 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">hexo-theme-matery</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-3-主题特性概述"><a href="#3-3-主题特性概述" class="headerlink" title="3.3 主题特性概述"></a>3.3 主题特性概述</h3><p>hexo-theme-matery主题主要特性：</p>
+<p>它们的关系是：用户请求 → Service IP/域名 → Service → 标签选择器 → 实际运行的Pod。Service就像一个门面，为实际运行在Pod中的应用程序提供稳定的访问入口。</p>
+<h3 id="1-2-概念映射"><a href="#1-2-概念映射" class="headerlink" title="1.2 概念映射"></a>1.2 概念映射</h3><p><strong>问题：假如有一个为java服务，这个服务一个实例就是一个pod，多个pod指向同一个service，service负责做负载均衡，容器是就是一个pod实例，每一个pod都是不是再某一个命名空间下的，集群通过控制pod部署在哪个node去控制资源做容灾</strong></p>
+<p><strong>回答：</strong> </p>
 <ul>
-<li><strong>Material Design</strong>：遵循Google Material Design设计规范</li>
-<li><strong>响应式布局</strong>：适配桌面端、平板、移动端</li>
-<li><strong>瀑布流展示</strong>：博客文章列表的动态布局</li>
-<li><strong>时间轴归档</strong>：按时间维度的文章归档展示</li>
-<li><strong>多评论系统</strong>：支持Gitalk、Valine、Disqus等</li>
-<li><strong>数据可视化</strong>：技能雷达图、项目展示等功能</li>
+<li>一个Pod通常运行一个服务实例，多个Pod通过Service提供负载均衡</li>
+<li>Pod包含一个或多个紧密相关的容器</li>
+<li>所有Pod都在命名空间下运行（默认为default）</li>
+<li>控制器通过调度策略控制Pod部署在哪个Node上以实现容灾</li>
 </ul>
-<h2 id="4-博客页面结构构建"><a href="#4-博客页面结构构建" class="headerlink" title="4. 博客页面结构构建"></a>4. 博客页面结构构建</h2><h3 id="4-1-必要页面创建"><a href="#4-1-必要页面创建" class="headerlink" title="4.1 必要页面创建"></a>4.1 必要页面创建</h3><p>创建分类、标签、关于等基础页面：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo new page <span class="string">"categories"</span></span><br><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"about"</span></span><br><span class="line">hexo new page <span class="string">"contact"</span></span><br><span class="line">hexo new page <span class="string">"friends"</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="2-集群操作"><a href="#2-集群操作" class="headerlink" title="2. 集群操作"></a>2. 集群操作</h2><h3 id="2-1-查看集群状态"><a href="#2-1-查看集群状态" class="headerlink" title="2.1 查看集群状态"></a>2.1 查看集群状态</h3><p><strong>问题：假如我们有一个三个主机构建的k8s集群，查看集群状态</strong></p>
+<p><strong>回答：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有节点状态</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点详细信息</span></span><br><span class="line">kubectl describe node &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群整体信息</span></span><br><span class="line">kubectl cluster-info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有命名空间中的资源</span></span><br><span class="line">kubectl get all --all-namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统命名空间中的资源</span></span><br><span class="line">kubectl get pods -n kube-system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群资源使用情况</span></span><br><span class="line">kubectl top nodes</span><br><span class="line">kubectl top pods --all-namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群事件</span></span><br><span class="line">kubectl get events --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
 
-<p>然后配置页面Front-matter：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># categories/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment"># about/index.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">about</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"about"</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"about"</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>问题：这个nodes是主机的意思吗</strong></p>
+<p><strong>回答：</strong> 是的，Node是指集群中的主机，可以是物理服务器或虚拟机。每个Node都安装了kubelet和容器运行时，是Kubernetes集群的工作机器。</p>
+<p><strong>问题：查看某命名空间下有多少服务</strong></p>
+<p><strong>回答：</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看指定命名空间下的服务数量</span></span><br><span class="line">kubectl get services -n &lt;命名空间名称&gt; --no-headers | <span class="built_in">wc</span> -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定命名空间下的所有服务</span></span><br><span class="line">kubectl get services -n &lt;命名空间名称&gt;</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="4-2-菜单导航配置"><a href="#4-2-菜单导航配置" class="headerlink" title="4.2 菜单导航配置"></a>4.2 菜单导航配置</h3><p>在主题配置文件中配置导航菜单：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Index:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">Tags:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/tags</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">Categories:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/categories</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-bookmark</span></span><br><span class="line">  <span class="attr">Archives:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/archives</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="attr">About:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/about</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-user-circle</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-2-日志查看"><a href="#2-2-日志查看" class="headerlink" title="2.2 日志查看"></a>2.2 日志查看</h3><p><strong>问题：查看某服务的日志</strong></p>
+<p><strong>回答：</strong> Service本身不产生日志。要查看与服务相关的日志，需要查看该服务后端Pod的日志：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务后端Pod的日志</span></span><br><span class="line">kubectl logs -l &lt;标签选择器&gt; -n &lt;命名空间&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看特定Pod的日志</span></span><br><span class="line">kubectl logs &lt;Pod名称&gt; -n &lt;命名空间&gt;</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="5-AI辅助开发与运维"><a href="#5-AI辅助开发与运维" class="headerlink" title="5. AI辅助开发与运维"></a>5. AI辅助开发与运维</h2><h3 id="5-1-Qwen-Code在博客搭建中的应用"><a href="#5-1-Qwen-Code在博客搭建中的应用" class="headerlink" title="5.1 Qwen Code在博客搭建中的应用"></a>5.1 Qwen Code在博客搭建中的应用</h3><p><strong>配置生成</strong>：通过自然语言描述快速生成复杂配置文件</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：生成包含AI、ETL、大数据标签的hexo配置文件</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>问题：如果这个pod不是的是多个呢，例如一个java服务，部署了3个实例</strong></p>
+<p><strong>回答：</strong> 如果一个服务有3个Pod实例，可以这样查看日志：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有3个Pod的日志</span></span><br><span class="line">kubectl logs -l app=&lt;标签值&gt; -n &lt;命名空间&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时查看所有Pod的日志</span></span><br><span class="line"><span class="comment"># 需要使用第三方工具如stern</span></span><br><span class="line">stern -n &lt;命名空间&gt; -l app=&lt;标签值&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或使用脚本查看所有Pod日志</span></span><br><span class="line">kubectl get pods -l app=&lt;标签值&gt; -n &lt;命名空间&gt; -o name | xargs -I {} kubectl logs {} -n &lt;命名空间&gt;</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong>内容创作</strong>：辅助技术文章编写和优化</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：为大数据处理技术文章生成大纲和内容要点</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>代码优化</strong>：改进代码质量和性能</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">指令：优化hexo主题的JavaScript性能</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="5-2-自动化运维脚本"><a href="#5-2-自动化运维脚本" class="headerlink" title="5.2 自动化运维脚本"></a>5.2 自动化运维脚本</h3><p>创建部署脚本，实现一键发布：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># deploy.sh</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"博客已成功部署！"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="6-个性化配置与优化"><a href="#6-个性化配置与优化" class="headerlink" title="6. 个性化配置与优化"></a>6. 个性化配置与优化</h2><h3 id="6-1-站点信息配置"><a href="#6-1-站点信息配置" class="headerlink" title="6.1 站点信息配置"></a>6.1 站点信息配置</h3><p>在根配置文件中设置站点信息：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 站点基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'学习记录与技术分享'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'这里是huhuhuhr的技术博客，记录学习历程和技术心得'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'AI, ETL, 大数据, 技术, 学习, 编程'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://your-domain.com</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="6-2-主题个性化"><a href="#6-2-主题个性化" class="headerlink" title="6.2 主题个性化"></a>6.2 主题个性化</h3><p>配置主题的个人信息：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 主题配置文件</span></span><br><span class="line"><span class="attr">profile:</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">/medias/avatar.jpg</span></span><br><span class="line">  <span class="attr">career:</span> <span class="string">'系统架构师'</span></span><br><span class="line">  <span class="attr">introduction:</span> <span class="string">'热爱技术，专注AI、ETL和大数据领域，通过博客记录学习历程和技术心得。'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">socialLink:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">https://github.com/your-username</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">your-email@example.com</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="7-GitHub-Pages-部署"><a href="#7-GitHub-Pages-部署" class="headerlink" title="7. GitHub Pages 部署"></a>7. GitHub Pages 部署</h2><h3 id="7-1-部署插件安装"><a href="#7-1-部署插件安装" class="headerlink" title="7.1 部署插件安装"></a>7.1 部署插件安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-2-部署配置"><a href="#7-2-部署配置" class="headerlink" title="7.2 部署配置"></a>7.2 部署配置</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-3-部署执行"><a href="#7-3-部署执行" class="headerlink" title="7.3 部署执行"></a>7.3 部署执行</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo deploy -g  <span class="comment"># 生成并部署</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="8-自定义域名配置"><a href="#8-自定义域名配置" class="headerlink" title="8. 自定义域名配置"></a>8. 自定义域名配置</h2><h3 id="8-1-CNAME文件创建"><a href="#8-1-CNAME文件创建" class="headerlink" title="8.1 CNAME文件创建"></a>8.1 CNAME文件创建</h3><p>在 <code>source</code> 目录下创建 <code>CNAME</code> 文件：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">your-domain.com</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="8-2-DNS记录配置"><a href="#8-2-DNS记录配置" class="headerlink" title="8.2 DNS记录配置"></a>8.2 DNS记录配置</h3><p>在域名提供商处添加DNS记录：</p>
-<ul>
-<li>A记录：指向GitHub Pages IP地址</li>
-<li>CNAME记录：子域名指向 GitHub 仓库</li>
-</ul>
-<h3 id="8-3-GitHub仓库设置"><a href="#8-3-GitHub仓库设置" class="headerlink" title="8.3 GitHub仓库设置"></a>8.3 GitHub仓库设置</h3><p>在仓库的 “Settings” -&gt; “Pages” 中配置自定义域名。</p>
-<h2 id="9-性能优化与SEO配置"><a href="#9-性能优化与SEO配置" class="headerlink" title="9. 性能优化与SEO配置"></a>9. 性能优化与SEO配置</h2><h3 id="9-1-搜索插件配置"><a href="#9-1-搜索插件配置" class="headerlink" title="9.1 搜索插件配置"></a>9.1 搜索插件配置</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="9-2-SEO优化配置"><a href="#9-2-SEO优化配置" class="headerlink" title="9.2 SEO优化配置"></a>9.2 SEO优化配置</h3><p>启用sitemap、keywords等SEO相关配置：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 文章字数统计</span></span><br><span class="line"><span class="attr">postInfo:</span></span><br><span class="line">  <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">update:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">wordCount:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="10-内容创作最佳实践"><a href="#10-内容创作最佳实践" class="headerlink" title="10. 内容创作最佳实践"></a>10. 内容创作最佳实践</h2><h3 id="10-1-文章Front-matter规范"><a href="#10-1-文章Front-matter规范" class="headerlink" title="10.1 文章Front-matter规范"></a>10.1 文章Front-matter规范</h3><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章标题</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-11-30 12:00:00</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">huhuhuhr</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术标签1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术标签2</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术分类</span></span><br><span class="line"><span class="attr">summary:</span> <span class="string">文章摘要</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="10-2-内容结构化"><a href="#10-2-内容结构化" class="headerlink" title="10.2 内容结构化"></a>10.2 内容结构化</h3><ul>
-<li><strong>问题引入</strong>：阐述文章要解决的问题</li>
-<li><strong>解决方案</strong>：详细描述解决过程和方法</li>
-<li><strong>技术总结</strong>：提炼关键知识点和经验</li>
-<li><strong>后续思考</strong>：提出进一步的研究方向</li>
-</ul>
-<h2 id="11-维护与更新策略"><a href="#11-维护与更新策略" class="headerlink" title="11. 维护与更新策略"></a>11. 维护与更新策略</h2><h3 id="11-1-定期维护任务"><a href="#11-1-定期维护任务" class="headerlink" title="11.1 定期维护任务"></a>11.1 定期维护任务</h3><ul>
-<li><strong>内容审核</strong>：定期检查内容的准确性和时效性</li>
-<li><strong>技术更新</strong>：跟进技术发展，更新过时内容</li>
-<li><strong>性能监控</strong>：检查网站加载速度和可用性</li>
-</ul>
-<h3 id="11-2-AI辅助维护"><a href="#11-2-AI辅助维护" class="headerlink" title="11.2 AI辅助维护"></a>11.2 AI辅助维护</h3><p>利用Qwen Code进行：</p>
-<ul>
-<li>语法和逻辑检查</li>
-<li>内容改写和优化</li>
-<li>SEO友好的标题和描述生成</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过本指南的实施，我们成功构建了一个基于现代技术栈的个人技术博客：利用Hexo框架的高效静态生成能力、hexo-theme-matery主题的精美设计、GitHub Pages的稳定托管服务，以及Qwen Code的AI辅助能力，实现了技术博客的快速搭建和高效运维。</p>
-<p>这种技术选型的优势在于：</p>
+<h2 id="3-运维实践"><a href="#3-运维实践" class="headerlink" title="3. 运维实践"></a>3. 运维实践</h2><h3 id="3-1-故障排查"><a href="#3-1-故障排查" class="headerlink" title="3.1 故障排查"></a>3.1 故障排查</h3><p><strong>问题：当您在生产环境中遇到Pod频繁重启时，您会按照什么顺序排查问题？</strong></p>
+<p><strong>回答：</strong> </p>
 <ol>
-<li><strong>成本效益</strong>：利用免费服务降低运营成本</li>
-<li><strong>技术先进</strong>：采用现代前端技术和设计理念</li>
-<li><strong>易于维护</strong>：简单配置和自动化部署</li>
-<li><strong>可扩展性</strong>：支持功能模块的灵活扩展</li>
+<li><code>kubectl get pods -l app=xxx -n &lt;命名空间&gt;</code> # 查看Pod状态</li>
+<li><code>kubectl describe pod &lt;pod名称&gt; -n &lt;命名空间&gt;</code> # 查看详细事件</li>
+<li><code>kubectl logs &lt;pod名称&gt; -n &lt;命名空间&gt;</code> # 查看当前容器日志</li>
+<li><code>kubectl logs &lt;pod名称&gt; -n &lt;命名空间&gt; --previous</code> # 查看上一个容器的日志</li>
 </ol>
-<p>在知识经济时代，个人技术博客不仅是知识沉淀的工具，更是技术影响力的载体。通过系统化的搭建和精细化的运营，将为个人技术品牌建设奠定坚实基础。</p>
+<h3 id="3-2-高可用配置"><a href="#3-2-高可用配置" class="headerlink" title="3.2 高可用配置"></a>3.2 高可用配置</h3><p><strong>问题：在一个三节点的K8s集群中，如果要实现高可用，您会如何分配Master和Worker节点的角色？</strong></p>
+<p><strong>回答：</strong> 在三节点集群中：</p>
+<ul>
+<li>选项1：三台都同时承担Master和Worker角色（混合节点配置）</li>
+<li>选项2：一台Master，两台Worker（分离角色配置）</li>
+</ul>
+<p>对于etcd高可用，需要在三个节点上都部署etcd实例。</p>
+<p><strong>Clusterfile配置示例：</strong></p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps.sealos.io/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Cluster</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-cluster</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">image:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">kubernetes:v1.25.0</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">calico:v3.24.1</span></span><br><span class="line">  <span class="attr">hosts:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">ips:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.100"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.101"</span> </span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.102"</span></span><br><span class="line">      <span class="attr">roles:</span> [ <span class="string">"master"</span>, <span class="string">"node"</span>, <span class="string">"etcd"</span> ]</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-3-配置管理"><a href="#3-3-配置管理" class="headerlink" title="3.3 配置管理"></a>3.3 配置管理</h3><p><strong>问题：您如何处理应用配置在不同环境（开发、测试、生产）之间的差异？</strong></p>
+<p><strong>回答：</strong> </p>
+<ol>
+<li>使用命名空间隔离不同环境</li>
+<li>使用ConfigMap管理非敏感配置</li>
+<li>使用Secret管理敏感配置</li>
+<li>使用Helm或Kustomize进行模板化配置管理</li>
+<li>通过CI/CD管道自动化部署到不同环境</li>
+</ol>
+<h2 id="4-概念解释"><a href="#4-概念解释" class="headerlink" title="4. 概念解释"></a>4. 概念解释</h2><h3 id="4-1-etcd"><a href="#4-1-etcd" class="headerlink" title="4.1 etcd"></a>4.1 etcd</h3><p><strong>问题：etcd是什么意思</strong></p>
+<p><strong>回答：</strong> etcd是Kubernetes的核心组件，是一个高可用的分布式键值存储系统，是Kubernetes的”大脑”，负责存储集群的所有状态信息，包括节点信息、Pod配置、服务定义、配置数据等。为了实现高可用，etcd通常需要在多个节点上部署实例，形成etcd集群。</p>
 
                 
             </div>
@@ -579,7 +530,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.huhuhuhr.top/2025/11/30/ge-ren-bo-ke-da-jian/">https://blog.huhuhuhr.top/2025/11/30/ge-ren-bo-ke-da-jian/</a>
+                    <a href="https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/">https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -617,20 +568,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Qwen-Code/">
-                                    <span class="chip bg-color">Qwen Code</span>
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
                                 </a>
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/k8s/">
+                                    <span class="chip bg-color">k8s</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                    <span class="chip bg-color">博客搭建</span>
+                                <a href="/tags/sealos/">
+                                    <span class="chip bg-color">sealos</span>
                                 </a>
                             
-                                <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">AI工具</span>
+                                <a href="/tags/%E9%97%AE%E7%AD%94/">
+                                    <span class="chip bg-color">问答</span>
                                 </a>
                             
                         </div>
@@ -713,32 +664,29 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2025/11/30/ge-ren-bo-ke-da-jian/">
+                <a href="/2025/12/07/0005-sealos-wen-da-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="个人博客搭建">
                         
-                        <span class="card-title">个人博客搭建</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="0005.sealos-问答记录">
+                        
+                        <span class="card-title">0005.sealos-问答记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于Qwen Code、hexo-theme-matery和GitHub Pages的个人技术博客搭建完整指南
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            huhuhuhr
                             
                         </span>
                     </div>
@@ -747,20 +695,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Qwen-Code/">
-                        <span class="chip bg-color">Qwen Code</span>
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/k8s/">
+                        <span class="chip bg-color">k8s</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
+                    <a href="/tags/sealos/">
+                        <span class="chip bg-color">sealos</span>
                     </a>
                     
-                    <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">AI工具</span>
+                    <a href="/tags/%E9%97%AE%E7%AD%94/">
+                        <span class="chip bg-color">问答</span>
                     </a>
                     
                 </div>
@@ -771,57 +719,57 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/11/30/ge-ren-bo-ke-da-jian/">
+                <a href="/2025/12/07/0004-sealos-shi-zhan/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="个人博客搭建">
                         
-                        <span class="card-title">个人博客搭建</span>
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="0004.sealos实战">
+                        
+                        <span class="card-title">0004.sealos实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于Qwen Code、hexo-theme-matery和GitHub Pages的个人技术博客搭建完整指南
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            huhuhuhr
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Qwen-Code/">
-                        <span class="chip bg-color">Qwen Code</span>
+                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                        <span class="chip bg-color">容器化</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
+                    <a href="/tags/k8s/">
+                        <span class="chip bg-color">k8s</span>
                     </a>
                     
-                    <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">AI工具</span>
+                    <a href="/tags/sealos/">
+                        <span class="chip bg-color">sealos</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
                     </a>
                     
                 </div>
@@ -1017,7 +965,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.5k</span>
+                        class="white-color">14.7k</span>
             
             
             
