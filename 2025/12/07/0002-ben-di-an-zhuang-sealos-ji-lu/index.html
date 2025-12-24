@@ -5,9 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="本地安装sealos记录, AI, ETL, 大数据, 技术, 学习, 编程">
-    <meta name="description" content="Sealos和Kubernetes本地安装记录目的本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。
+    <meta name="description" content="Sealos和Kubernetes本地安装记录
+目的
+本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。
 环境要求
-Ubuntu 22.04 LTS">
+
+Ubuntu 22.04 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -368,10 +371,6 @@ Ubuntu 22.04 LTS">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                <span class="chip bg-color">运维</span>
-                            </a>
-                        
                             <a href="/tags/Kubernetes/">
                                 <span class="chip bg-color">Kubernetes</span>
                             </a>
@@ -386,6 +385,10 @@ Ubuntu 22.04 LTS">
                         
                             <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
                                 <span class="chip bg-color">容器化</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
                             </a>
                         
                     </div>
@@ -444,92 +447,100 @@ Ubuntu 22.04 LTS">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Sealos和Kubernetes本地安装记录"><a href="#Sealos和Kubernetes本地安装记录" class="headerlink" title="Sealos和Kubernetes本地安装记录"></a>Sealos和Kubernetes本地安装记录</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。</p>
-<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+                <h1>Sealos和Kubernetes本地安装记录</h1>
+<h2 id="目的">目的</h2>
+<p>本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。</p>
+<h2 id="环境要求">环境要求</h2>
+<ul>
 <li>Ubuntu 22.04 LTS 或更高版本</li>
 <li>至少4GB RAM和2个CPU核心</li>
 <li>至少40GB可用磁盘空间</li>
 <li>能够访问网络以下载组件</li>
 <li>root权限或sudo权限</li>
 </ul>
-<h2 id="系统准备"><a href="#系统准备" class="headerlink" title="系统准备"></a>系统准备</h2><h3 id="1-更新系统包"><a href="#1-更新系统包" class="headerlink" title="1. 更新系统包"></a>1. 更新系统包</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-安装必要工具"><a href="#2-安装必要工具" class="headerlink" title="2. 安装必要工具"></a>2. 安装必要工具</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y curl wget apt-transport-https ca-certificates</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="安装Sealos"><a href="#安装Sealos" class="headerlink" title="安装Sealos"></a>安装Sealos</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y uidmap fuse-overlayfs</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-下载并安装Sealos"><a href="#2-下载并安装Sealos" class="headerlink" title="2. 下载并安装Sealos"></a>2. 下载并安装Sealos</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 方式1: 从官方源下载</span></span><br><span class="line">wget https://github.com/labring/sealos/releases/download/v5.0.0/sealos_5.0.0_linux_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装deb包</span></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i sealos_5.0.0_linux_amd64.deb</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-验证安装"><a href="#3-验证安装" class="headerlink" title="3. 验证安装"></a>3. 验证安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos version</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="系统准备">系统准备</h2>
+<h3 id="1-更新系统包">1. 更新系统包</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-安装必要工具">2. 安装必要工具</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y curl wget apt-transport-https ca-certificates</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="安装Sealos">安装Sealos</h2>
+<h3 id="1-安装依赖">1. 安装依赖</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y uidmap fuse-overlayfs</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-下载并安装Sealos">2. 下载并安装Sealos</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 方式1: 从官方源下载</span></span><br><span class="line">wget https://github.com/labring/sealos/releases/download/v5.0.0/sealos_5.0.0_linux_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装deb包</span></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i sealos_5.0.0_linux_amd64.deb</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-验证安装">3. 验证安装</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos version</span><br></pre></td></tr></tbody></table></figure>
 <p>如果成功，应该能看到Sealos的版本信息。</p>
-<h2 id="安装Kubernetes"><a href="#安装Kubernetes" class="headerlink" title="安装Kubernetes"></a>安装Kubernetes</h2><h3 id="1-配置系统参数"><a href="#1-配置系统参数" class="headerlink" title="1. 配置系统参数"></a>1. 配置系统参数</h3><p>由于Sealos运行Kubernetes需要纯净环境，我们需要确保系统配置正确：</p>
+<h2 id="安装Kubernetes">安装Kubernetes</h2>
+<h3 id="1-配置系统参数">1. 配置系统参数</h3>
+<p>由于Sealos运行Kubernetes需要纯净环境，我们需要确保系统配置正确：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 关闭交换分区（Kubernetes要求）</span></span><br><span class="line"><span class="built_in">sudo</span> swapoff -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 永久禁用交换分区（添加到fstab注释）</span></span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'/ swap / s/^\(.*\)$/#\1/g'</span> /etc/fstab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用内核模块</span></span><br><span class="line"><span class="built_in">sudo</span> modprobe overlay</span><br><span class="line"><span class="built_in">sudo</span> modprobe br_netfilter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置内核参数</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/modules-load.d/k8s.conf</span></span><br><span class="line"><span class="string">overlay</span></span><br><span class="line"><span class="string">br_netfilter</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置系统参数</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables  = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward                 = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用系统参数</span></span><br><span class="line"><span class="built_in">sudo</span> sysctl --system</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-安装Containerd（如果系统没有默认安装）"><a href="#2-安装Containerd（如果系统没有默认安装）" class="headerlink" title="2. 安装Containerd（如果系统没有默认安装）"></a>2. 安装Containerd（如果系统没有默认安装）</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装containerd</span></span><br><span class="line"><span class="built_in">sudo</span> apt install -y containerd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置containerd</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/containerd</span><br><span class="line">containerd config default | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改设置以使用systemd作为cgroup驱动</span></span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'s/SystemdCgroup = false/SystemdCgroup = true/'</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启containerd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart containerd</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> containerd</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-使用Sealos部署单节点Kubernetes集群"><a href="#3-使用Sealos部署单节点Kubernetes集群" class="headerlink" title="3. 使用Sealos部署单节点Kubernetes集群"></a>3. 使用Sealos部署单节点Kubernetes集群</h3><p>获取本机IP地址（这将是控制节点的IP）：</p>
+<h3 id="2-安装Containerd（如果系统没有默认安装）">2. 安装Containerd（如果系统没有默认安装）</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装containerd</span></span><br><span class="line"><span class="built_in">sudo</span> apt install -y containerd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置containerd</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/containerd</span><br><span class="line">containerd config default | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改设置以使用systemd作为cgroup驱动</span></span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'s/SystemdCgroup = false/SystemdCgroup = true/'</span> /etc/containerd/config.toml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启containerd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart containerd</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> containerd</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-使用Sealos部署单节点Kubernetes集群">3. 使用Sealos部署单节点Kubernetes集群</h3>
+<p>获取本机IP地址（这将是控制节点的IP）：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">MASTER_IP=$(hostname -I | awk <span class="string">'{print $1}'</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Master IP: <span class="variable">$MASTER_IP</span>"</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>使用Sealos创建单节点集群：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 运行Kubernetes集群</span></span><br><span class="line"><span class="built_in">sudo</span> sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters <span class="variable">$MASTER_IP</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>这将：</p>
 <ul>
 <li>拉取并安装Kubernetes v1.28.15</li>
 <li>安装Calico网络插件</li>
 <li>创建单节点集群</li>
 </ul>
-<h2 id="配置kubectl"><a href="#配置kubectl" class="headerlink" title="配置kubectl"></a>配置kubectl</h2><h3 id="1-配置访问凭证"><a href="#1-配置访问凭证" class="headerlink" title="1. 配置访问凭证"></a>1. 配置访问凭证</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.kube</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> $(<span class="built_in">id</span> -u):$(<span class="built_in">id</span> -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-验证集群状态"><a href="#2-验证集群状态" class="headerlink" title="2. 验证集群状态"></a>2. 验证集群状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get nodes</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="配置kubectl">配置kubectl</h2>
+<h3 id="1-配置访问凭证">1. 配置访问凭证</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.kube</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> $(<span class="built_in">id</span> -u):$(<span class="built_in">id</span> -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-验证集群状态">2. 验证集群状态</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get nodes</span><br></pre></td></tr></tbody></table></figure>
 <p>如果一切正常，您应该看到类似以下输出：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">NAME     STATUS   ROLES           AGE   VERSION</span><br><span class="line">&lt;hostname&gt;   Ready    control-plane   2m    v1.28.15</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-验证所有系统Pod运行状态"><a href="#3-验证所有系统Pod运行状态" class="headerlink" title="3. 验证所有系统Pod运行状态"></a>3. 验证所有系统Pod运行状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get pods -A</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="配置单节点集群"><a href="#配置单节点集群" class="headerlink" title="配置单节点集群"></a>配置单节点集群</h2><p>在单节点集群中，我们需要允许Pod在控制平面上运行：</p>
+<h3 id="3-验证所有系统Pod运行状态">3. 验证所有系统Pod运行状态</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get pods -A</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="配置单节点集群">配置单节点集群</h2>
+<p>在单节点集群中，我们需要允许Pod在控制平面上运行：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl taint nodes --all node-role.kubernetes.io/control-plane-</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h2><h3 id="如果Sealos安装失败"><a href="#如果Sealos安装失败" class="headerlink" title="如果Sealos安装失败"></a>如果Sealos安装失败</h3><p>如果Sealos无法正常部署Kubernetes，您可以使用kubeadm手动部署：</p>
+<h2 id="故障排除">故障排除</h2>
+<h3 id="如果Sealos安装失败">如果Sealos安装失败</h3>
+<p>如果Sealos无法正常部署Kubernetes，您可以使用kubeadm手动部署：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 安装kubeadm、kubelet和kubectl</span></span><br><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /'</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install -y kubelet kubeadm kubectl</span><br><span class="line"><span class="built_in">sudo</span> apt-mark hold kubelet kubeadm kubectl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 初始化集群</span></span><br><span class="line"><span class="built_in">sudo</span> kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<span class="variable">$MASTER_IP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 配置kubectl</span></span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.kube</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> $(<span class="built_in">id</span> -u):$(<span class="built_in">id</span> -g) <span class="variable">$HOME</span>/.kube/config</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 安装网络插件（Flannel作为示例）</span></span><br><span class="line">kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="如果遇到容器运行时错误"><a href="#如果遇到容器运行时错误" class="headerlink" title="如果遇到容器运行时错误"></a>如果遇到容器运行时错误</h3><p>如果出现与containerd相关的错误，尝试重新启动服务：</p>
+<h3 id="如果遇到容器运行时错误">如果遇到容器运行时错误</h3>
+<p>如果出现与containerd相关的错误，尝试重新启动服务：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart containerd</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart kubelet</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><h3 id="1-检查集群信息"><a href="#1-检查集群信息" class="headerlink" title="1. 检查集群信息"></a>1. 检查集群信息</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl cluster-info</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-创建测试Pod"><a href="#2-创建测试Pod" class="headerlink" title="2. 创建测试Pod"></a>2. 创建测试Pod</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create deployment nginx --image=nginx</span><br><span class="line">kubectl get pods</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-检查集群组件状态"><a href="#3-检查集群组件状态" class="headerlink" title="3. 检查集群组件状态"></a>3. 检查集群组件状态</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get componentstatuses</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="清理和重置"><a href="#清理和重置" class="headerlink" title="清理和重置"></a>清理和重置</h2><p>如果需要重新开始，可以使用以下命令清理环境：</p>
+<h2 id="验证安装">验证安装</h2>
+<h3 id="1-检查集群信息">1. 检查集群信息</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl cluster-info</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-创建测试Pod">2. 创建测试Pod</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create deployment nginx --image=nginx</span><br><span class="line">kubectl get pods</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-检查集群组件状态">3. 检查集群组件状态</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get componentstatuses</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="清理和重置">清理和重置</h2>
+<p>如果需要重新开始，可以使用以下命令清理环境：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Sealos重置集群</span></span><br><span class="line"><span class="built_in">sudo</span> sealos reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用kubeadm重置</span></span><br><span class="line"><span class="built_in">sudo</span> kubeadm reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理iptables规则</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -F &amp;&amp; <span class="built_in">sudo</span> iptables -t nat -F &amp;&amp; <span class="built_in">sudo</span> iptables -t mangle -F &amp;&amp; <span class="built_in">sudo</span> iptables -X</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="过程中的问题与解决"><a href="#过程中的问题与解决" class="headerlink" title="过程中的问题与解决"></a>过程中的问题与解决</h2><p>在实际安装过程中，我遇到了以下几个关键问题，记录如下：</p>
-<h3 id="1-Sealos环境冲突问题"><a href="#1-Sealos环境冲突问题" class="headerlink" title="1. Sealos环境冲突问题"></a>1. Sealos环境冲突问题</h3><p>在使用<code>sudo sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters 192.168.1.18</code>命令时，遇到错误：</p>
+<h2 id="过程中的问题与解决">过程中的问题与解决</h2>
+<p>在实际安装过程中，我遇到了以下几个关键问题，记录如下：</p>
+<h3 id="1-Sealos环境冲突问题">1. Sealos环境冲突问题</h3>
+<p>在使用<code>sudo sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters 192.168.1.18</code>命令时，遇到错误：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Error: failed to run checker: containerd is installed on 192.168.1.18:22 please uninstall it first</span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>解决方案</strong>：Sealos要求纯净环境，不允许存在预安装的containerd。我执行了以下命令：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl stop containerd &amp;&amp; <span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> containerd</span><br><span class="line"><span class="built_in">sudo</span> apt remove containerd.io containerd -y</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-镜像仓库访问问题"><a href="#2-镜像仓库访问问题" class="headerlink" title="2. 镜像仓库访问问题"></a>2. 镜像仓库访问问题</h3><p>在尝试使用Sealos安装时，遇到了网络插件镜像无法拉取的问题：</p>
+<h3 id="2-镜像仓库访问问题">2. 镜像仓库访问问题</h3>
+<p>在尝试使用Sealos安装时，遇到了网络插件镜像无法拉取的问题：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Error: error parsing image name "//labring/calico:v3.26.2": reading manifest v3.26.2 in docker.io/labring/calico: manifest unknown</span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>解决方案</strong>：切换到使用kubeadm手动安装，这是备选方案。</p>
-<h3 id="3-GPG密钥问题"><a href="#3-GPG密钥问题" class="headerlink" title="3. GPG密钥问题"></a>3. GPG密钥问题</h3><p>在使用kubeadm安装过程中，执行添加Kubernetes GPG密钥的命令时遇到问题：</p>
+<h3 id="3-GPG密钥问题">3. GPG密钥问题</h3>
+<p>在使用kubeadm安装过程中，执行添加Kubernetes GPG密钥的命令时遇到问题：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span><br></pre></td></tr></tbody></table></figure>
 <p>出现 <code>gpg: cannot open '/dev/tty': 没有那个设备或地址</code> 错误。</p>
 <p><strong>解决方案</strong>：改用apt-key命令：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> apt-key add -</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="4-容器运行时重新配置"><a href="#4-容器运行时重新配置" class="headerlink" title="4. 容器运行时重新配置"></a>4. 容器运行时重新配置</h3><p>由于之前移除了containerd，Kubernetes无法启动，因为CRI（容器运行时接口）不可用。</p>
+<h3 id="4-容器运行时重新配置">4. 容器运行时重新配置</h3>
+<p>由于之前移除了containerd，Kubernetes无法启动，因为CRI（容器运行时接口）不可用。</p>
 <p><strong>解决方案</strong>：下载并安装containerd二进制文件：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">wget https://github.com/containerd/containerd/releases/download/v1.7.20/containerd-1.7.20-linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> tar Cxzf /usr/local containerd-1.7.20-linux-amd64.tar.gz</span><br></pre></td></tr></tbody></table></figure>
-
 <p>然后创建systemd服务文件并启动containerd。</p>
-<h3 id="5-节点状态问题"><a href="#5-节点状态问题" class="headerlink" title="5. 节点状态问题"></a>5. 节点状态问题</h3><p>在kubeadm初始化集群后，节点显示为<code>NotReady</code>状态，而不是预期的<code>Ready</code>。</p>
+<h3 id="5-节点状态问题">5. 节点状态问题</h3>
+<p>在kubeadm初始化集群后，节点显示为<code>NotReady</code>状态，而不是预期的<code>Ready</code>。</p>
 <p><strong>解决方案</strong>：</p>
 <ul>
 <li>安装Flannel网络插件解决CNI问题</li>
@@ -539,34 +550,41 @@ Ubuntu 22.04 LTS">
 <ul>
 <li>等待一段时间使所有组件就绪</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这次安装实践，我成功搭建了本地的Kubernetes环境，主要收获如下：</p>
+<h2 id="总结">总结</h2>
+<p>通过这次安装实践，我成功搭建了本地的Kubernetes环境，主要收获如下：</p>
 <ol>
 <li><strong>Sealos和Kubernetes环境</strong>：成功安装了Sealos CLI工具和单节点Kubernetes集群</li>
 <li><strong>kubectl配置</strong>：正确配置了kubectl命令行工具，可以正常管理集群</li>
 <li><strong>网络插件</strong>：成功部署了Flannel网络插件，使Pod间可以正常通信</li>
 <li><strong>问题解决经验</strong>：在过程中解决了多个典型问题，包括环境冲突、容器运行时配置和节点状态问题</li>
 </ol>
-<h3 id="经验教训"><a href="#经验教训" class="headerlink" title="经验教训"></a>经验教训</h3><ol>
+<h3 id="经验教训">经验教训</h3>
+<ol>
 <li><strong>环境准备的重要性</strong>：在部署Kubernetes前，确保系统环境符合要求至关重要</li>
 <li><strong>备选方案的准备</strong>：当首选方案（Sealos）遇到问题时，kubeadm是一个可靠的备选方案</li>
 <li><strong>网络插件必不可少</strong>：集群初始化后必须安装CNI网络插件，否则Pod无法正常通信</li>
 <li><strong>单节点集群的特殊配置</strong>：需要移除master节点的污点才能在单节点上调度Pod</li>
 </ol>
 <p>这次安装过程虽然遇到了一些挑战，但也提供了宝贵的实践经验，对理解和部署Kubernetes环境有很大帮助。</p>
-<h2 id="Docker与Containerd的共存关系"><a href="#Docker与Containerd的共存关系" class="headerlink" title="Docker与Containerd的共存关系"></a>Docker与Containerd的共存关系</h2><p>在安装过程中，我发现了一个有趣的现象：系统上同时存在Docker容器和服务以及Kubernetes集群。</p>
-<h3 id="共存机制"><a href="#共存机制" class="headerlink" title="共存机制"></a>共存机制</h3><p>实际上，Docker和Kubernetes可以共存，因为它们都使用了containerd作为容器运行时：</p>
+<h2 id="Docker与Containerd的共存关系">Docker与Containerd的共存关系</h2>
+<p>在安装过程中，我发现了一个有趣的现象：系统上同时存在Docker容器和服务以及Kubernetes集群。</p>
+<h3 id="共存机制">共存机制</h3>
+<p>实际上，Docker和Kubernetes可以共存，因为它们都使用了containerd作为容器运行时：</p>
 <ol>
-<li><strong>双重命名空间</strong>：containerd支持多客户端，Docker使用’moby’命名空间，而Kubernetes使用’k8s.io’命名空间</li>
+<li><strong>双重命名空间</strong>：containerd支持多客户端，Docker使用’moby’命名空间，而Kubernetes使用’<a target="_blank" rel="noopener" href="http://k8s.io">k8s.io</a>’命名空间</li>
 <li><strong>共享容器运行时</strong>：Docker和Kubernetes共享同一个containerd实例，但通过不同的命名空间隔离</li>
 <li><strong>进程结构</strong>：Docker daemon通过<code>--containerd=/run/containerd/containerd.sock</code>连接到containerd，而Kubernetes的kubelet也连接到同一个containerd</li>
 </ol>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>虽然技术上可行，但这种配置在生产环境中不推荐，因为：</p>
+<h3 id="注意事项">注意事项</h3>
+<p>虽然技术上可行，但这种配置在生产环境中不推荐，因为：</p>
 <ul>
 <li>容器资源竞争</li>
 <li>网络和存储配置可能冲突</li>
 <li>安全性和隔离性可能受到影响</li>
 </ul>
-<h2 id="运维命令"><a href="#运维命令" class="headerlink" title="运维命令"></a>运维命令</h2><h3 id="kubectl运维命令"><a href="#kubectl运维命令" class="headerlink" title="kubectl运维命令"></a>kubectl运维命令</h3><p>kubectl的配置文件通常存储在<code>$HOME/.kube/config</code>，这是访问Kubernetes集群的凭证文件。</p>
+<h2 id="运维命令">运维命令</h2>
+<h3 id="kubectl运维命令">kubectl运维命令</h3>
+<p>kubectl的配置文件通常存储在<code>$HOME/.kube/config</code>，这是访问Kubernetes集群的凭证文件。</p>
 <p>常用运维命令：</p>
 <ul>
 <li><code>kubectl get nodes</code> - 查看集群节点状态</li>
@@ -581,7 +599,8 @@ Ubuntu 22.04 LTS">
 <li><code>kubectl cluster-info</code> - 查看集群信息</li>
 <li><code>kubectl top nodes/pods</code> - 查看资源使用情况</li>
 </ul>
-<h3 id="Sealos运维命令"><a href="#Sealos运维命令" class="headerlink" title="Sealos运维命令"></a>Sealos运维命令</h3><p>虽然我们最终没有使用Sealos完成安装，但其基本运维命令包括：</p>
+<h3 id="Sealos运维命令">Sealos运维命令</h3>
+<p>虽然我们最终没有使用Sealos完成安装，但其基本运维命令包括：</p>
 <ul>
 <li><code>sealos run &lt;image&gt;</code> - 部署集群</li>
 <li><code>sealos destroy</code> - 销毁集群</li>
@@ -655,10 +674,6 @@ Ubuntu 22.04 LTS">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                    <span class="chip bg-color">运维</span>
-                                </a>
-                            
                                 <a href="/tags/Kubernetes/">
                                     <span class="chip bg-color">Kubernetes</span>
                                 </a>
@@ -673,6 +688,10 @@ Ubuntu 22.04 LTS">
                             
                                 <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
                                     <span class="chip bg-color">容器化</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
                                 </a>
                             
                         </div>
@@ -784,6 +803,10 @@ Ubuntu 22.04 LTS">
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
                     <a href="/tags/k8s/">
                         <span class="chip bg-color">k8s</span>
                     </a>
@@ -798,10 +821,6 @@ Ubuntu 22.04 LTS">
                     
                     <a href="/tags/kubectl/">
                         <span class="chip bg-color">kubectl</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                        <span class="chip bg-color">运维</span>
                     </a>
                     
                 </div>
@@ -1057,7 +1076,7 @@ Ubuntu 22.04 LTS">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.7k</span>
+                        class="white-color">28k</span>
             
             
             
@@ -1259,6 +1278,14 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
     
 
     

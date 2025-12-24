@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="sealos实战, AI, ETL, 大数据, 技术, 学习, 编程">
-    <meta name="description" content="Sealos实战：从零开始部署和管理Kubernetes集群概述本文档详细介绍了如何使用Sealos在多台服务器上部署和管理Kubernetes集群，包括环境准备、集群部署、应用部署、配置管理、扩容、容灾、升级和回滚等完整运维流程。我们将以">
+    <meta name="description" content="Sealos实战：从零开始部署和管理Kubernetes集群
+概述
+本文档详细介绍了如何使用Sealos在多台服务器上部署和管理Kubernetes集群，包括环境准备、集群部署、应用部署、配置管理、扩容、容灾、升级和回滚等完整运维流程。我们">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -366,20 +368,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/k8s/">
-                                <span class="chip bg-color">k8s</span>
-                            </a>
-                        
-                            <a href="/tags/sealos/">
-                                <span class="chip bg-color">sealos</span>
+                            <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                                <span class="chip bg-color">容器化</span>
                             </a>
                         
                             <a href="/tags/%E8%BF%90%E7%BB%B4/">
                                 <span class="chip bg-color">运维</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
-                                <span class="chip bg-color">容器化</span>
+                            <a href="/tags/k8s/">
+                                <span class="chip bg-color">k8s</span>
+                            </a>
+                        
+                            <a href="/tags/sealos/">
+                                <span class="chip bg-color">sealos</span>
                             </a>
                         
                             <a href="/tags/%E9%83%A8%E7%BD%B2/">
@@ -442,47 +444,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Sealos实战：从零开始部署和管理Kubernetes集群"><a href="#Sealos实战：从零开始部署和管理Kubernetes集群" class="headerlink" title="Sealos实战：从零开始部署和管理Kubernetes集群"></a>Sealos实战：从零开始部署和管理Kubernetes集群</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档详细介绍了如何使用Sealos在多台服务器上部署和管理Kubernetes集群，包括环境准备、集群部署、应用部署、配置管理、扩容、容灾、升级和回滚等完整运维流程。我们将以三台服务器为例，展示从零开始构建到运维整个Kubernetes集群的完整过程。</p>
-<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><h3 id="1-1-服务器规划"><a href="#1-1-服务器规划" class="headerlink" title="1.1 服务器规划"></a>1.1 服务器规划</h3><p>我们使用三台服务器作为示例：</p>
+                <h1>Sealos实战：从零开始部署和管理Kubernetes集群</h1>
+<h2 id="概述">概述</h2>
+<p>本文档详细介绍了如何使用Sealos在多台服务器上部署和管理Kubernetes集群，包括环境准备、集群部署、应用部署、配置管理、扩容、容灾、升级和回滚等完整运维流程。我们将以三台服务器为例，展示从零开始构建到运维整个Kubernetes集群的完整过程。</p>
+<h2 id="1-环境准备">1. 环境准备</h2>
+<h3 id="1-1-服务器规划">1.1 服务器规划</h3>
+<p>我们使用三台服务器作为示例：</p>
 <ul>
 <li>Master节点（控制平面）：192.168.1.100</li>
 <li>Worker节点1：192.168.1.101</li>
 <li>Worker节点2：192.168.1.102</li>
 </ul>
-<h3 id="1-2-前提条件"><a href="#1-2-前提条件" class="headerlink" title="1.2 前提条件"></a>1.2 前提条件</h3><p>在所有服务器上准备以下环境：</p>
+<h3 id="1-2-前提条件">1.2 前提条件</h3>
+<p>在所有服务器上准备以下环境：</p>
 <ol>
 <li><strong>操作系统</strong>：Ubuntu 20.04 LTS 或 CentOS 8.x</li>
-<li><strong>硬件配置</strong>：<ul>
+<li><strong>硬件配置</strong>：
+<ul>
 <li>CPU：至少2核</li>
 <li>内存：至少4GB</li>
 <li>磁盘：至少40GB</li>
 </ul>
 </li>
-<li><strong>网络配置</strong>：<ul>
+<li><strong>网络配置</strong>：
+<ul>
 <li>服务器之间网络互通</li>
 <li>关闭防火墙或开放必要端口</li>
 </ul>
 </li>
 <li><strong>SSH访问</strong>：确保可以从任一节点SSH到其他节点</li>
 </ol>
-<h3 id="1-3-系统准备命令"><a href="#1-3-系统准备命令" class="headerlink" title="1.3 系统准备命令"></a>1.3 系统准备命令</h3><p>在所有节点上执行以下命令：</p>
+<h3 id="1-3-系统准备命令">1.3 系统准备命令</h3>
+<p>在所有节点上执行以下命令：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 关闭防火墙（生产环境建议配置具体规则）</span></span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">disable</span>  <span class="comment"># Ubuntu</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl stop firewalld  <span class="comment"># CentOS</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭Swap</span></span><br><span class="line"><span class="built_in">sudo</span> swapoff -a</span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">'/ swap / s/^\(.*\)$/#\1/g'</span> /etc/fstab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许iptables转发</span></span><br><span class="line"><span class="built_in">sudo</span> modprobe overlay</span><br><span class="line"><span class="built_in">sudo</span> modprobe br_netfilter</span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/modules-load.d/k8s.conf</span></span><br><span class="line"><span class="string">overlay</span></span><br><span class="line"><span class="string">br_netfilter</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables  = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward                 = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> sysctl --system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装Docker</span></span><br><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> docker</span><br><span class="line"><span class="built_in">sudo</span> systemctl start docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置国内镜像源（可选，提高拉取速度）</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">{</span></span><br><span class="line"><span class="string">  "registry-mirrors": [</span></span><br><span class="line"><span class="string">    "https://docker.mirrors.ustc.edu.cn",</span></span><br><span class="line"><span class="string">    "https://hub-mirror.c.163.com"</span></span><br><span class="line"><span class="string">  ],</span></span><br><span class="line"><span class="string">  "exec-opts": ["native.cgroupdriver=systemd"]</span></span><br><span class="line"><span class="string">}</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="2-安装Sealos"><a href="#2-安装Sealos" class="headerlink" title="2. 安装Sealos"></a>2. 安装Sealos</h2><p>在Master节点（192.168.1.100）上安装Sealos：</p>
+<h2 id="2-安装Sealos">2. 安装Sealos</h2>
+<p>在Master节点（192.168.1.100）上安装Sealos：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装sealos</span></span><br><span class="line">wget -c https://ghproxy.com/github.com/labring/sealos/releases/download/v4.4.0/sealos_4.4.0_linux_amd64.tar.gz \</span><br><span class="line">     -O - | <span class="built_in">sudo</span> tar -zx -C /usr/local/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为sealos添加执行权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> +x /usr/local/bin/sealos</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证安装</span></span><br><span class="line">sealos version</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-创建Clusterfile定义集群"><a href="#3-创建Clusterfile定义集群" class="headerlink" title="3. 创建Clusterfile定义集群"></a>3. 创建Clusterfile定义集群</h2><p>创建一个名为<code>Clusterfile</code>的文件来定义集群配置：</p>
+<h2 id="3-创建Clusterfile定义集群">3. 创建Clusterfile定义集群</h2>
+<p>创建一个名为<code>Clusterfile</code>的文件来定义集群配置：</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps.sealos.io/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Cluster</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-cluster</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">image:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">kubernetes:v1.25.0</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">calico:v3.24.1</span></span><br><span class="line">  <span class="attr">hosts:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">ips:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.100"</span>  <span class="comment"># Master节点IP</span></span><br><span class="line">      <span class="attr">roles:</span> [ <span class="string">"master"</span>, <span class="string">"control-plane"</span> ]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">ips:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.101"</span>  <span class="comment"># Worker节点IP 1</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">"192.168.1.102"</span>  <span class="comment"># Worker节点IP 2</span></span><br><span class="line">      <span class="attr">roles:</span> [ <span class="string">"node"</span> ]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>这个配置文件定义了：</p>
 <ul>
 <li>使用Kubernetes v1.25.0版本</li>
 <li>使用Calico作为CNI网络插件</li>
 <li>一台Master节点和两台Worker节点</li>
 </ul>
-<h2 id="4-部署Kubernetes集群"><a href="#4-部署Kubernetes集群" class="headerlink" title="4. 部署Kubernetes集群"></a>4. 部署Kubernetes集群</h2><p>在Master节点上运行以下命令部署集群：</p>
+<h2 id="4-部署Kubernetes集群">4. 部署Kubernetes集群</h2>
+<p>在Master节点上运行以下命令部署集群：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Clusterfile部署集群</span></span><br><span class="line">sealos run -f Clusterfile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者直接使用命令行参数部署</span></span><br><span class="line">sealos run kubernetes:v1.25.0 calico:v3.24.1 \</span><br><span class="line">  --masters 192.168.1.100 \</span><br><span class="line">  --nodes 192.168.1.101,192.168.1.102</span><br></pre></td></tr></tbody></table></figure>
-
 <p>部署完成后，Sealos会：</p>
 <ul>
 <li>安装Kubernetes组件</li>
@@ -493,80 +502,88 @@
 </ul>
 <p>验证集群状态：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 如果sealos自动配置了kubectl</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用以下命令获取集群访问信息</span></span><br><span class="line">sealos kubeconfig -f Clusterfile --host 192.168.1.100</span><br></pre></td></tr></tbody></table></figure>
-
 <p>预期输出：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">NAME              STATUS   ROLES                  AGE   VERSION</span><br><span class="line">192.168.1.100     Ready    control-plane,master   5m    v1.25.0</span><br><span class="line">192.168.1.101     Ready    &lt;none&gt;                 4m    v1.25.0</span><br><span class="line">192.168.1.102     Ready    &lt;none&gt;                 4m    v1.25.0</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="5-理解Pod和Node的分配机制"><a href="#5-理解Pod和Node的分配机制" class="headerlink" title="5. 理解Pod和Node的分配机制"></a>5. 理解Pod和Node的分配机制</h2><h3 id="5-1-Node（节点）"><a href="#5-1-Node（节点）" class="headerlink" title="5.1 Node（节点）"></a>5.1 Node（节点）</h3><p>Node是集群中的工作机器（物理机或虚拟机），负责运行Pod。在我们的例子中：</p>
+<h2 id="5-理解Pod和Node的分配机制">5. 理解Pod和Node的分配机制</h2>
+<h3 id="5-1-Node（节点）">5.1 Node（节点）</h3>
+<p>Node是集群中的工作机器（物理机或虚拟机），负责运行Pod。在我们的例子中：</p>
 <ul>
 <li>192.168.1.100：Master节点，具有控制平面角色</li>
 <li>192.168.1.101和192.168.1.102：Worker节点，用于运行工作负载</li>
 </ul>
-<h3 id="5-2-Pod（容器组）"><a href="#5-2-Pod（容器组）" class="headerlink" title="5.2 Pod（容器组）"></a>5.2 Pod（容器组）</h3><p>Pod是Kubernetes中最小的部署单元，通常包含一个或多个紧密相关的容器。</p>
-<h3 id="5-3-调度机制"><a href="#5-3-调度机制" class="headerlink" title="5.3 调度机制"></a>5.3 调度机制</h3><p>Kubernetes调度器（kube-scheduler）负责决定Pod在哪个Node上运行。它考虑以下因素：</p>
+<h3 id="5-2-Pod（容器组）">5.2 Pod（容器组）</h3>
+<p>Pod是Kubernetes中最小的部署单元，通常包含一个或多个紧密相关的容器。</p>
+<h3 id="5-3-调度机制">5.3 调度机制</h3>
+<p>Kubernetes调度器（kube-scheduler）负责决定Pod在哪个Node上运行。它考虑以下因素：</p>
 <ul>
 <li>资源需求：CPU、内存等</li>
 <li>节点标签（Labels）和节点选择器（Node Selector）</li>
 <li>污点（Taints）和容忍度（Tolerations）</li>
 <li>亲和性（Affinity）和反亲和性（Anti-Affinity）</li>
 </ul>
-<h2 id="6-部署应用到集群"><a href="#6-部署应用到集群" class="headerlink" title="6. 部署应用到集群"></a>6. 部署应用到集群</h2><h3 id="6-1-准备Docker镜像"><a href="#6-1-准备Docker镜像" class="headerlink" title="6.1 准备Docker镜像"></a>6.1 准备Docker镜像</h3><p>假设我们有一个名为<code>my-web-app:latest</code>的Docker镜像，包含一个简单的Web应用。</p>
+<h2 id="6-部署应用到集群">6. 部署应用到集群</h2>
+<h3 id="6-1-准备Docker镜像">6.1 准备Docker镜像</h3>
+<p>假设我们有一个名为<code>my-web-app:latest</code>的Docker镜像，包含一个简单的Web应用。</p>
 <p>首先，确保镜像在所有节点上都可用：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 在所有节点上拉取镜像</span></span><br><span class="line"><span class="built_in">sudo</span> docker pull my-registry/my-web-app:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者在一台机器上保存镜像为tar文件，然后分发到其他节点</span></span><br><span class="line">docker save -o my-web-app.tar my-registry/my-web-app:latest</span><br><span class="line">scp my-web-app.tar user@192.168.1.101:~/</span><br><span class="line">scp my-web-app.tar user@192.168.1.102:~/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在其他节点上加载镜像</span></span><br><span class="line">docker load -i my-web-app.tar</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="6-2-创建应用部署配置"><a href="#6-2-创建应用部署配置" class="headerlink" title="6.2 创建应用部署配置"></a>6.2 创建应用部署配置</h3><p>创建一个名为<code>web-app-deployment.yaml</code>的文件：</p>
+<h3 id="6-2-创建应用部署配置">6.2 创建应用部署配置</h3>
+<p>创建一个名为<code>web-app-deployment.yaml</code>的文件：</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span>  <span class="comment"># 初始副本数</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web-container</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">my-registry/my-web-app:latest</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ENV</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">"production"</span></span><br><span class="line">        <span class="attr">resources:</span></span><br><span class="line">          <span class="attr">requests:</span></span><br><span class="line">            <span class="attr">memory:</span> <span class="string">"64Mi"</span></span><br><span class="line">            <span class="attr">cpu:</span> <span class="string">"250m"</span></span><br><span class="line">          <span class="attr">limits:</span></span><br><span class="line">            <span class="attr">memory:</span> <span class="string">"128Mi"</span></span><br><span class="line">            <span class="attr">cpu:</span> <span class="string">"500m"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-web-app-service</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">      <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">      <span class="attr">targetPort:</span> <span class="number">80</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">LoadBalancer</span>  <span class="comment"># 或者使用NodePort或ClusterIP</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="6-3-通过Sealos部署应用"><a href="#6-3-通过Sealos部署应用" class="headerlink" title="6.3 通过Sealos部署应用"></a>6.3 通过Sealos部署应用</h3><p>使用Sealos可以创建应用包来部署应用，也可以使用kubectl直接应用YAML配置：</p>
-<h4 id="方法1：使用kubectl"><a href="#方法1：使用kubectl" class="headerlink" title="方法1：使用kubectl"></a>方法1：使用kubectl</h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 应用YAML配置</span></span><br><span class="line">kubectl apply -f web-app-deployment.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证部署</span></span><br><span class="line">kubectl get deployments</span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl get services</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="方法2：使用Sealos应用包"><a href="#方法2：使用Sealos应用包" class="headerlink" title="方法2：使用Sealos应用包"></a>方法2：使用Sealos应用包</h4><p>首先创建应用包（Application Package）：</p>
+<h3 id="6-3-通过Sealos部署应用">6.3 通过Sealos部署应用</h3>
+<p>使用Sealos可以创建应用包来部署应用，也可以使用kubectl直接应用YAML配置：</p>
+<h4 id="方法1：使用kubectl">方法1：使用kubectl</h4>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 应用YAML配置</span></span><br><span class="line">kubectl apply -f web-app-deployment.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证部署</span></span><br><span class="line">kubectl get deployments</span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl get services</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="方法2：使用Sealos应用包">方法2：使用Sealos应用包</h4>
+<p>首先创建应用包（Application Package）：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建应用包目录结构</span></span><br><span class="line"><span class="built_in">mkdir</span> my-web-app-pkg</span><br><span class="line"><span class="built_in">cd</span> my-web-app-pkg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Kubefile定义应用包</span></span><br><span class="line"><span class="built_in">cat</span> &gt; Kubefile &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">FROM scratch</span></span><br><span class="line"><span class="string">COPY web-app-deployment.yaml .</span></span><br><span class="line"><span class="string">CMD ["kubectl apply -f web-app-deployment.yaml"]</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建应用包镜像</span></span><br><span class="line">sealos build -t my-registry/my-web-app-pkg:latest .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送镜像到仓库（如果需要）</span></span><br><span class="line">sealos push my-registry/my-web-app-pkg:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行应用包</span></span><br><span class="line">sealos run my-registry/my-web-app-pkg:latest</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="7-配置参数注入"><a href="#7-配置参数注入" class="headerlink" title="7. 配置参数注入"></a>7. 配置参数注入</h2><h3 id="7-1-通过ConfigMap注入配置"><a href="#7-1-通过ConfigMap注入配置" class="headerlink" title="7.1 通过ConfigMap注入配置"></a>7.1 通过ConfigMap注入配置</h3><p>创建一个ConfigMap来存储配置参数：</p>
+<h2 id="7-配置参数注入">7. 配置参数注入</h2>
+<h3 id="7-1-通过ConfigMap注入配置">7.1 通过ConfigMap注入配置</h3>
+<p>创建一个ConfigMap来存储配置参数：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建ConfigMap</span></span><br><span class="line">kubectl create configmap app-config \</span><br><span class="line">  --from-literal=database.host=192.168.1.200 \</span><br><span class="line">  --from-literal=database.port=3306 \</span><br><span class="line">  --from-literal=app.mode=production</span><br></pre></td></tr></tbody></table></figure>
-
 <p>更新Deployment以使用ConfigMap：</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-web-app</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web-container</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">my-registry/my-web-app:latest</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">DATABASE_HOST</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">configMapKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-config</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">database.host</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">DATABASE_PORT</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">configMapKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-config</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">database.port</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">APP_MODE</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">configMapKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-config</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">app.mode</span></span><br><span class="line">        <span class="attr">volumeMounts:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config-volume</span></span><br><span class="line">          <span class="attr">mountPath:</span> <span class="string">/etc/config</span></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config-volume</span></span><br><span class="line">        <span class="attr">configMap:</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">app-config</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-2-通过Secret注入敏感配置"><a href="#7-2-通过Secret注入敏感配置" class="headerlink" title="7.2 通过Secret注入敏感配置"></a>7.2 通过Secret注入敏感配置</h3><p>创建一个Secret来存储敏感信息（如密码、密钥）：</p>
+<h3 id="7-2-通过Secret注入敏感配置">7.2 通过Secret注入敏感配置</h3>
+<p>创建一个Secret来存储敏感信息（如密码、密钥）：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建Secret</span></span><br><span class="line">kubectl create secret generic app-secret \</span><br><span class="line">  --from-literal=db-password=supersecretpassword \</span><br><span class="line">  --from-literal=api-key=your-api-key</span><br></pre></td></tr></tbody></table></figure>
-
 <p>更新Deployment以使用Secret：</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-web-app</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web-container</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">my-registry/my-web-app:latest</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">DATABASE_HOST</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">configMapKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-config</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">database.host</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">DB_PASSWORD</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-secret</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">db-password</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">API_KEY</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">app-secret</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">api-key</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="8-节点扩容"><a href="#8-节点扩容" class="headerlink" title="8. 节点扩容"></a>8. 节点扩容</h2><h3 id="8-1-扩容Worker节点"><a href="#8-1-扩容Worker节点" class="headerlink" title="8.1 扩容Worker节点"></a>8.1 扩容Worker节点</h3><p>当需要增加Worker节点来提供更多的计算资源时：</p>
+<h2 id="8-节点扩容">8. 节点扩容</h2>
+<h3 id="8-1-扩容Worker节点">8.1 扩容Worker节点</h3>
+<p>当需要增加Worker节点来提供更多的计算资源时：</p>
 <ol>
 <li>在新的服务器上准备环境（按照1.3节的系统准备命令）</li>
 <li>使用Sealos添加节点：</li>
 </ol>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加新的Worker节点</span></span><br><span class="line">sealos add --nodes 192.168.1.103</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证节点是否加入集群</span></span><br><span class="line">kubectl get nodes</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="8-2-扩容应用Pod"><a href="#8-2-扩容应用Pod" class="headerlink" title="8.2 扩容应用Pod"></a>8.2 扩容应用Pod</h3><p>增加应用的副本数：</p>
+<h3 id="8-2-扩容应用Pod">8.2 扩容应用Pod</h3>
+<p>增加应用的副本数：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 扩容到5个副本</span></span><br><span class="line">kubectl scale deployment my-web-app --replicas=5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者直接编辑Deployment</span></span><br><span class="line">kubectl edit deployment my-web-app</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="9-容灾策略"><a href="#9-容灾策略" class="headerlink" title="9. 容灾策略"></a>9. 容灾策略</h2><h3 id="9-1-高可用Master节点"><a href="#9-1-高可用Master节点" class="headerlink" title="9.1 高可用Master节点"></a>9.1 高可用Master节点</h3><p>为避免Master节点单点故障，我们可以部署高可用集群：</p>
+<h2 id="9-容灾策略">9. 容灾策略</h2>
+<h3 id="9-1-高可用Master节点">9.1 高可用Master节点</h3>
+<p>为避免Master节点单点故障，我们可以部署高可用集群：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用三个Master节点部署高可用集群</span></span><br><span class="line">sealos run kubernetes:v1.25.0 calico:v3.24.1 \</span><br><span class="line">  --masters 192.168.1.100,192.168.1.103,192.168.1.104 \</span><br><span class="line">  --nodes 192.168.1.101,192.168.1.102</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="9-2-备份和恢复"><a href="#9-2-备份和恢复" class="headerlink" title="9.2 备份和恢复"></a>9.2 备份和恢复</h3><p>定期备份etcd数据和Kubernetes清单：</p>
+<h3 id="9-2-备份和恢复">9.2 备份和恢复</h3>
+<p>定期备份etcd数据和Kubernetes清单：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 备份etcd</span></span><br><span class="line">ETCDCTL_API=3 etcdctl snapshot save /tmp/etcd-snapshot-$(<span class="built_in">date</span> +%Y%m%d).db \</span><br><span class="line">  --endpoints=https://127.0.0.1:2379 \</span><br><span class="line">  --cacert=/etc/kubernetes/pki/etcd/ca.crt \</span><br><span class="line">  --cert=/etc/kubernetes/pki/etcd/server.crt \</span><br><span class="line">  --key=/etc/kubernetes/pki/etcd/server.key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Velero备份和恢复</span></span><br><span class="line"><span class="comment"># 安装Velero</span></span><br><span class="line">kubectl apply -f https://github.com/vmware-tanzu/velero/releases/latest/download/velero-install.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建备份</span></span><br><span class="line">velero backup create my-backup --selector app=my-web-app</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="9-3-健康检查和监控"><a href="#9-3-健康检查和监控" class="headerlink" title="9.3 健康检查和监控"></a>9.3 健康检查和监控</h3><p>配置Liveness和Readiness探针：</p>
+<h3 id="9-3-健康检查和监控">9.3 健康检查和监控</h3>
+<p>配置Liveness和Readiness探针：</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-web-app</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">my-web-app</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web-container</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">my-registry/my-web-app:latest</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">livenessProbe:</span></span><br><span class="line">          <span class="attr">httpGet:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">/health</span></span><br><span class="line">            <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">          <span class="attr">initialDelaySeconds:</span> <span class="number">30</span></span><br><span class="line">          <span class="attr">periodSeconds:</span> <span class="number">10</span></span><br><span class="line">        <span class="attr">readinessProbe:</span></span><br><span class="line">          <span class="attr">httpGet:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">/ready</span></span><br><span class="line">            <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">          <span class="attr">initialDelaySeconds:</span> <span class="number">5</span></span><br><span class="line">          <span class="attr">periodSeconds:</span> <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="10-应用升级和回滚"><a href="#10-应用升级和回滚" class="headerlink" title="10. 应用升级和回滚"></a>10. 应用升级和回滚</h2><h3 id="10-1-应用升级"><a href="#10-1-应用升级" class="headerlink" title="10.1 应用升级"></a>10.1 应用升级</h3><h4 id="滚动更新"><a href="#滚动更新" class="headerlink" title="滚动更新"></a>滚动更新</h4><p>使用滚动更新策略进行应用升级：</p>
+<h2 id="10-应用升级和回滚">10. 应用升级和回滚</h2>
+<h3 id="10-1-应用升级">10.1 应用升级</h3>
+<h4 id="滚动更新">滚动更新</h4>
+<p>使用滚动更新策略进行应用升级：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更新部署的镜像</span></span><br><span class="line">kubectl <span class="built_in">set</span> image deployment/my-web-app web-container=my-registry/my-web-app:v2.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看升级进度</span></span><br><span class="line">kubectl rollout status deployment/my-web-app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看升级历史</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment/my-web-app</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="使用Helm进行升级（可选）"><a href="#使用Helm进行升级（可选）" class="headerlink" title="使用Helm进行升级（可选）"></a>使用Helm进行升级（可选）</h4><p>如果使用Helm管理应用：</p>
+<h4 id="使用Helm进行升级（可选）">使用Helm进行升级（可选）</h4>
+<p>如果使用Helm管理应用：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更新Helm Chart</span></span><br><span class="line">helm upgrade my-release my-chart --<span class="built_in">set</span> image.tag=v2.0</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="10-2-升级失败回滚"><a href="#10-2-升级失败回滚" class="headerlink" title="10.2 升级失败回滚"></a>10.2 升级失败回滚</h3><p>如果新版本出现问题，可以快速回滚：</p>
+<h3 id="10-2-升级失败回滚">10.2 升级失败回滚</h3>
+<p>如果新版本出现问题，可以快速回滚：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看升级历史</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment/my-web-app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一个版本</span></span><br><span class="line">kubectl rollout undo deployment/my-web-app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到指定版本</span></span><br><span class="line">kubectl rollout undo deployment/my-web-app --to-revision=2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="10-3-集群升级"><a href="#10-3-集群升级" class="headerlink" title="10.3 集群升级"></a>10.3 集群升级</h3><p>升级整个Kubernetes集群：</p>
+<h3 id="10-3-集群升级">10.3 集群升级</h3>
+<p>升级整个Kubernetes集群：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Sealos升级集群</span></span><br><span class="line">sealos run kubernetes:v1.26.0 calico:v3.25.0 \</span><br><span class="line">  --masters 192.168.1.100 \</span><br><span class="line">  --nodes 192.168.1.101,192.168.1.102</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="11-实战案例总结"><a href="#11-实战案例总结" class="headerlink" title="11. 实战案例总结"></a>11. 实战案例总结</h2><p>通过以上步骤，我们完成了一个完整的Sealos实战流程：</p>
+<h2 id="11-实战案例总结">11. 实战案例总结</h2>
+<p>通过以上步骤，我们完成了一个完整的Sealos实战流程：</p>
 <ol>
 <li><strong>环境准备</strong>：在三台服务器上配置系统环境</li>
 <li><strong>集群部署</strong>：使用Sealos快速部署Kubernetes集群</li>
@@ -577,158 +594,193 @@
 <li><strong>升级回滚</strong>：实现应用和集群的升级与回滚</li>
 </ol>
 <p>这种基于Sealos的部署方式大大简化了Kubernetes集群的部署和管理复杂度，使得运维团队可以更专注于应用本身，而不是基础设施的复杂性。</p>
-<h2 id="12-Kubernetes核心概念和术语"><a href="#12-Kubernetes核心概念和术语" class="headerlink" title="12. Kubernetes核心概念和术语"></a>12. Kubernetes核心概念和术语</h2><p>在深入了解问题排查之前，让我们先梳理Kubernetes的层级结构和核心概念，从大到小排列：</p>
-<h3 id="12-1-集群（Cluster）"><a href="#12-1-集群（Cluster）" class="headerlink" title="12.1 集群（Cluster）"></a>12.1 集群（Cluster）</h3><ul>
+<h2 id="12-Kubernetes核心概念和术语">12. Kubernetes核心概念和术语</h2>
+<p>在深入了解问题排查之前，让我们先梳理Kubernetes的层级结构和核心概念，从大到小排列：</p>
+<h3 id="12-1-集群（Cluster）">12.1 集群（Cluster）</h3>
+<ul>
 <li><strong>定义</strong>：由一个或多个节点组成的容器化应用平台</li>
 <li><strong>实际例子</strong>：我们前面创建的名为<code>my-cluster</code>的Kubernetes集群</li>
 <li><strong>映射</strong>：一个完整的Kubernetes环境，包含控制平面和工作节点</li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看集群信息</span></span><br><span class="line">kubectl cluster-info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查集群组件状态</span></span><br><span class="line">kubectl get componentstatuses</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群节点</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群版本信息</span></span><br><span class="line">kubectl version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查集群健康状况</span></span><br><span class="line">kubectl top nodes</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看集群信息</span></span><br><span class="line">kubectl cluster-info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查集群组件状态</span></span><br><span class="line">kubectl get componentstatuses</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群节点</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群版本信息</span></span><br><span class="line">kubectl version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查集群健康状况</span></span><br><span class="line">kubectl top nodes</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-2-命名空间（Namespace）"><a href="#12-2-命名空间（Namespace）" class="headerlink" title="12.2 命名空间（Namespace）"></a>12.2 命名空间（Namespace）</h3><ul>
+<h3 id="12-2-命名空间（Namespace）">12.2 命名空间（Namespace）</h3>
+<ul>
 <li><strong>定义</strong>：集群中的虚拟子分区，用于隔离资源</li>
 <li><strong>实际例子</strong>：default、kube-system、kube-public等</li>
 <li><strong>映射</strong>：类似于操作系统的文件夹，用于组织和隔离不同环境的资源</li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有命名空间</span></span><br><span class="line">kubectl get namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建命名空间</span></span><br><span class="line">kubectl create namespace my-namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在指定命名空间中操作资源</span></span><br><span class="line">kubectl get pods -n my-namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看命名空间详细信息</span></span><br><span class="line">kubectl describe namespace my-namespace</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有命名空间</span></span><br><span class="line">kubectl get namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建命名空间</span></span><br><span class="line">kubectl create namespace my-namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在指定命名空间中操作资源</span></span><br><span class="line">kubectl get pods -n my-namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看命名空间详细信息</span></span><br><span class="line">kubectl describe namespace my-namespace</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-3-节点（Node）"><a href="#12-3-节点（Node）" class="headerlink" title="12.3 节点（Node）"></a>12.3 节点（Node）</h3><ul>
+<h3 id="12-3-节点（Node）">12.3 节点（Node）</h3>
+<ul>
 <li><strong>定义</strong>：集群中的工作机器，可以是物理机或虚拟机</li>
 <li><strong>实际例子</strong>：我们使用的三台服务器（192.168.1.100、192.168.1.101、192.168.1.102）</li>
 <li><strong>映射</strong>：192.168.1.100（Master节点）、192.168.1.101和192.168.1.102（Worker节点）</li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有节点</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点详细信息</span></span><br><span class="line">kubectl describe node &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点资源使用情况</span></span><br><span class="line">kubectl top nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记节点不可调度</span></span><br><span class="line">kubectl cordon &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记节点可调度</span></span><br><span class="line">kubectl uncordon &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安全驱逐节点上的Pod（用于维护）</span></span><br><span class="line">kubectl drain &lt;node-name&gt; --ignore-daemonsets</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点事件</span></span><br><span class="line">kubectl get events --field-selector involvedObject.kind=Node</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有节点</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点详细信息</span></span><br><span class="line">kubectl describe node &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点资源使用情况</span></span><br><span class="line">kubectl top nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记节点不可调度</span></span><br><span class="line">kubectl cordon &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记节点可调度</span></span><br><span class="line">kubectl uncordon &lt;node-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安全驱逐节点上的Pod（用于维护）</span></span><br><span class="line">kubectl drain &lt;node-name&gt; --ignore-daemonsets</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点事件</span></span><br><span class="line">kubectl get events --field-selector involvedObject.kind=Node</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-4-Pod"><a href="#12-4-Pod" class="headerlink" title="12.4 Pod"></a>12.4 Pod</h3><ul>
+<h3 id="12-4-Pod">12.4 Pod</h3>
+<ul>
 <li><strong>定义</strong>：Kubernetes中最小的部署单元，可包含一个或多个紧密相关的容器</li>
 <li><strong>实际例子</strong>：my-web-app-7d5b9c8f4c-xyz12 这个Pod</li>
 <li><strong>映射</strong>：一个逻辑主机，包含一个或多个共享存储、网络和规格定义的容器</li>
-<li><strong>深入理解</strong>：<ul>
+<li><strong>深入理解</strong>：
+<ul>
 <li><strong>Pod不是Docker Compose服务组</strong>：一个Pod通常对应一个应用实例，而不是多个相关服务</li>
-<li><strong>紧密相关容器</strong>：Pod中的多个容器需要共享存储和网络，协同完成一个任务<ul>
+<li><strong>紧密相关容器</strong>：Pod中的多个容器需要共享存储和网络，协同完成一个任务
+<ul>
 <li>例如：主应用容器 + 日志收集容器（如Filebeat）</li>
 <li>例如：主应用容器 + 代理容器（如Envoy）</li>
 <li>例如：主应用容器 + Sidecar容器（如Istio Proxy）</li>
 </ul>
 </li>
-<li><strong>共享资源</strong>：<ul>
+<li><strong>共享资源</strong>：
+<ul>
 <li>网络：Pod内所有容器共享IP地址和端口空间</li>
 <li>存储：Pod内所有容器可以共享存储卷</li>
 </ul>
 </li>
 <li><strong>生命周期</strong>：Pod中的容器一起启动、停止和重启</li>
-<li><strong>Docker Compose到Kubernetes的映射</strong>：<ul>
+<li><strong>Docker Compose到Kubernetes的映射</strong>：
+<ul>
 <li>Docker Compose中的一个服务 → Kubernetes中的一个Pod</li>
 <li>Docker Compose中的多个服务 → Kubernetes中的多个Pod + Service</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod详细信息</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时查看Pod日志</span></span><br><span class="line">kubectl logs -f &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入Pod容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -n &lt;namespace&gt; -- bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod YAML配置</span></span><br><span class="line">kubectl get pod &lt;pod-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除Pod（Deployment会自动重建）</span></span><br><span class="line">kubectl delete pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod资源使用情况</span></span><br><span class="line">kubectl top pods -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod详细信息</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时查看Pod日志</span></span><br><span class="line">kubectl logs -f &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入Pod容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -n &lt;namespace&gt; -- bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod YAML配置</span></span><br><span class="line">kubectl get pod &lt;pod-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除Pod（Deployment会自动重建）</span></span><br><span class="line">kubectl delete pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod资源使用情况</span></span><br><span class="line">kubectl top pods -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-5-容器（Container）"><a href="#12-5-容器（Container）" class="headerlink" title="12.5 容器（Container）"></a>12.5 容器（Container）</h3><ul>
+<h3 id="12-5-容器（Container）">12.5 容器（Container）</h3>
+<ul>
 <li><strong>定义</strong>：运行应用的轻量级虚拟化环境</li>
 <li><strong>实际例子</strong>：my-web-app Pod中的web-container</li>
 <li><strong>映射</strong>：Docker容器，运行具体的应用程序</li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod中的容器</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt; -o jsonpath=<span class="string">'{.items[*].spec.containers[*].name}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看特定容器的日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入特定容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt; -- bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器镜像</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt; -o jsonpath=<span class="string">'{.items[*].spec.containers[*].image}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器资源限制</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod中的容器</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt; -o jsonpath=<span class="string">'{.items[*].spec.containers[*].name}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看特定容器的日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入特定容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt; -- bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器镜像</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt; -o jsonpath=<span class="string">'{.items[*].spec.containers[*].image}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器资源限制</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-6-服务（Service）"><a href="#12-6-服务（Service）" class="headerlink" title="12.6 服务（Service）"></a>12.6 服务（Service）</h3><ul>
+<h3 id="12-6-服务（Service）">12.6 服务（Service）</h3>
+<ul>
 <li><strong>定义</strong>：定义一组Pod的逻辑集合和访问策略，提供稳定的网络端点</li>
 <li><strong>实际例子</strong>：my-web-app-service，为my-web-app的Pod提供稳定的访问地址</li>
 <li><strong>映射</strong>：类似负载均衡器或代理，为一组Pod提供稳定的IP和DNS名称</li>
-<li><strong>深入理解</strong>：<ul>
+<li><strong>深入理解</strong>：
+<ul>
 <li><strong>服务发现</strong>：通过标签选择器（label selector）发现后端Pod</li>
 <li><strong>负载均衡</strong>：在后端Pod间分发流量，但不使用传统负载均衡算法</li>
 <li><strong>稳定端点</strong>：即使Pod被重新调度，Service的IP和DNS名称保持不变</li>
-<li><strong>服务类型</strong>：<ul>
+<li><strong>服务类型</strong>：
+<ul>
 <li>ClusterIP：仅在集群内部访问</li>
 <li>NodePort：在集群节点上开放端口</li>
 <li>LoadBalancer：创建外部负载均衡器</li>
 <li>ExternalName：将服务映射到外部DNS名称</li>
 </ul>
 </li>
-<li><strong>与Docker Compose的映射</strong>：<ul>
+<li><strong>与Docker Compose的映射</strong>：
+<ul>
 <li>Docker Compose服务间的连接 → Kubernetes中使用Service</li>
 <li>Docker Compose的links功能 → Kubernetes中使用Service DNS名称</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务</span></span><br><span class="line">kubectl get services -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务详细信息</span></span><br><span class="line">kubectl describe service &lt;service-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务端点（后端Pod IP）</span></span><br><span class="line">kubectl get endpoints &lt;service-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务YAML配置</span></span><br><span class="line">kubectl get service &lt;service-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试服务连通性</span></span><br><span class="line">kubectl run test-pod --image=busybox --<span class="built_in">rm</span> -it --restart=Never -- nslookup &lt;service-name&gt;.&lt;namespace&gt;.svc.cluster.local</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口转发到服务</span></span><br><span class="line">kubectl port-forward service/&lt;service-name&gt; 8080:80 -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务</span></span><br><span class="line">kubectl get services -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务详细信息</span></span><br><span class="line">kubectl describe service &lt;service-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务端点（后端Pod IP）</span></span><br><span class="line">kubectl get endpoints &lt;service-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务YAML配置</span></span><br><span class="line">kubectl get service &lt;service-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试服务连通性</span></span><br><span class="line">kubectl run test-pod --image=busybox --<span class="built_in">rm</span> -it --restart=Never -- nslookup &lt;service-name&gt;.&lt;namespace&gt;.svc.cluster.local</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口转发到服务</span></span><br><span class="line">kubectl port-forward service/&lt;service-name&gt; 8080:80 -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-7-控制器（Controller）"><a href="#12-7-控制器（Controller）" class="headerlink" title="12.7 控制器（Controller）"></a>12.7 控制器（Controller）</h3><ul>
+<h3 id="12-7-控制器（Controller）">12.7 控制器（Controller）</h3>
+<ul>
 <li><strong>定义</strong>：确保Pod按照预期状态运行的资源对象</li>
 <li><strong>实际例子</strong>：Deployment、StatefulSet、DaemonSet等</li>
 <li><strong>映射</strong>：Deployment控制器确保my-web-app始终有2个副本运行</li>
-<li><strong>深入理解</strong>：<ul>
-<li><strong>控制器类型</strong>：<ul>
+<li><strong>深入理解</strong>：
+<ul>
+<li><strong>控制器类型</strong>：
+<ul>
 <li>Deployment：管理无状态应用，支持滚动更新和回滚</li>
 <li>StatefulSet：管理有状态应用，提供稳定的网络标识和持久存储</li>
 <li>DaemonSet：确保所有节点运行一个Pod副本</li>
 <li>Job/CronJob：管理一次性任务和定时任务</li>
 </ul>
 </li>
-<li><strong>Pod调度与容灾</strong>：<ul>
+<li><strong>Pod调度与容灾</strong>：
+<ul>
 <li>通过污点（Taints）和容忍度（Tolerations）控制Pod调度到特定节点</li>
 <li>通过节点亲和性（Node Affinity）和反亲和性（Node Anti-Affinity）控制Pod部署位置</li>
 <li>通过Pod反亲和性避免相同应用的Pod运行在同一节点上，实现容灾</li>
 </ul>
 </li>
-<li><strong>与Docker Compose的映射</strong>：<ul>
+<li><strong>与Docker Compose的映射</strong>：
+<ul>
 <li>Docker Compose的replicas → Kubernetes中的Deployment replicas</li>
 <li>Docker Compose的restart policy → Kubernetes的Pod重启策略</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Deployment</span></span><br><span class="line">kubectl get deployments -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Deployment详细信息</span></span><br><span class="line">kubectl describe deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扩容Deployment</span></span><br><span class="line">kubectl scale deployment &lt;deployment-name&gt; --replicas=5 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新Deployment镜像</span></span><br><span class="line">kubectl <span class="built_in">set</span> image deployment/&lt;deployment-name&gt; &lt;container-name&gt;=&lt;new-image&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Deployment升级历史</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚Deployment</span></span><br><span class="line">kubectl rollout undo deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂停/恢复Deployment rollout</span></span><br><span class="line">kubectl rollout pause deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line">kubectl rollout resume deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看控制器管理的Pod</span></span><br><span class="line">kubectl get pods -l &lt;label-key&gt;=&lt;label-value&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Deployment</span></span><br><span class="line">kubectl get deployments -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Deployment详细信息</span></span><br><span class="line">kubectl describe deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扩容Deployment</span></span><br><span class="line">kubectl scale deployment &lt;deployment-name&gt; --replicas=5 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新Deployment镜像</span></span><br><span class="line">kubectl <span class="built_in">set</span> image deployment/&lt;deployment-name&gt; &lt;container-name&gt;=&lt;new-image&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Deployment升级历史</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚Deployment</span></span><br><span class="line">kubectl rollout undo deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂停/恢复Deployment rollout</span></span><br><span class="line">kubectl rollout pause deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line">kubectl rollout resume deployment &lt;deployment-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看控制器管理的Pod</span></span><br><span class="line">kubectl get pods -l &lt;label-key&gt;=&lt;label-value&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="12-8-配置和存储资源"><a href="#12-8-配置和存储资源" class="headerlink" title="12.8 配置和存储资源"></a>12.8 配置和存储资源</h3><ul>
+<h3 id="12-8-配置和存储资源">12.8 配置和存储资源</h3>
+<ul>
 <li><strong>ConfigMap</strong>：存储非敏感配置数据</li>
 <li><strong>Secret</strong>：存储敏感数据如密码、密钥</li>
 <li><strong>PersistentVolume/PersistentVolumeClaim</strong>：提供持久化存储</li>
-<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># ConfigMap命令</span></span><br><span class="line"><span class="comment"># 查看ConfigMap</span></span><br><span class="line">kubectl get configmaps -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看ConfigMap详细信息</span></span><br><span class="line">kubectl describe configmap &lt;configmap-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建ConfigMap</span></span><br><span class="line">kubectl create configmap &lt;configmap-name&gt; --from-literal=key1=value1 --from-literal=key2=value2 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件创建ConfigMap</span></span><br><span class="line">kubectl create configmap &lt;configmap-name&gt; --from-file=config.properties -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Secret命令</span></span><br><span class="line"><span class="comment"># 查看Secret</span></span><br><span class="line">kubectl get secrets -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Secret详细信息</span></span><br><span class="line">kubectl describe secret &lt;secret-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Secret</span></span><br><span class="line">kubectl create secret generic &lt;secret-name&gt; --from-literal=key1=value1 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件创建Secret</span></span><br><span class="line">kubectl create secret generic &lt;secret-name&gt; --from-file=ssh-privatekey=/path/to/key -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Secret内容（编码后的）</span></span><br><span class="line">kubectl get secret &lt;secret-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># PersistentVolume/PersistentVolumeClaim命令</span></span><br><span class="line"><span class="comment"># 查看PersistentVolume</span></span><br><span class="line">kubectl get pv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolumeClaim</span></span><br><span class="line">kubectl get pvc -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolume详细信息</span></span><br><span class="line">kubectl describe pv &lt;pv-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolumeClaim详细信息</span></span><br><span class="line">kubectl describe pvc &lt;pvc-name&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><strong>对应命令</strong>：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># ConfigMap命令</span></span><br><span class="line"><span class="comment"># 查看ConfigMap</span></span><br><span class="line">kubectl get configmaps -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看ConfigMap详细信息</span></span><br><span class="line">kubectl describe configmap &lt;configmap-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建ConfigMap</span></span><br><span class="line">kubectl create configmap &lt;configmap-name&gt; --from-literal=key1=value1 --from-literal=key2=value2 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件创建ConfigMap</span></span><br><span class="line">kubectl create configmap &lt;configmap-name&gt; --from-file=config.properties -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Secret命令</span></span><br><span class="line"><span class="comment"># 查看Secret</span></span><br><span class="line">kubectl get secrets -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Secret详细信息</span></span><br><span class="line">kubectl describe secret &lt;secret-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Secret</span></span><br><span class="line">kubectl create secret generic &lt;secret-name&gt; --from-literal=key1=value1 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件创建Secret</span></span><br><span class="line">kubectl create secret generic &lt;secret-name&gt; --from-file=ssh-privatekey=/path/to/key -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Secret内容（编码后的）</span></span><br><span class="line">kubectl get secret &lt;secret-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># PersistentVolume/PersistentVolumeClaim命令</span></span><br><span class="line"><span class="comment"># 查看PersistentVolume</span></span><br><span class="line">kubectl get pv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolumeClaim</span></span><br><span class="line">kubectl get pvc -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolume详细信息</span></span><br><span class="line">kubectl describe pv &lt;pv-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PersistentVolumeClaim详细信息</span></span><br><span class="line">kubectl describe pvc &lt;pvc-name&gt; -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h2 id="13-常见问题排查"><a href="#13-常见问题排查" class="headerlink" title="13. 常见问题排查"></a>13. 常见问题排查</h2><p>在运维Kubernetes集群和应用时，掌握常见问题排查方法非常重要。以下是几个关键的排查入口和技巧：</p>
-<h3 id="13-1-从集群状态开始排查"><a href="#13-1-从集群状态开始排查" class="headerlink" title="13.1 从集群状态开始排查"></a>13.1 从集群状态开始排查</h3><p>首先检查集群整体状态：</p>
+<h2 id="13-常见问题排查">13. 常见问题排查</h2>
+<p>在运维Kubernetes集群和应用时，掌握常见问题排查方法非常重要。以下是几个关键的排查入口和技巧：</p>
+<h3 id="13-1-从集群状态开始排查">13.1 从集群状态开始排查</h3>
+<p>首先检查集群整体状态：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 检查节点状态</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"><span class="comment"># 确保所有节点处于Ready状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查核心组件状态</span></span><br><span class="line">kubectl get cs  <span class="comment"># (已弃用，使用下面的命令)</span></span><br><span class="line">kubectl get componentstatuses</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有命名空间</span></span><br><span class="line">kubectl get namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查命名空间中的资源</span></span><br><span class="line">kubectl get all --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-2-检查Pod状态和事件"><a href="#12-2-检查Pod状态和事件" class="headerlink" title="12.2 检查Pod状态和事件"></a>12.2 检查Pod状态和事件</h3><p>Pod是最基本的部署单元，是排查问题的起点：</p>
+<h3 id="12-2-检查Pod状态和事件">12.2 检查Pod状态和事件</h3>
+<p>Pod是最基本的部署单元，是排查问题的起点：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod状态</span></span><br><span class="line">kubectl get pods -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod详细信息和事件</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"><span class="comment"># 关注Events部分，通常包含错误信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查Pod的YAML定义</span></span><br><span class="line">kubectl get pod &lt;pod-name&gt; -n &lt;namespace&gt; -o yaml</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-3-查看应用日志"><a href="#12-3-查看应用日志" class="headerlink" title="12.3 查看应用日志"></a>12.3 查看应用日志</h3><p>查看应用容器的日志是排查问题的重要手段：</p>
+<h3 id="12-3-查看应用日志">12.3 查看应用日志</h3>
+<p>查看应用容器的日志是排查问题的重要手段：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod中主容器的日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Pod中指定容器的日志（多容器Pod）</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最近的日志（例如最后100行）</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; --<span class="built_in">tail</span>=100 -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时查看日志流</span></span><br><span class="line">kubectl logs -f &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看过去一小时的日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; --since=1h -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看重启前的容器日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; --previous -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-4-进入容器调试"><a href="#12-4-进入容器调试" class="headerlink" title="12.4 进入容器调试"></a>12.4 进入容器调试</h3><p>当需要直接进入容器内部进行调试时：</p>
+<h3 id="12-4-进入容器调试">12.4 进入容器调试</h3>
+<p>当需要直接进入容器内部进行调试时：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 进入容器执行交互式命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -n &lt;namespace&gt; -- bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中执行单个命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> &lt;pod-name&gt; -n &lt;namespace&gt; -- <span class="built_in">ls</span> -la /</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入多容器Pod中的指定容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -c &lt;container-name&gt; -n &lt;namespace&gt; -- sh</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-5-检查资源使用情况"><a href="#12-5-检查资源使用情况" class="headerlink" title="12.5 检查资源使用情况"></a>12.5 检查资源使用情况</h3><p>查看Pod和节点的资源使用情况：</p>
+<h3 id="12-5-检查资源使用情况">12.5 检查资源使用情况</h3>
+<p>查看Pod和节点的资源使用情况：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看Pod的资源使用情况</span></span><br><span class="line">kubectl top pods -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看节点的资源使用情况</span></span><br><span class="line">kubectl top nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取Pod的详细资源配额</span></span><br><span class="line">kubectl describe pod &lt;pod-name&gt; -n &lt;namespace&gt;</span><br><span class="line"><span class="comment"># 在"Conditions"和"QoS"部分查看资源相关信息</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-6-检查服务和网络"><a href="#12-6-检查服务和网络" class="headerlink" title="12.6 检查服务和网络"></a>12.6 检查服务和网络</h3><p>排查服务访问和网络连接问题：</p>
+<h3 id="12-6-检查服务和网络">12.6 检查服务和网络</h3>
+<p>排查服务访问和网络连接问题：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">kubectl get svc -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务详细信息</span></span><br><span class="line">kubectl describe svc &lt;service-name&gt; -n &lt;namespace&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试服务连通性（在集群内部）</span></span><br><span class="line">kubectl run test-pod --image=busybox --<span class="built_in">rm</span> -it --restart=Never -- nslookup &lt;service-name&gt;.&lt;namespace&gt;.svc.cluster.local</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口转发进行本地测试</span></span><br><span class="line">kubectl port-forward &lt;pod-name&gt; 8080:80 -n &lt;namespace&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-7-检查配置和密钥"><a href="#12-7-检查配置和密钥" class="headerlink" title="12.7 检查配置和密钥"></a>12.7 检查配置和密钥</h3><p>验证配置和密钥是否正确挂载到Pod中：</p>
+<h3 id="12-7-检查配置和密钥">12.7 检查配置和密钥</h3>
+<p>验证配置和密钥是否正确挂载到Pod中：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看ConfigMap内容</span></span><br><span class="line">kubectl get configmap &lt;configmap-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Secret内容（注意敏感信息）</span></span><br><span class="line">kubectl get secret &lt;secret-name&gt; -n &lt;namespace&gt; -o yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在Pod中检查挂载的配置</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it &lt;pod-name&gt; -n &lt;namespace&gt; -- <span class="built_in">ls</span> /etc/config</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="12-8-排查常见问题"><a href="#12-8-排查常见问题" class="headerlink" title="12.8 排查常见问题"></a>12.8 排查常见问题</h3><h4 id="Pod处于Pending状态"><a href="#Pod处于Pending状态" class="headerlink" title="Pod处于Pending状态"></a>Pod处于Pending状态</h4><ul>
+<h3 id="12-8-排查常见问题">12.8 排查常见问题</h3>
+<h4 id="Pod处于Pending状态">Pod处于Pending状态</h4>
+<ul>
 <li>检查是否有足够的资源</li>
 <li>检查节点选择器和污点容忍度配置</li>
 </ul>
-<h4 id="Pod处于CrashLoopBackOff状态"><a href="#Pod处于CrashLoopBackOff状态" class="headerlink" title="Pod处于CrashLoopBackOff状态"></a>Pod处于CrashLoopBackOff状态</h4><ul>
+<h4 id="Pod处于CrashLoopBackOff状态">Pod处于CrashLoopBackOff状态</h4>
+<ul>
 <li>查看容器日志</li>
 <li>检查启动脚本和配置</li>
 <li>检查资源限制是否过小</li>
 </ul>
-<h4 id="Pod处于ImagePullBackOff状态"><a href="#Pod处于ImagePullBackOff状态" class="headerlink" title="Pod处于ImagePullBackOff状态"></a>Pod处于ImagePullBackOff状态</h4><ul>
+<h4 id="Pod处于ImagePullBackOff状态">Pod处于ImagePullBackOff状态</h4>
+<ul>
 <li>检查镜像名称和标签是否正确</li>
 <li>检查镜像仓库访问权限</li>
 </ul>
-<h4 id="服务无法访问"><a href="#服务无法访问" class="headerlink" title="服务无法访问"></a>服务无法访问</h4><ul>
+<h4 id="服务无法访问">服务无法访问</h4>
+<ul>
 <li>检查Service和Pod的标签选择器是否匹配</li>
 <li>检查端口配置是否正确</li>
 <li>验证网络策略是否有误</li>
 </ul>
-<h3 id="12-9-使用Sealos排查集群问题"><a href="#12-9-使用Sealos排查集群问题" class="headerlink" title="12.9 使用Sealos排查集群问题"></a>12.9 使用Sealos排查集群问题</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 检查Sealos集群状态</span></span><br><span class="line">sealos status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在节点上执行命令</span></span><br><span class="line">sealos <span class="built_in">exec</span> --hosts 192.168.1.100 <span class="string">"systemctl status kubelet"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群证书信息</span></span><br><span class="line">sealos cert</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查节点是否正常</span></span><br><span class="line">kubectl get nodes -o wide</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="13-最佳实践"><a href="#13-最佳实践" class="headerlink" title="13. 最佳实践"></a>13. 最佳实践</h2><ol>
+<h3 id="12-9-使用Sealos排查集群问题">12.9 使用Sealos排查集群问题</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 检查Sealos集群状态</span></span><br><span class="line">sealos status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在节点上执行命令</span></span><br><span class="line">sealos <span class="built_in">exec</span> --hosts 192.168.1.100 <span class="string">"systemctl status kubelet"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群证书信息</span></span><br><span class="line">sealos cert</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查节点是否正常</span></span><br><span class="line">kubectl get nodes -o wide</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="13-最佳实践">13. 最佳实践</h2>
+<ol>
 <li><strong>安全</strong>：始终使用RBAC控制访问权限，定期更新证书和密钥</li>
 <li><strong>监控</strong>：部署Prometheus和Grafana等监控工具</li>
 <li><strong>日志</strong>：使用EFK（Elasticsearch, Fluentd, Kibana）收集和分析日志</li>
@@ -801,20 +853,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/k8s/">
-                                    <span class="chip bg-color">k8s</span>
-                                </a>
-                            
-                                <a href="/tags/sealos/">
-                                    <span class="chip bg-color">sealos</span>
+                                <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                                    <span class="chip bg-color">容器化</span>
                                 </a>
                             
                                 <a href="/tags/%E8%BF%90%E7%BB%B4/">
                                     <span class="chip bg-color">运维</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
-                                    <span class="chip bg-color">容器化</span>
+                                <a href="/tags/k8s/">
+                                    <span class="chip bg-color">k8s</span>
+                                </a>
+                            
+                                <a href="/tags/sealos/">
+                                    <span class="chip bg-color">sealos</span>
                                 </a>
                             
                                 <a href="/tags/%E9%83%A8%E7%BD%B2/">
@@ -930,16 +982,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
                     <a href="/tags/k8s/">
                         <span class="chip bg-color">k8s</span>
                     </a>
                     
                     <a href="/tags/sealos/">
                         <span class="chip bg-color">sealos</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                        <span class="chip bg-color">运维</span>
                     </a>
                     
                     <a href="/tags/%E9%97%AE%E7%AD%94/">
@@ -987,6 +1039,10 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
                     <a href="/tags/k8s/">
                         <span class="chip bg-color">k8s</span>
                     </a>
@@ -1001,10 +1057,6 @@
                     
                     <a href="/tags/kubectl/">
                         <span class="chip bg-color">kubectl</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                        <span class="chip bg-color">运维</span>
                     </a>
                     
                 </div>
@@ -1200,7 +1252,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.7k</span>
+                        class="white-color">28k</span>
             
             
             
@@ -1402,6 +1454,14 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
     
 
     

@@ -671,3 +671,574 @@ figure.highlight .code {
     font-weight: bold;
     background-color: rgba(15, 157, 88, 0.1);
 }
+
+
+/* Mermaid图表优化样式 - 控制尺寸和居中 */
+.mermaid {
+    text-align: center !important;
+    margin: 1.5rem auto !important;
+    display: block !important;
+    /* 限制最大宽度，避免图表过大 */
+    max-width: 800px !important;
+    width: auto !important;
+}
+
+/* Mermaid SVG容器尺寸控制 */
+.mermaid svg {
+    display: block !important;
+    margin: 0 auto !important;
+    /* 限制SVG的最大宽度 */
+    max-width: 100% !important;
+    /* 限制SVG的最大高度 */
+    max-height: 600px !important;
+    height: auto !important;
+    /* 保持宽高比 */
+    aspect-ratio: auto !important;
+}
+
+/* 代码块格式的Mermaid图表样式优化 */
+pre.language-mermaid {
+    text-align: center !important;
+    margin: 1.5rem auto !important;
+    display: block !important;
+    /* 限制预格式化块的最大宽度 */
+    max-width: 800px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 1rem !important;
+    overflow-x: auto !important;
+}
+
+pre.language-mermaid code {
+    background: transparent !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    white-space: pre-wrap !important;
+}
+
+/* 为不同图表类型设置特定的尺寸限制 */
+.mermaid[data-processor*="graph"] svg {
+    /* 流程图的最大尺寸 */
+    max-width: 700px !important;
+    max-height: 500px !important;
+}
+
+.mermaid[data-processor*="sequence"] svg {
+    /* 时序图的最大尺寸 */
+    max-width: 900px !important;
+    max-height: 400px !important;
+}
+
+.mermaid[data-processor*="class"] svg {
+    /* 类图的最大尺寸 */
+    max-width: 700px !important;
+    max-height: 600px !important;
+}
+
+.mermaid[data-processor*="gantt"] svg {
+    /* 甘特图允许更宽 */
+    max-width: 1000px !important;
+    max-height: 500px !important;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .mermaid {
+        max-width: 700px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mermaid {
+        max-width: 100% !important;
+        margin: 1rem auto !important;
+        padding: 0.5rem !important;
+    }
+    
+    .mermaid svg {
+        max-width: 100% !important;
+        max-height: 400px !important;
+        height: auto !important;
+    }
+    
+    pre.language-mermaid {
+        max-width: 100% !important;
+        padding: 0.5rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mermaid svg {
+        max-height: 300px !important;
+    }
+}
+
+/* 修复代码块展开/收起功能 */
+.code-area {
+    position: relative !important;
+    margin: 1rem 0 !important;
+    overflow: visible !important; /* 确保子元素不会被裁剪 */
+}
+
+/* 调整展开/收起按钮位置，避免与复制按钮冲突 */
+.code-expand {
+    position: absolute !important;
+    top: 8px !important;
+    right: 55px !important; /* 调整到复制按钮左侧 */
+    cursor: pointer !important;
+    z-index: 9999 !important; /* 确保按钮在最上层 */
+    font-size: 16px !important;
+    transition: transform 0.3s ease, opacity 0.2s ease !important;
+    background: transparent !important; /* 移除背景 */
+    color: #666 !important;
+    border: none !important; /* 移除边框 */
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    padding: 2px !important;
+}
+
+.code-expand:hover {
+    opacity: 0.7 !important;
+    color: #333 !important;
+    transform: scale(1.1) !important;
+}
+
+/* 收起状态的样式 */
+.code-closed .code-expand {
+    transform: rotate(-180deg) !important;
+    /* 关键修复：确保收起状态时按钮仍然可见 */
+    top: 8px !important;
+    right: 55px !important; /* 保持一致的位置 */
+    z-index: 9999 !important;
+}
+
+/* 确保复制按钮不被遮挡并调整其样式 */
+.code_copy {
+    position: absolute !important;
+    top: 8px !important;
+    right: 15px !important; /* 保持原来的位置 */
+    z-index: 9998 !important; /* 比展开按钮低一级，但仍然很高 */
+    cursor: pointer !important;
+    font-size: 16px !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+    background: transparent !important; /* 移除背景 */
+    color: #666 !important;
+    border: none !important; /* 移除边框 */
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    padding: 2px !important;
+    filter: none !important; /* 移除原来的filter */
+}
+
+.code_copy:hover {
+    opacity: 0.7 !important;
+    color: #333 !important;
+    transform: scale(1.1) !important;
+}
+
+/* 确保两个按钮之间有合适的间距 */
+.code-area {
+    min-height: 42px !important; /* 确保有足够空间显示按钮 */
+}
+
+/* 收起时隐藏代码内容 */
+.code-closed pre {
+    max-height: 60px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.code-closed pre::after {
+    content: "..." !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 25px !important;
+    background: linear-gradient(transparent, var(--global-bg-color, #fff) 70%) !important;
+    display: block !important;
+    padding-bottom: 5px !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: #666 !important;
+}
+
+/* 确保代码块有正确的结构 */
+pre code {
+    display: block !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 针对 markdown-it 渲染器的特殊处理 */
+.highlight pre {
+    position: relative !important;
+    margin: 0 !important;
+}
+
+/* 确保代码块可以正确收起和展开 */
+.code-closed .highlight pre {
+    max-height: 60px !important;
+    overflow: hidden !important;
+}
+
+/* 针对代码块区域的背景色适配 */
+.code-area .highlight {
+    background: #f6f8fa !important;
+    border-radius: 6px !important;
+    padding: 1px !important;
+}
+
+/* 确保代码块区域不会影响按钮的可见性 */
+.code-area .code-expand {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* 在代码块收起时，确保按钮在可见区域 */
+.code-closed .code-expand {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+}
+
+/* 优化代码块字体显示 */
+pre code,
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+    tab-size: 4 !important;
+}
+
+/* 针对不同代码块的特殊优化 */
+.highlight pre,
+.highlight pre code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+}
+
+/* 移除PrismJS可能的粗体样式 */
+.token.bold,
+.token.important {
+    font-weight: normal !important;
+}
+
+/* 确保代码块内容正常显示 */
+pre[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+}
+
+/* 修复可能的字体继承问题 */
+.token {
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 确保代码块内的文本不会被意外加粗 */
+code .token,
+pre .token,
+.highlight .token {
+    font-weight: normal !important;
+}
+
+/* 更全面的代码块样式统一 */
+/* 覆盖所有可能的代码块选择器 */
+pre,
+code,
+pre code,
+code pre,
+.highlight,
+.highlight pre,
+.highlight code,
+pre[class*="language-"],
+code[class*="language-"],
+[class*="highlight-"] pre,
+[class*="highlight-"] code,
+table.highlighttable pre,
+table.highlighttable code,
+figure.highlight pre,
+figure.highlight code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+}
+
+/* 针对所有token类的样式重置 */
+.token,
+[class*="token-"],
+[class*="token"] {
+    font-family: inherit !important;
+    font-weight: normal !important;
+    font-size: inherit !important;
+}
+
+/* 移除所有可能的特殊样式 */
+.token.keyword,
+.token.string,
+.token.number,
+.token.comment,
+.token.function,
+.token.operator,
+.token.class-name,
+.token.property,
+.token.punctuation,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.inserted,
+.token.deleted,
+.token.entity,
+.token.url,
+.token.selector,
+.token.attr-name,
+.token.attr-value,
+.token.char,
+.token.namespace,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    font-weight: normal !important;
+    font-family: inherit !important;
+}
+
+/* 确保GFM（GitHub Flavored Markdown）代码块样式一致 */
+.gist .gist-data .gist-syntax {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+/* 超级强制的代码块样式覆盖 - 解决JavaScript等语言字体过大问题 */
+pre code,
+pre code[class*="language-"],
+pre[class*="language-"] code,
+code[class*="language-"],
+.highlight pre,
+.highlight code,
+figure.highlight pre,
+figure.highlight code,
+table.highlighttable pre,
+table.highlighttable td.code pre,
+table.highlighttable td.code code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+}
+
+/* 覆盖PrismJS可能的全局设置 */
+code[class*="language-"] *,
+pre[class*="language-"] *,
+.token *,
+[class*="language-"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 针对JavaScript的特殊处理 */
+.language-javascript,
+[class*="language-javascript"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+.language-javascript *,
+[class*="language-javascript"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 针对TypeScript的特殊处理 */
+.language-typescript,
+[class*="language-typescript"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+.language-typescript *,
+[class*="language-typescript"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 超级强制 - 覆盖所有PrismJS token的字体样式 */
+/* 使用超高优先级选择器确保覆盖所有语法高亮的字体变化 */
+pre code .token,
+pre[class*="language-"] .token,
+code[class*="language-"] .token,
+.highlight .token,
+figure.highlight .token,
+table.highlighttable .token,
+.language-javascript .token,
+.language-typescript .token,
+.language-json .token,
+.language-python .token,
+.language-css .token,
+.language-html .token,
+.language-bash .token,
+.language-scss .token,
+.language-xml .token,
+.language-yaml .token,
+.token.token.token,
+.token.token.token.token,
+div[class*="code"] .token,
+span.token,
+[class*="token"] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    word-spacing: inherit !important;
+}
+
+/* 特别针对函数名、关键字等的强制覆盖 */
+.token.function,
+.token.function .token,
+.token.keyword,
+.token.keyword .token,
+.token.class-name,
+.token.class-name .token,
+.token.constructor,
+.token.constructor .token,
+.token.title,
+.token.title .token,
+.token.selector,
+.token.selector .token,
+.token.tag,
+.token.tag .token,
+.token.attr-name,
+.token.attr-name .token,
+.token.property,
+.token.property .token,
+.token.method,
+.token.method .token,
+.token.variable,
+.token.variable .token,
+.token.parameter,
+.token.parameter .token {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+/* 超级强制重置 - 使用更高优先级 */
+body pre code .token,
+body pre[class*="language-"] .token,
+body code[class*="language-"] .token,
+body .token,
+body span.token,
+body .highlight .token,
+body figure.highlight .token {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    line-height: inherit !important;
+}
+
+/* 最终保险 - 使用通用选择器覆盖所有可能的情况，但排除按钮 */
+pre code *,
+pre[class*="language-"] *,
+code[class*="language-"] *,
+.highlight *,
+figure.highlight *,
+table.highlighttable * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 恢复按钮的FontAwesome图标样式 */
+pre code .fa,
+pre[class*="language-"] .fa,
+code[class*="language-"] .fa,
+.highlight .fa,
+figure.highlight .fa,
+table.highlighttable .fa,
+pre code .fas,
+pre[class*="language-"] .fas,
+code[class*="language-"] .fas,
+.highlight .fas,
+figure.highlight .fas,
+table.highlighttable .fas,
+pre code .far,
+pre[class*="language-"] .far,
+code[class*="language-"] .far,
+.highlight .far,
+figure.highlight .far,
+table.highlighttable .far,
+pre code .fab,
+pre[class*="language-"] .fab,
+code[class*="language-"] .fab,
+.highlight .fab,
+figure.highlight .fab,
+table.highlighttable .fab,
+pre code .fal,
+pre[class*="language-"] .fal,
+code[class*="language-"] .fal,
+.highlight .fal,
+figure.highlight .fal,
+table.highlighttable .fal,
+pre code i[class*="fa"],
+pre[class*="language-"] i[class*="fa"],
+code[class*="language-"] i[class*="fa"],
+.highlight i[class*="fa"],
+figure.highlight i[class*="fa"],
+table.highlighttable i[class*="fa"] {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-size: inherit !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 特别恢复代码块按钮的样式 */
+.code-expand,
+.code-copy,
+.code-copy-btn,
+.copy-btn,
+.copy-button,
+button[class*="copy"],
+button[class*="Copy"],
+i.code-expand,
+i.code-copy,
+i[class*="code-expand"],
+i[class*="code-copy"] {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+}
+
+.code-expand:before,
+.code-copy:before,
+i.code-expand:before,
+i.code-copy:before {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* 但保留颜色高亮 - 只重置字体相关属性 */
+.token {
+    /* 字体属性被上面的规则覆盖为统一值 */
+}

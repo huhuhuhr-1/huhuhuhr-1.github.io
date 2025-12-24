@@ -5,13 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="k8s命令集合, AI, ETL, 大数据, 技术, 学习, 编程">
-    <meta name="description" content="Docker 命令集合1. 系统信息查看命令命令格式：
+    <meta name="description" content="Docker 命令集合
+1. 系统信息查看命令
+命令格式：
 docker versiondocker info
-
 功能说明：
 
 docker version: 查看Docker客户端和服务器的版本信息
-docker info: 显示Docker">
+docker info: 显示Docke">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -372,6 +373,10 @@ docker info: 显示Docker">
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
+                            </a>
+                        
                             <a href="/tags/k8s/">
                                 <span class="chip bg-color">k8s</span>
                             </a>
@@ -386,10 +391,6 @@ docker info: 显示Docker">
                         
                             <a href="/tags/kubectl/">
                                 <span class="chip bg-color">kubectl</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                <span class="chip bg-color">运维</span>
                             </a>
                         
                     </div>
@@ -448,9 +449,10 @@ docker info: 显示Docker">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker-命令集合"><a href="#Docker-命令集合" class="headerlink" title="Docker 命令集合"></a>Docker 命令集合</h1><h2 id="1-系统信息查看命令"><a href="#1-系统信息查看命令" class="headerlink" title="1. 系统信息查看命令"></a>1. 系统信息查看命令</h2><p><strong>命令格式：</strong></p>
+                <h1>Docker 命令集合</h1>
+<h2 id="1-系统信息查看命令">1. 系统信息查看命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker version</span><br><span class="line">docker info</span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker version</code>: 查看Docker客户端和服务器的版本信息</li>
@@ -462,9 +464,9 @@ docker info: 显示Docker">
 <li>查看Docker版本及系统配置</li>
 <li>排查Docker相关问题时获取系统信息</li>
 </ul>
-<h2 id="2-镜像管理命令"><a href="#2-镜像管理命令" class="headerlink" title="2. 镜像管理命令"></a>2. 镜像管理命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="2-镜像管理命令">2. 镜像管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker images           <span class="comment"># 列出本地镜像</span></span><br><span class="line">docker pull &lt;镜像名&gt;    <span class="comment"># 下载镜像</span></span><br><span class="line">docker search &lt;镜像名&gt;  <span class="comment"># 搜索镜像</span></span><br><span class="line">docker rmi &lt;镜像ID或名称&gt; <span class="comment"># 删除镜像</span></span><br><span class="line">docker commit &lt;容器ID&gt; &lt;新镜像名&gt; <span class="comment"># 从容器创建新镜像</span></span><br><span class="line">docker save -o &lt;文件名&gt; &lt;镜像名&gt; <span class="comment"># 保存镜像为tar文件</span></span><br><span class="line">docker load -i &lt;文件名&gt; <span class="comment"># 从tar文件加载镜像</span></span><br><span class="line">docker build -t &lt;镜像名&gt; . <span class="comment"># 从Dockerfile构建镜像</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker images</code>: 列出本地所有镜像</li>
@@ -481,9 +483,9 @@ docker info: 显示Docker">
 <li>构建和分享自定义镜像</li>
 <li>镜像的备份和迁移</li>
 </ul>
-<h2 id="3-容器管理命令"><a href="#3-容器管理命令" class="headerlink" title="3. 容器管理命令"></a>3. 容器管理命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="3-容器管理命令">3. 容器管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run [OPTIONS] &lt;镜像名&gt; [命令] <span class="comment"># 运行容器</span></span><br><span class="line">docker ps [-a] <span class="comment"># 列出容器</span></span><br><span class="line">docker start &lt;容器ID或名称&gt; <span class="comment"># 启动容器</span></span><br><span class="line">docker stop &lt;容器ID或名称&gt; <span class="comment"># 停止容器</span></span><br><span class="line">docker restart &lt;容器ID或名称&gt; <span class="comment"># 重启容器</span></span><br><span class="line">docker <span class="built_in">kill</span> &lt;容器ID或名称&gt; <span class="comment"># 强制停止容器</span></span><br><span class="line">docker <span class="built_in">rm</span> &lt;容器ID或名称&gt; <span class="comment"># 删除容器</span></span><br><span class="line">docker pause &lt;容器ID&gt; <span class="comment"># 暂停容器</span></span><br><span class="line">docker unpause &lt;容器ID&gt; <span class="comment"># 恢复容器</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker run</code>: 创建并运行容器</li>
@@ -499,9 +501,9 @@ docker info: 显示Docker">
 <li>部署和运行应用程序</li>
 <li>容器生命周期管理</li>
 </ul>
-<h2 id="4-容器交互命令"><a href="#4-容器交互命令" class="headerlink" title="4. 容器交互命令"></a>4. 容器交互命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="4-容器交互命令">4. 容器交互命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> [OPTIONS] &lt;容器ID或名称&gt; &lt;命令&gt;</span><br><span class="line">docker attach &lt;容器ID或名称&gt;</span><br><span class="line">docker logs &lt;容器ID或名称&gt;</span><br><span class="line">docker top &lt;容器ID或名称&gt;</span><br><span class="line">docker stats &lt;容器ID或名称&gt; <span class="comment"># 查看容器资源使用情况</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker exec</code>: 在运行的容器中执行命令</li>
@@ -516,9 +518,9 @@ docker info: 显示Docker">
 <li>查看容器运行状态和日志</li>
 <li>监控容器内进程和资源使用</li>
 </ul>
-<h2 id="5-网络和存储命令"><a href="#5-网络和存储命令" class="headerlink" title="5. 网络和存储命令"></a>5. 网络和存储命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="5-网络和存储命令">5. 网络和存储命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br><span class="line">docker network create &lt;网络名&gt;</span><br><span class="line">docker network <span class="built_in">rm</span> &lt;网络名&gt;</span><br><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line">docker volume create &lt;卷名&gt;</span><br><span class="line">docker volume <span class="built_in">rm</span> &lt;卷名&gt;</span><br><span class="line">docker volume prune <span class="comment"># 清理未使用的卷</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker network</code>: 管理Docker网络</li>
@@ -531,9 +533,9 @@ docker info: 显示Docker">
 <li>数据持久化存储</li>
 <li>容器间通信配置</li>
 </ul>
-<h2 id="6-其他重要运维命令"><a href="#6-其他重要运维命令" class="headerlink" title="6. 其他重要运维命令"></a>6. 其他重要运维命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="6-其他重要运维命令">6. 其他重要运维命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker inspect &lt;容器ID或镜像ID&gt; <span class="comment"># 查看详细配置信息</span></span><br><span class="line">docker <span class="built_in">cp</span> &lt;源&gt; &lt;目标&gt; <span class="comment"># 在容器和主机间复制文件</span></span><br><span class="line">docker tag &lt;源镜像&gt; &lt;目标镜像&gt; <span class="comment"># 为镜像打标签</span></span><br><span class="line">docker system <span class="built_in">df</span> <span class="comment"># 查看Docker磁盘使用情况</span></span><br><span class="line">docker system prune <span class="comment"># 清理未使用的资源</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker inspect</code>: 查看对象（容器、镜像、网络等）的详细配置</li>
@@ -549,9 +551,9 @@ docker info: 显示Docker">
 <li>数据备份和迁移</li>
 <li>系统资源管理和清理</li>
 </ul>
-<h2 id="7-安全和登录命令"><a href="#7-安全和登录命令" class="headerlink" title="7. 安全和登录命令"></a>7. 安全和登录命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="7-安全和登录命令">7. 安全和登录命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker login [SERVER]</span><br><span class="line">docker <span class="built_in">logout</span> [SERVER]</span><br><span class="line">docker events</span><br><span class="line">docker run --<span class="built_in">rm</span> -it alpine:latest <span class="comment"># 临时运行容器</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>docker login</code>: 登录Docker仓库</li>
@@ -566,9 +568,10 @@ docker info: 显示Docker">
 <li>监控Docker活动</li>
 <li>临时任务执行</li>
 </ul>
-<h1 id="Sealos-命令集合"><a href="#Sealos-命令集合" class="headerlink" title="Sealos 命令集合"></a>Sealos 命令集合</h1><h2 id="1-集群管理命令"><a href="#1-集群管理命令" class="headerlink" title="1. 集群管理命令"></a>1. 集群管理命令</h2><p><strong>命令格式：</strong></p>
+<h1>Sealos 命令集合</h1>
+<h2 id="1-集群管理命令">1. 集群管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos run &lt;镜像名&gt; [可选参数] <span class="comment"># 运行集群镜像，快速部署应用</span></span><br><span class="line">sealos apply -f Clusterfile <span class="comment"># 使用Clusterfile运行集群镜像</span></span><br><span class="line">sealos reset <span class="comment"># 重置集群中的所有内容</span></span><br><span class="line">sealos status <span class="comment"># 查看Sealos集群的状态</span></span><br><span class="line">sealos cert <span class="comment"># 更新Kubernetes API服务器的证书</span></span><br><span class="line">sealos gen <span class="comment"># 生成具有所有默认设置的Clusterfile</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>sealos run</code>: 轻松运行云原生应用，是部署集群的常用方式</li>
@@ -585,9 +588,9 @@ docker info: 显示Docker">
 <li>证书更新和管理</li>
 <li>集群配置文件创建</li>
 </ul>
-<h2 id="2-节点管理命令"><a href="#2-节点管理命令" class="headerlink" title="2. 节点管理命令"></a>2. 节点管理命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="2-节点管理命令">2. 节点管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos add --masters &lt;IP列表&gt; <span class="comment"># 添加master节点到集群</span></span><br><span class="line">sealos add --nodes &lt;IP列表&gt; <span class="comment"># 添加node节点到集群</span></span><br><span class="line">sealos delete --masters &lt;IP列表&gt; <span class="comment"># 从集群中删除master节点</span></span><br><span class="line">sealos delete --nodes &lt;IP列表&gt; <span class="comment"># 从集群中删除node节点</span></span><br><span class="line">sealos <span class="built_in">exec</span> -m <span class="string">"command"</span> <span class="comment"># 在所有master节点上执行命令</span></span><br><span class="line">sealos <span class="built_in">exec</span> -n <span class="string">"command"</span> <span class="comment"># 在所有node节点上执行命令</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>sealos add</code>: 向集群中添加master或node节点</li>
@@ -600,9 +603,9 @@ docker info: 显示Docker">
 <li>节点维护或故障后移除节点</li>
 <li>在集群节点上执行维护任务</li>
 </ul>
-<h2 id="3-远程操作命令"><a href="#3-远程操作命令" class="headerlink" title="3. 远程操作命令"></a>3. 远程操作命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="3-远程操作命令">3. 远程操作命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos <span class="built_in">exec</span> --hosts &lt;IP地址&gt; <span class="string">"command"</span> <span class="comment"># 在指定节点上执行命令</span></span><br><span class="line">sealos scp &lt;本地文件&gt; &lt;节点IP:远程路径&gt; <span class="comment"># 将文件复制到指定节点</span></span><br><span class="line">sealos scp &lt;节点IP:远程文件&gt; &lt;本地路径&gt; <span class="comment"># 从指定节点复制文件</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>sealos exec</code>: 在远程节点上执行shell命令或脚本</li>
@@ -614,9 +617,9 @@ docker info: 显示Docker">
 <li>向节点传输配置文件或脚本</li>
 <li>远程收集日志或配置文件</li>
 </ul>
-<h2 id="4-容器和镜像命令"><a href="#4-容器和镜像命令" class="headerlink" title="4. 容器和镜像命令"></a>4. 容器和镜像命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="4-容器和镜像命令">4. 容器和镜像命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos images <span class="comment"># 列出本地存储中的镜像</span></span><br><span class="line">sealos pull &lt;镜像名&gt; <span class="comment"># 从指定位置拉取镜像</span></span><br><span class="line">sealos push &lt;镜像名&gt; &lt;目标地址&gt; <span class="comment"># 将镜像推送到指定的目标</span></span><br><span class="line">sealos rmi &lt;镜像名或ID&gt; <span class="comment"># 从本地存储中删除一个或多个镜像</span></span><br><span class="line">sealos save -o &lt;文件名&gt; &lt;镜像名&gt; <span class="comment"># 将镜像保存到存档文件中</span></span><br><span class="line">sealos load -i &lt;文件名&gt; <span class="comment"># 从文件中加载镜像</span></span><br><span class="line">sealos tag &lt;源镜像&gt; &lt;目标镜像&gt; <span class="comment"># 为本地镜像添加一个附加名称</span></span><br><span class="line">sealos build -t &lt;镜像名&gt; . <span class="comment"># 构建自定义集群镜像</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>sealos images/pull/push/rmi/save/load/tag</code>: 镜像的基本操作</li>
@@ -628,9 +631,9 @@ docker info: 显示Docker">
 <li>构建和推送自定义集群镜像</li>
 <li>镜像的备份和迁移</li>
 </ul>
-<h2 id="5-其他辅助命令"><a href="#5-其他辅助命令" class="headerlink" title="5. 其他辅助命令"></a>5. 其他辅助命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="5-其他辅助命令">5. 其他辅助命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sealos completion &lt;shell&gt; <span class="comment"># 为指定的shell生成自动补全脚本</span></span><br><span class="line">sealos version <span class="comment"># 打印版本信息</span></span><br><span class="line">sealos <span class="built_in">env</span> <span class="comment"># 打印Sealos使用的所有环境信息</span></span><br><span class="line">sealos login &lt;仓库地址&gt; <span class="comment"># 登录到容器仓库</span></span><br><span class="line">sealos <span class="built_in">logout</span> <span class="comment"># 登出容器仓库</span></span><br><span class="line">sealos inspect &lt;镜像名&gt; <span class="comment"># 检查容器或镜像的配置</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>sealos completion</code>: 配置命令行自动补全功能</li>
@@ -645,17 +648,18 @@ docker info: 显示Docker">
 <li>仓库访问认证</li>
 <li>镜像详细信息查看</li>
 </ul>
-<h1 id="Kubectl-命令集合"><a href="#Kubectl-命令集合" class="headerlink" title="Kubectl 命令集合"></a>Kubectl 命令集合</h1><h2 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1. 基础语法"></a>1. 基础语法</h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">kubectl [command] [TYPE] [NAME] [flags]</span><br></pre></td></tr></tbody></table></figure>
-
+<h1>Kubectl 命令集合</h1>
+<h2 id="1-基础语法">1. 基础语法</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">kubectl [command] [TYPE] [NAME] [flags]</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li><strong>command</strong>：指定要对一个或多个资源执行的操作，如create、get、describe和delete</li>
 <li><strong>TYPE</strong>：指定资源类型，不区分大小写，可以为单数、复数或缩写形式</li>
 <li><strong>NAME</strong>：指定资源的名称，区分大小写，若省略则显示所有资源</li>
 <li><strong>flags</strong>：指定可选参数，如-s或–server参数指定Kubernetes API服务器的地址和端口</li>
 </ul>
-<h2 id="2-资源查看与查询命令"><a href="#2-资源查看与查询命令" class="headerlink" title="2. 资源查看与查询命令"></a>2. 资源查看与查询命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="2-资源查看与查询命令">2. 资源查看与查询命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl get pods -A                    <span class="comment"># 列出所有命名空间中的Pod</span></span><br><span class="line">kubectl get nodes                      <span class="comment"># 获取所有节点信息</span></span><br><span class="line">kubectl get deployments -n namespace   <span class="comment"># 获取指定命名空间下的部署信息</span></span><br><span class="line">kubectl get services                   <span class="comment"># 获取服务信息</span></span><br><span class="line">kubectl get pv,pvc                     <span class="comment"># 获取持久卷和持久卷申领信息</span></span><br><span class="line">kubectl get all -n namespace           <span class="comment"># 获取指定命名空间下所有资源</span></span><br><span class="line">kubectl get pods --watch               <span class="comment"># 实时监控Pod状态变化</span></span><br><span class="line">kubectl get events                     <span class="comment"># 查看集群事件</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl get</code>: 获取资源对象的基本信息</li>
@@ -668,9 +672,9 @@ docker info: 显示Docker">
 <li>检查应用部署状态</li>
 <li>查看服务暴露情况</li>
 </ul>
-<h2 id="3-资源创建与管理命令"><a href="#3-资源创建与管理命令" class="headerlink" title="3. 资源创建与管理命令"></a>3. 资源创建与管理命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="3-资源创建与管理命令">3. 资源创建与管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create -f resource.yaml                    <span class="comment"># 从配置文件创建资源</span></span><br><span class="line">kubectl apply -f resource.yaml                    <span class="comment"># 应用资源配置(创建或更新)</span></span><br><span class="line">kubectl apply -f &lt;directory&gt;                      <span class="comment"># 应用目录下所有配置文件</span></span><br><span class="line">kubectl delete pod pod_name                       <span class="comment"># 删除指定Pod</span></span><br><span class="line">kubectl delete -f resource.yaml                   <span class="comment"># 从配置文件删除资源</span></span><br><span class="line">kubectl scale deployment deployment_name --replicas=N  <span class="comment"># 扩缩容部署副本数</span></span><br><span class="line">kubectl expose deployment deployment_name --port=port   <span class="comment"># 暴露服务</span></span><br><span class="line">kubectl label pods pod_name key=value             <span class="comment"># 为Pod添加标签</span></span><br><span class="line">kubectl annotate pods pod_name key=value          <span class="comment"># 为Pod添加注解</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl create/apply</code>: 创建或更新资源对象</li>
@@ -685,9 +689,9 @@ docker info: 显示Docker">
 <li>动态调整应用负载能力</li>
 <li>删除异常或不需要的资源</li>
 </ul>
-<h2 id="4-资源描述与调试命令"><a href="#4-资源描述与调试命令" class="headerlink" title="4. 资源描述与调试命令"></a>4. 资源描述与调试命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="4-资源描述与调试命令">4. 资源描述与调试命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl describe pod pod_name                       <span class="comment"># 显示Pod详细信息和事件</span></span><br><span class="line">kubectl describe node node_name                   <span class="comment"># 显示节点详细信息</span></span><br><span class="line">kubectl describe deployment deployment_name       <span class="comment"># 显示部署详细信息</span></span><br><span class="line">kubectl logs pod_name                             <span class="comment"># 查看Pod日志</span></span><br><span class="line">kubectl logs pod_name -f                          <span class="comment"># 实时查看Pod日志流</span></span><br><span class="line">kubectl logs pod_name --<span class="built_in">tail</span>=100                  <span class="comment"># 查看Pod最后100行日志</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it pod_name -- bash                 <span class="comment"># 进入Pod执行交互命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it pod_name -- sh                   <span class="comment"># 进入Pod执行sh命令</span></span><br><span class="line">kubectl port-forward pod_name local_port:pod_port <span class="comment"># 端口转发到本地</span></span><br><span class="line">kubectl <span class="built_in">cp</span> /path/to/file &lt;pod&gt;:/path/to/file      <span class="comment"># 在Pod和本地间复制文件</span></span><br><span class="line">kubectl top nodes                                 <span class="comment"># 显示节点资源使用情况</span></span><br><span class="line">kubectl top pods -n namespace                     <span class="comment"># 显示Pod资源使用情况</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl describe</code>: 显示资源的详细配置和状态信息</li>
@@ -704,9 +708,9 @@ docker info: 显示Docker">
 <li>实时监控应用输出</li>
 <li>本地调试集群内服务</li>
 </ul>
-<h2 id="5-配置与更新命令"><a href="#5-配置与更新命令" class="headerlink" title="5. 配置与更新命令"></a>5. 配置与更新命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="5-配置与更新命令">5. 配置与更新命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl <span class="built_in">set</span> image deployment/deployment_name container_name=image:newtag  <span class="comment"># 更新部署的镜像</span></span><br><span class="line">kubectl patch deployment deployment_name -p <span class="string">'{"spec":{"replicas":3}}'</span>    <span class="comment"># 部分更新资源</span></span><br><span class="line">kubectl rollout <span class="built_in">history</span> deployment deployment_name                        <span class="comment"># 查看部署历史</span></span><br><span class="line">kubectl rollout undo deployment deployment_name                           <span class="comment"># 回滚到上一个版本</span></span><br><span class="line">kubectl rollout undo deployment deployment_name --to-revision=N           <span class="comment"># 回滚到指定版本</span></span><br><span class="line">kubectl rollout status deployment deployment_name                         <span class="comment"># 查看滚动更新状态</span></span><br><span class="line">kubectl <span class="built_in">set</span> <span class="built_in">env</span> deployment/deployment_name ENV_NAME=ENV_VALUE            <span class="comment"># 设置环境变量</span></span><br><span class="line">kubectl <span class="built_in">set</span> resources deployment/deployment_name --limits=cpu=200m      <span class="comment"># 设置资源限制</span></span><br><span class="line">kubectl patch pod pod_name -p <span class="string">'{"spec":{"activeDeadlineSeconds":100}}'</span>   <span class="comment"># 部分更新Pod</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl set image</code>: 更新部署的镜像</li>
@@ -721,9 +725,9 @@ docker info: 显示Docker">
 <li>监控更新进度</li>
 <li>修改资源配置</li>
 </ul>
-<h2 id="6-节点与集群管理命令"><a href="#6-节点与集群管理命令" class="headerlink" title="6. 节点与集群管理命令"></a>6. 节点与集群管理命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="6-节点与集群管理命令">6. 节点与集群管理命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl cordon node_name                    <span class="comment"># 标记节点不可调度</span></span><br><span class="line">kubectl uncordon node_name                  <span class="comment"># 标记节点可调度</span></span><br><span class="line">kubectl drain node_name                     <span class="comment"># 安全排空节点</span></span><br><span class="line">kubectl taint nodes node_name key=value:NoSchedule  <span class="comment"># 给节点添加污点</span></span><br><span class="line">kubectl cluster-info                        <span class="comment"># 显示主控节点和服务信息</span></span><br><span class="line">kubectl config view                         <span class="comment"># 查看kubeconfig配置</span></span><br><span class="line">kubectl config get-contexts                 <span class="comment"># 列出kubeconfig中的上下文</span></span><br><span class="line">kubectl config use-context context-name     <span class="comment"># 切换当前上下文</span></span><br><span class="line">kubectl version                             <span class="comment"># 显示客户端和服务端版本</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl cordon/uncordon</code>: 标记节点可调度或不可调度</li>
@@ -738,9 +742,9 @@ docker info: 显示Docker">
 <li>节点维护前安全驱逐Pod</li>
 <li>集群配置管理</li>
 </ul>
-<h2 id="7-配置管理与网络命令"><a href="#7-配置管理与网络命令" class="headerlink" title="7. 配置管理与网络命令"></a>7. 配置管理与网络命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="7-配置管理与网络命令">7. 配置管理与网络命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl create configmap name --from-file=file         <span class="comment"># 创建ConfigMap</span></span><br><span class="line">kubectl create configmap name --from-literal=key=val   <span class="comment"># 创建键值对ConfigMap</span></span><br><span class="line">kubectl create secret generic name --from-literal=key=val <span class="comment"># 创建Secret</span></span><br><span class="line">kubectl create secret generic name --from-file=file    <span class="comment"># 从文件创建Secret</span></span><br><span class="line">kubectl get configmaps -n namespace                   <span class="comment"># 获取ConfigMap</span></span><br><span class="line">kubectl get secrets -n namespace                      <span class="comment"># 获取Secret</span></span><br><span class="line">kubectl get ingress                                   <span class="comment"># 获取入口资源</span></span><br><span class="line">kubectl get networkpolicy                             <span class="comment"># 获取网络策略</span></span><br><span class="line">kubectl create -f service-account.yaml                <span class="comment"># 创建服务账户</span></span><br><span class="line">kubectl get serviceaccount -n namespace               <span class="comment"># 获取服务账户</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl create configmap/secret</code>: 创建配置和密钥</li>
@@ -753,9 +757,9 @@ docker info: 显示Docker">
 <li>控制应用网络访问</li>
 <li>权限管理</li>
 </ul>
-<h2 id="8-调试和排错命令"><a href="#8-调试和排错命令" class="headerlink" title="8. 调试和排错命令"></a>8. 调试和排错命令</h2><p><strong>命令格式：</strong></p>
+<h2 id="8-调试和排错命令">8. 调试和排错命令</h2>
+<p><strong>命令格式：</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl debug node/node_name -it --image=busybox    <span class="comment"># 调试节点</span></span><br><span class="line">kubectl debug pod_name -it --image=busybox          <span class="comment"># 调试Pod</span></span><br><span class="line">kubectl get componentstatuses                     <span class="comment"># 查看集群组件状态</span></span><br><span class="line">kubectl get pods --field-selector status.phase!=Running <span class="comment"># 查找非运行状态Pod</span></span><br><span class="line">kubectl get pods --field-selector spec.nodeName=&lt;node-name&gt; <span class="comment"># 查找节点上Pod</span></span><br><span class="line">kubectl events --<span class="keyword">for</span> pod/pod_name                 <span class="comment"># 查看Pod事件</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>功能说明：</strong></p>
 <ul>
 <li><code>kubectl debug</code>: 创建调试Pod用于排错</li>
@@ -768,19 +772,24 @@ docker info: 显示Docker">
 <li>排查集群组件问题</li>
 <li>查找特定状态的资源</li>
 </ul>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>本文档全面总结了Docker、Sealos和Kubectl三个重要工具的运维命令，涵盖了从基础操作到高级管理的各个方面。这些命令是云原生运维工程师必须掌握的核心技能，熟练使用这些命令可以有效提高日常运维效率，保障应用的稳定运行。</p>
-<h2 id="常用运维流程示例"><a href="#常用运维流程示例" class="headerlink" title="常用运维流程示例"></a>常用运维流程示例</h2><h3 id="1-应用部署流程"><a href="#1-应用部署流程" class="headerlink" title="1. 应用部署流程"></a>1. 应用部署流程</h3><ol>
+<h1>结论</h1>
+<p>本文档全面总结了Docker、Sealos和Kubectl三个重要工具的运维命令，涵盖了从基础操作到高级管理的各个方面。这些命令是云原生运维工程师必须掌握的核心技能，熟练使用这些命令可以有效提高日常运维效率，保障应用的稳定运行。</p>
+<h2 id="常用运维流程示例">常用运维流程示例</h2>
+<h3 id="1-应用部署流程">1. 应用部署流程</h3>
+<ol>
 <li>使用Docker构建应用镜像</li>
 <li>使用Sealos部署Kubernetes集群</li>
 <li>使用Kubectl部署应用到集群</li>
 </ol>
-<h3 id="2-问题排查流程"><a href="#2-问题排查流程" class="headerlink" title="2. 问题排查流程"></a>2. 问题排查流程</h3><ol>
+<h3 id="2-问题排查流程">2. 问题排查流程</h3>
+<ol>
 <li>使用kubectl get pods检查Pod状态</li>
 <li>使用kubectl describe pod查看详情</li>
 <li>使用kubectl logs查看日志</li>
 <li>使用kubectl exec进入Pod调试</li>
 </ol>
-<h3 id="3-集群维护流程"><a href="#3-集群维护流程" class="headerlink" title="3. 集群维护流程"></a>3. 集群维护流程</h3><ol>
+<h3 id="3-集群维护流程">3. 集群维护流程</h3>
+<ol>
 <li>使用kubectl cordon标记节点不可调度</li>
 <li>使用kubectl drain安全排空节点</li>
 <li>维护完成后使用kubectl uncordon恢复节点调度</li>
@@ -851,6 +860,10 @@ docker info: 显示Docker">
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
+                                </a>
+                            
                                 <a href="/tags/k8s/">
                                     <span class="chip bg-color">k8s</span>
                                 </a>
@@ -865,10 +878,6 @@ docker info: 显示Docker">
                             
                                 <a href="/tags/kubectl/">
                                     <span class="chip bg-color">kubectl</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                    <span class="chip bg-color">运维</span>
                                 </a>
                             
                         </div>
@@ -980,20 +989,20 @@ docker info: 显示Docker">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/k8s/">
-                        <span class="chip bg-color">k8s</span>
-                    </a>
-                    
-                    <a href="/tags/sealos/">
-                        <span class="chip bg-color">sealos</span>
+                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
+                        <span class="chip bg-color">容器化</span>
                     </a>
                     
                     <a href="/tags/%E8%BF%90%E7%BB%B4/">
                         <span class="chip bg-color">运维</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
-                        <span class="chip bg-color">容器化</span>
+                    <a href="/tags/k8s/">
+                        <span class="chip bg-color">k8s</span>
+                    </a>
+                    
+                    <a href="/tags/sealos/">
+                        <span class="chip bg-color">sealos</span>
                     </a>
                     
                     <a href="/tags/%E9%83%A8%E7%BD%B2/">
@@ -1041,10 +1050,6 @@ docker info: 显示Docker">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                        <span class="chip bg-color">运维</span>
-                    </a>
-                    
                     <a href="/tags/Kubernetes/">
                         <span class="chip bg-color">Kubernetes</span>
                     </a>
@@ -1059,6 +1064,10 @@ docker info: 显示Docker">
                     
                     <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">
                         <span class="chip bg-color">容器化</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
                     </a>
                     
                 </div>
@@ -1254,7 +1263,7 @@ docker info: 显示Docker">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.7k</span>
+                        class="white-color">28k</span>
             
             
             
@@ -1456,6 +1465,14 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
     
 
     
