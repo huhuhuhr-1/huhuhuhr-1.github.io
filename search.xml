@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>测试智能部署脚本</title>
+      <link href="/2026/01/12/test-deploy/"/>
+      <url>/2026/01/12/test-deploy/</url>
+      
+        <content type="html"><![CDATA[<h1>测试 Claude 智能部署脚本</h1><p>这是一篇测试文章，用于验证 Claude AI 生成的提交信息功能。</p><h2 id="功能特性">功能特性</h2><ul><li>使用 Claude AI 分析代码变更</li><li>自动生成符合规范的提交信息</li><li>一键部署到 GitHub Pages</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>claude docs</title>
       <link href="/2025/12/24/claude-docs/"/>
       <url>/2025/12/24/claude-docs/</url>

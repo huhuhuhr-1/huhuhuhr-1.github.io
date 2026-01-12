@@ -6,7 +6,7 @@
   <link href="https://blog.huhuhuhr.top/atom.xml" rel="self"/>
   
   <link href="https://blog.huhuhuhr.top/"/>
-  <updated>2025-12-25T03:17:24.726Z</updated>
+  <updated>2026-01-12T06:01:28.108Z</updated>
   <id>https://blog.huhuhuhr.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试智能部署脚本</title>
+    <link href="https://blog.huhuhuhr.top/2026/01/12/test-deploy/"/>
+    <id>https://blog.huhuhuhr.top/2026/01/12/test-deploy/</id>
+    <published>2026-01-12T06:30:00.000Z</published>
+    <updated>2026-01-12T06:01:28.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;测试 Claude 智能部署脚本&lt;/h1&gt;
+&lt;p&gt;这是一篇测试文章，用于验证 Claude AI 生成的提交信息功能。&lt;/p&gt;
+&lt;h2 id=&quot;功能特性&quot;&gt;功能特性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Claude AI</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.huhuhuhr.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="测试" scheme="https://blog.huhuhuhr.top/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>claude docs</title>
