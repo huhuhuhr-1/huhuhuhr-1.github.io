@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>huhuhuhr</title>
+  
+  <subtitle>学习记录与技术分享</subtitle>
+  <link href="https://blog.huhuhuhr.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.huhuhuhr.top/"/>
+  <updated>2026-09-02T15:16:18.435Z</updated>
+  <id>https://blog.huhuhuhr.top/</id>
+  
+  <author>
+    <name>huhuhuhr</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试智能部署脚本</title>
+    <link href="https://blog.huhuhuhr.top/2026/01/12/test-deploy/"/>
+    <id>https://blog.huhuhuhr.top/2026/01/12/test-deploy/</id>
+    <published>2026-01-12T06:30:00.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;测试 Claude 智能部署脚本&lt;/h1&gt;
+&lt;p&gt;这是一篇测试文章，用于验证 Claude AI 生成的提交信息功能。&lt;/p&gt;
+&lt;h2 id=&quot;功能特性&quot;&gt;功能特性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Claude AI</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.huhuhuhr.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="测试" scheme="https://blog.huhuhuhr.top/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>claude docs</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/24/claude-docs/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/24/claude-docs/</id>
+    <published>2025-12-24T09:37:51.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Claude Code CLI 完整使用指南&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Claude Code - 专业的 AI 辅助编程命令行工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tmp-record</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/09/tmp-record/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/09/tmp-record/</id>
+    <published>2025-12-09T02:48:13.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;https-github-com-rlancemartin-claude-diary原文章https-rlancemartin-github-io-2025-12-01-claude-diary&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Qwen Code 0.4.0 TypeScript SDK 完全实战指南</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/08/0007-qwen-code-0-4-0-typescript-sdk-guide/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/08/0007-qwen-code-0-4-0-typescript-sdk-guide/</id>
+    <published>2025-12-08T08:00:00.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Qwen Code 0.4.0 TypeScript SDK 完全实战指南&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;从命令行工具到可编程 AI 平台的革命性升级 - 包含完整可运行的项目示例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="技术实践" scheme="https://blog.huhuhuhr.top/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+    <category term="AI" scheme="https://blog.huhuhuhr.top/tags/AI/"/>
+    
+    <category term="TypeScript" scheme="https://blog.huhuhuhr.top/tags/TypeScript/"/>
+    
+    <category term="Qwen" scheme="https://blog.huhuhuhr.top/tags/Qwen/"/>
+    
+    <category term="SDK" scheme="https://blog.huhuhuhr.top/tags/SDK/"/>
+    
+    <category term="开发工具" scheme="https://blog.huhuhuhr.top/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法完整指南</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/08/0006-markdown-yu-fa-wan-zheng-zhi-nan/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/08/0006-markdown-yu-fa-wan-zheng-zhi-nan/</id>
+    <published>2025-12-08T07:05:06.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Markdown 语法完整指南&lt;/h1&gt;
+&lt;p&gt;这是一个完整的Markdown语法参考指南，展示了在Hexo博客中可以使用的各种Markdown元素和扩展功能。&lt;/p&gt;
+&lt;h2 id=&quot;📝-文本格式&quot;&gt;📝 文本格式&lt;/h2&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="技术指南" scheme="https://blog.huhuhuhr.top/categories/%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97/"/>
+    
+    <category term="博客教程" scheme="https://blog.huhuhuhr.top/categories/%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Markdown" scheme="https://blog.huhuhuhr.top/tags/Markdown/"/>
+    
+    <category term="语法指南" scheme="https://blog.huhuhuhr.top/tags/%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"/>
+    
+    <category term="写作教程" scheme="https://blog.huhuhuhr.top/tags/%E5%86%99%E4%BD%9C%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="博客功能" scheme="https://blog.huhuhuhr.top/tags/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sealos问答记录</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/07/0005-sealos-wen-da-ji-lu/</id>
+    <published>2025-12-07T13:30:00.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Sealos运维问答记录&lt;/h1&gt;
+&lt;h2 id=&quot;1-概念理解&quot;&gt;1. 概念理解&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-Kubernetes架构相关&quot;&gt;1.1</summary>
+        
+      
+    
+    
+    
+    
+    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="k8s" scheme="https://blog.huhuhuhr.top/tags/k8s/"/>
+    
+    <category term="sealos" scheme="https://blog.huhuhuhr.top/tags/sealos/"/>
+    
+    <category term="问答" scheme="https://blog.huhuhuhr.top/tags/%E9%97%AE%E7%AD%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sealos实战</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/07/0004-sealos-shi-zhan/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/07/0004-sealos-shi-zhan/</id>
+    <published>2025-12-07T12:45:53.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Sealos实战：从零开始部署和管理Kubernetes集群&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="容器化" scheme="https://blog.huhuhuhr.top/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/"/>
+    
+    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="k8s" scheme="https://blog.huhuhuhr.top/tags/k8s/"/>
+    
+    <category term="sealos" scheme="https://blog.huhuhuhr.top/tags/sealos/"/>
+    
+    <category term="部署" scheme="https://blog.huhuhuhr.top/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s命令集合</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/07/0003-k8s-ming-ling-ji-he/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/07/0003-k8s-ming-ling-ji-he/</id>
+    <published>2025-12-07T12:24:52.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Docker 命令集合&lt;/h1&gt;
+&lt;h2 id=&quot;1-系统信息查看命令&quot;&gt;1. 系统信息查看命令&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;命令格式：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="k8s" scheme="https://blog.huhuhuhr.top/tags/k8s/"/>
+    
+    <category term="sealos" scheme="https://blog.huhuhuhr.top/tags/sealos/"/>
+    
+    <category term="docker" scheme="https://blog.huhuhuhr.top/tags/docker/"/>
+    
+    <category term="kubectl" scheme="https://blog.huhuhuhr.top/tags/kubectl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本地安装sealos记录</title>
+    <link href="https://blog.huhuhuhr.top/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/"/>
+    <id>https://blog.huhuhuhr.top/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/</id>
+    <published>2025-12-07T08:57:52.000Z</published>
+    <updated>2026-09-02T15:16:18.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Sealos和Kubernetes本地安装记录&lt;/h1&gt;
+&lt;h2 id=&quot;目的&quot;&gt;目的&lt;/h2&gt;
+&lt;p&gt;本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Kubernetes" scheme="https://blog.huhuhuhr.top/tags/Kubernetes/"/>
+    
+    <category term="Sealos" scheme="https://blog.huhuhuhr.top/tags/Sealos/"/>
+    
+    <category term="本地部署" scheme="https://blog.huhuhuhr.top/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="容器化" scheme="https://blog.huhuhuhr.top/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/"/>
+    
+    <category term="运维" scheme="https://blog.huhuhuhr.top/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客搭建</title>
+    <link href="https://blog.huhuhuhr.top/2025/11/30/0001-ge-ren-bo-ke-da-jian/"/>
+    <id>https://blog.huhuhuhr.top/2025/11/30/0001-ge-ren-bo-ke-da-jian/</id>
+    <published>2025-11-30T03:43:37.000Z</published>
+    <updated>2026-09-02T15:16:18.434Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;基于Qwen Code + hexo-theme-matery + GitHub Pages的个人技术博客搭建指南&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://blog.huhuhuhr.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Qwen Code" scheme="https://blog.huhuhuhr.top/tags/Qwen-Code/"/>
+    
+    <category term="Hexo" scheme="https://blog.huhuhuhr.top/tags/Hexo/"/>
+    
+    <category term="博客搭建" scheme="https://blog.huhuhuhr.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="AI工具" scheme="https://blog.huhuhuhr.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+</feed>

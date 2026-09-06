@@ -1,0 +1,631 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="标签: Sealos, AI, ETL, 大数据, 技术, 学习, 编程">
+    <meta name="description" content="这里是huhuhuhr的技术博客，记录学习历程和技术心得">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>标签: Sealos | huhuhuhr</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/css/site-v2.css">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">huhuhuhr</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <!-- <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li> -->
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">huhuhuhr</div>
+        <div class="logo-desc">
+            
+            这里是huhuhuhr的技术博客，记录学习历程和技术心得
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huhuhuhr-1" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huhuhuhr-1" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <main class="content site-index-page taxonomy-posts-page">
+    <section class="container site-index-shell" aria-labelledby="taxonomy-title">
+        <header class="site-index-heading">
+            <h1 id="taxonomy-title">#Sealos</h1>
+            <span>1 篇文章</span>
+        </header>
+        <div class="site-index-list">
+    
+    
+    <article class="site-index-item">
+        <time datetime="2025-12-07">2025-12-07</time>
+        <div>
+            <h2><a href="/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/">本地安装sealos记录</a></h2>
+            <p>Sealos和Kubernetes本地安装记录 目的 本记录详细说明了如何在本地环境中安装Sealos和Kubernetes。我们将提供一个简洁实用的安装流程，以确保成功搭建Kubernetes环境。 环境要求 Ubuntu 22.04 LTS 或更高版本 至少4GB RAM和2个CPU核心 至少40GB可用磁盘空间 能够访问网络以下载组件 root权限或sudo权限 系统准备 1. 更新系统包 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y 2. 安装必要工具 sudo apt install -y curl wget apt-transport-https ca-certificates 安装Sealos 1. 安装依赖 sudo apt install -y uidmap fuse-overlayfs 2. 下载并安装Sealos # 方式1: 从官方源下载wget https://github.com/labring/sealos/releases/download/v5.0.0/sealos_5.0.0_linux_amd64.deb# 安装deb包sudo dpkg -i sealos_5.0.0_linux_amd64.deb 3. 验证安装 sealos version 如果成功，应该能看到Sealos的版本信息。 安装Kubernetes 1. 配置系统参数 由于Sealos运行Kubernetes需要纯净环境，我们需要确保系统配置正确： # 关闭交换分区（Kubernetes要求）sudo swapoff -a# 永久禁用交换分区（添加到fstab注释）sudo sed -i &#39;/ swap / s/^\(.*\)$/#\1/g&#39; /etc/fstab# 启用内核模块sudo modprobe overlaysudo modprobe br_netfilter# 配置内核参数cat &amp;lt;&amp;lt;EOF | sudo tee /etc/modules-load.d/k8s.confoverlaybr_netfilterEOF# 设置系统参数cat &amp;lt;&amp;lt;EOF | sudo tee /etc/sysctl.d/k8s.confnet.bridge.bridge-nf-call-iptables = 1net.bridge.bridge-nf-call-ip6tables = 1net.ipv4.ip_forward = 1EOF# 应用系统参数sudo sysctl --system 2. 安装Containerd（如果系统没有默认安装） # 安装containerdsudo apt install -y containerd# 配置containerdsudo mkdir -p /etc/containerdcontainerd config default | sudo tee /etc/containerd/config.toml# 修改设置以使用systemd作为cgroup驱动sudo sed -i &#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39; /etc/containerd/config.toml# 重启containerdsudo systemctl restart containerdsudo systemctl enable containerd 3. 使用Sealos部署单节点Kubernetes集群 获取本机IP地址（这将是控制节点的IP）： MASTER_IP=$(hostname -I | awk &#39;{print $1}&#39;)echo &#34;Master IP: $MASTER_IP&#34; 使用Sealos创建单节点集群： # 运行Kubernetes集群sudo sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters $MASTER_IP 这将： 拉取并安装Kubernetes v1.28.15 安装Calico网络插件 创建单节点集群 配置kubectl 1. 配置访问凭证 mkdir -p $HOME/.kubesudo cp /etc/kubernetes/admin.conf $HOME/.kube/configsudo chown $(id -u):$(id -g) $HOME/.kube/config 2. 验证集群状态 kubectl get nodes 如果一切正常，您应该看到类似以下输出： NAME STATUS ROLES AGE VERSION&amp;lt;hostname&amp;gt; Ready control-plane 2m v1.28.15 3. 验证所有系统Pod运行状态 kubectl get pods -A 配置单节点集群 在单节点集群中，我们需要允许Pod在控制平面上运行： kubectl taint nodes --all node-role.kubernetes.io/control-plane- 故障排除 如果Sealos安装失败 如果Sealos无法正常部署Kubernetes，您可以使用kubeadm手动部署： # 1. 安装kubeadm、kubelet和kubectlcurl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpgecho &#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /&#39; | sudo tee /etc/apt/sources.list.d/kubernetes.listsudo apt updatesudo apt install -y kubelet kubeadm kubectlsudo apt-mark hold kubelet kubeadm kubectl# 2. 初始化集群sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=$MASTER_IP# 3. 配置kubectlmkdir -p $HOME/.kubesudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/configsudo chown $(id -u):$(id -g) $HOME/.kube/config# 4. 安装网络插件（Flannel作为示例）kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml 如果遇到容器运行时错误 如果出现与containerd相关的错误，尝试重新启动服务： sudo systemctl restart containerdsudo systemctl restart kubelet 验证安装 1. 检查集群信息 kubectl cluster-info 2. 创建测试Pod kubectl create deployment nginx --image=nginxkubectl get pods 3. 检查集群组件状态 kubectl get componentstatuses 清理和重置 如果需要重新开始，可以使用以下命令清理环境： # 使用Sealos重置集群sudo sealos reset# 或者使用kubeadm重置sudo kubeadm reset# 清理iptables规则sudo iptables -F &amp;amp;&amp;amp; sudo iptables -t nat -F &amp;amp;&amp;amp; sudo iptables -t mangle -F &amp;amp;&amp;amp; sudo iptables -X 过程中的问题与解决 在实际安装过程中，我遇到了以下几个关键问题，记录如下： 1. Sealos环境冲突问题 在使用sudo sealos run labring/kubernetes:v1.28.15 labring/calico:v3.26.2 --masters 192.168.1.18命令时，遇到错误： Error: failed to run checker: containerd is installed on 192.168.1.18:22 please uninstall it first 解决方案：Sealos要求纯净环境，不允许存在预安装的containerd。我执行了以下命令： sudo systemctl stop containerd &amp;amp;&amp;amp; sudo systemctl disable containerdsudo apt remove containerd.io containerd -y 2. 镜像仓库访问问题 在尝试使用Sealos安装时，遇到了网络插件镜像无法拉取的问题： Error: error parsing image name &#34;//labring/calico:v3.26.2&#34;: reading manifest v3.26.2 in docker.io/labring/calico: manifest unknown 解决方案：切换到使用kubeadm手动安装，这是备选方案。 3. GPG密钥问题 在使用kubeadm安装过程中，执行添加Kubernetes GPG密钥的命令时遇到问题： curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg 出现 gpg: cannot open &#39;/dev/tty&#39;: 没有那个设备或地址 错误。 解决方案：改用apt-key命令： curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo apt-key add - 4. 容器运行时重新配置 由于之前移除了containerd，Kubernetes无法启动，因为CRI（容器运行时接口）不可用。 解决方案：下载并安装containerd二进制文件： wget https://github.com/containerd/containerd/releases/download/v1.7.20/containerd-1.7.20-linux-amd64.tar.gzsudo tar Cxzf /usr/local containerd-1.7.20-linux-amd64.tar.gz 然后创建systemd服务文件并启动containerd。 5. 节点状态问题 在kubeadm初始化集群后，节点显示为NotReady状态，而不是预期的Ready。 解决方案： 安装Flannel网络插件解决CNI问题 移除节点的污点以允许Pod在单节点集群上调度： kubectl taint nodes --all node-role.kubernetes.io/control-plane- 等待一段时间使所有组件就绪 总结 通过这次安装实践，我成功搭建了本地的Kubernetes环境，主要收获如下： Sealos和Kubernetes环境：成功安装了Sealos CLI工具和单节点Kubernetes集群 kubectl配置：正确配置了kubectl命令行工具，可以正常管理集群 网络插件：成功部署了Flannel网络插件，使Pod间可以正常通信 问题解决经验：在过程中解决了多个典型问题，包括环境冲突、容器运行时配置和节点状态问题 经验教训 环境准备的重要性：在部署Kubernetes前，确保系统环境符合要求至关重要 备选方案的准备：当首选方案（Sealos）遇到问题时，kubeadm是一个可靠的备选方案 网络插件必不可少：集群初始化后必须安装CNI网络插件，否则Pod无法正常通信 单节点集群的特殊配置：需要移除master节点的污点才能在单节点上调度Pod 这次安装过程虽然遇到了一些挑战，但也提供了宝贵的实践经验，对理解和部署Kubernetes环境有很大帮助。 Docker与Containerd的共存关系 在安装过程中，我发现了一个有趣的现象：系统上同时存在Docker容器和服务以及Kubernetes集群。 共存机制 实际上，Docker和Kubernetes可以共存，因为它们都使用了containerd作为容器运行时： 双重命名空间：containerd支持多客户端，Docker使用’moby’命名空间，而Kubernetes使用’k8s.io’命名空间 共享容器运行时：Docker和Kubernetes共享同一个containerd实例，但通过不同的命名空间隔离 进程结构：Docker daemon通过--containerd=/run/containerd/containerd.sock连接到containerd，而Kubernetes的kubelet也连接到同一个containerd 注意事项 虽然技术上可行，但这种配置在生产环境中不推荐，因为： 容器资源竞争 网络和存储配置可能冲突 安全性和隔离性可能受到影响 运维命令 kubectl运维命令 kubectl的配置文件通常存储在$HOME/.kube/config，这是访问Kubernetes集群的凭证文件。 常用运维命令： kubectl get nodes - 查看集群节点状态 kubectl get pods -A - 查看所有命名空间中的Pod kubectl get services -A - 查看所有服务 kubectl get deployments -A - 查看所有部署 kubectl describe pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; - 查看Pod详细信息 kubectl logs &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; - 查看Pod日志 kubectl apply -f &amp;lt;file.yaml&amp;gt; - 部署资源 kubectl delete -f &amp;lt;file.yaml&amp;gt; - 删除资源 kubectl scale deployment &amp;lt;name&amp;gt; --replicas=&amp;lt;number&amp;gt; - 扩缩容部署 kubectl cluster-info - 查看集群信息 kubectl top nodes/pods - 查看资源使用情况 Sealos运维命令 虽然我们最终没有使用Sealos完成安装，但其基本运维命令包括： sealos run &amp;lt;image&amp;gt; - 部署集群 sealos destroy - 销毁集群 sealos reset - 重置集群 sealos version - 查看版本 sealos status - 查看集群状态 sealos exec &amp;lt;command&amp;gt; - 在集群上执行命令 这些命令提供了管理Kubernetes集群的便捷方式，通过容器镜像封装了Kubernetes组件。</p>
+            <div class="site-index-item__taxonomies">
+                
+                
+                    
+                        <a href="/tags/Kubernetes/">#Kubernetes</a>
+                        
+                    
+                        <a href="/tags/Sealos/">#Sealos</a>
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                
+            </div>
+        </div>
+        <a class="site-index-item__open" href="/2025/12/07/0002-ben-di-an-zhuang-sealos-ji-lu/" aria-label="阅读：本地安装sealos记录">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </article>
+    
+</div>
+
+    </section>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/about" target="_blank">huhuhuhr</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">28.7k</span>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/huhuhuhr-1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:757033301@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+
+</body>
+
+</html>

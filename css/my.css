@@ -1,0 +1,1611 @@
+/* Here is your custom css styles. */
+
+/* 优化首页布局，减少顶部Banner占用的空间，让内容卡片更多显示 */
+/* 调整所有页面背景覆盖高度，保持一致性 */
+.bg-cover {
+    height: 40vh !important; /* 统一设置为40vh，平衡首页和其他页面高度 */
+}
+
+/* 调整首页大屏高度，与其他页面保持一致 */
+.index-cover {
+    height: 40vh !important; /* 与其他页面保持一致 */
+}
+
+/* 确保文章详情页等其他页面的横幅高度也与此协调 */
+.post-cover {
+    height: 30vh !important; /* 文章页面的横幅高度 */
+}
+
+/* 调整首页内容区域的位置，使其与其他页面对齐 */
+.index-main {
+    margin-top: 0 !important; /* 确保首页内容区域与其它页面对齐 */
+}
+
+/* 调整首页的容器样式，保证内容与其他页面对齐 */
+.index-container .index-center .index-info {
+    padding-top: 0 !important; /* 减少首页内容的顶部填充 */
+}
+
+/* 确保所有页面的内容区域对齐 */
+.main-container {
+    padding-top: 0 !important; /* 统一设置内容区域的顶部填充 */
+}
+
+/* 为首页内容区域设置更紧凑的样式 */
+.index-post .index-center .post-body {
+    margin-top: 10px !important; /* 减小上边距 */
+}
+
+.post-body .article-title {
+    font-size: 1.4rem !important; /* 稍微减小标题大小 */
+    line-height: 1.4 !important;
+    margin: 0.3rem 0 !important; /* 减小标题上下边距 */
+}
+
+/* 优化文章卡片间距，让页面显示更多内容 */
+.card {
+    margin: 0.5rem 0 !important; /* 减小卡片垂直间距 */
+}
+
+/* 优化文章列表的布局 */
+.container .row {
+    margin: 0 -0.5rem !important; /* 减小行间距 */
+}
+
+/* 调整首页文章摘要显示 */
+.article .summary {
+    font-size: 0.9rem !important; /* 稍微减小摘要字体大小 */
+    margin: 0.3rem 0 !important; /* 减小摘要间距 */
+    line-height: 1.4 !important;
+}
+
+/* 调整文章元信息显示 */
+.article .post-meta {
+    font-size: 0.8rem !important; /* 减小元信息字体大小 */
+    margin: 0.2rem 0 !important;
+}
+
+/* 隐藏顶部banner中的多余元素，节省空间 */
+.index-cover .description {
+    display: none !important; /* 隐藏描述文字 */
+}
+
+/* 隐藏首页的"我的梦想"内容 */
+.dream {
+    display: none !important;
+}
+
+/* 隐藏首页的推荐文章部分 */
+.recommend .title,
+.recommend .recommended-posts {
+    display: none !important;
+}
+
+/* 首页搜索框样式 */
+.search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #4fc08d;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.search-header:focus-within {
+    border-color: #0f9d58;
+    box-shadow: 0 2px 16px rgba(15, 157, 88, 0.2);
+}
+
+.search-header .title {
+    margin-right: 1rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+.search-clear {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.search-clear:hover {
+    color: #999;
+    cursor: pointer;
+}
+
+.search-result-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-title {
+    display: block;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.search-result-title:hover {
+    color: #0f9d58;
+}
+
+.search-result-content {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.search-keyword {
+    color: #0f9d58;
+    font-weight: bold;
+    background-color: rgba(15, 157, 88, 0.1);
+}
+
+/* -------------------------------------------------------------
+   Control Plane visual layer
+   A Hexo-native redesign: content and routes stay unchanged; this
+   layer only changes the presentation of Matery's existing markup.
+   ------------------------------------------------------------- */
+:root {
+    --cp-paper: #f7f8fa;
+    --cp-surface: #ffffff;
+    --cp-ink: #15202b;
+    --cp-muted: #667384;
+    --cp-line: #e2e8f0;
+    --cp-cobalt: #295bff;
+    --cp-amber: #f2b84b;
+}
+
+body {
+    background: var(--cp-paper) !important;
+    color: var(--cp-ink);
+    font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+}
+
+body .index-cover {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 7rem 0 5rem;
+    text-align: left;
+}
+
+.index-cover .container {
+    max-width: 1120px;
+}
+
+.index-cover .brand {
+    border-left: 3px solid var(--cp-cobalt);
+    padding-left: 1.4rem;
+    text-align: left;
+}
+
+.index-cover .brand .title,
+.index-cover .brand .description {
+    text-align: left !important;
+    color: var(--cp-ink) !important;
+}
+
+.index-cover .brand .title {
+    font-family: "Noto Serif SC", Georgia, serif;
+    font-size: clamp(2.4rem, 5vw, 4.7rem) !important;
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: 1.15;
+}
+
+.index-cover .brand .description {
+    max-width: 42rem;
+    margin-top: 1.3rem;
+    color: var(--cp-muted) !important;
+    font-size: 1.05rem;
+}
+
+.index-cover .cover-btns,
+.index-cover .cover-social-link,
+.index-cover .carousel-control,
+.index-cover .indicators {
+    display: none !important;
+}
+
+.home-search-box {
+    margin-top: 0 !important;
+    margin-bottom: 2.2rem;
+}
+
+.home-search-box .search-input-container {
+    border: 1px solid var(--cp-line) !important;
+    border-radius: 0 !important;
+    background: var(--cp-surface) !important;
+    box-shadow: none !important;
+}
+
+.articles .article-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.articles .article {
+    padding: 0 0.55rem;
+}
+
+.articles .card {
+    min-height: 0 !important;
+    border: 1px solid var(--cp-line) !important;
+    border-radius: 0 !important;
+    background: var(--cp-surface) !important;
+    box-shadow: none !important;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.articles .card:hover {
+    border-color: var(--cp-cobalt) !important;
+    box-shadow: 0 18px 40px rgba(21, 32, 43, .09) !important;
+    transform: translateY(-4px);
+}
+
+.articles .card-image {
+    height: 9rem !important;
+    filter: saturate(.72);
+}
+
+.articles .card-image::after {
+    background: linear-gradient(90deg, rgba(41, 91, 255, .74), transparent) !important;
+}
+
+.articles .card .card-title {
+    font-family: "Noto Serif SC", Georgia, serif;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.articles .article-content {
+    padding: 1.2rem 1.25rem !important;
+}
+
+.articles .summary {
+    color: var(--cp-muted) !important;
+    line-height: 1.7 !important;
+}
+
+.articles .publish-info {
+    border-top: 1px solid var(--cp-line);
+    margin-top: 1rem;
+    padding-top: .75rem;
+    color: var(--cp-muted) !important;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .72rem;
+}
+
+#artDetail > .card,
+.post-content .card {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid var(--cp-line);
+    background: var(--cp-surface);
+}
+
+#articleContent {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 1.04rem;
+    line-height: 1.95;
+}
+
+#articleContent h1,
+#articleContent h2,
+#articleContent h3 {
+    font-family: "Noto Serif SC", Georgia, serif;
+    letter-spacing: -.025em;
+}
+
+#articleContent pre {
+    border-left: 3px solid var(--cp-cobalt);
+    border-radius: 0 !important;
+}
+
+@media (max-width: 700px) {
+    body .index-cover { padding: 5rem 0 3.5rem; }
+    .index-cover .brand .title { font-size: 2.7rem !important; }
+    .articles .article { padding: 0; }
+    #articleContent { font-size: 1rem; }
+}
+
+/* 首页卡片：固定列网格 + 每行等高，避免 Masonry 造成错位 */
+#articles .article-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
+    margin: 0 !important;
+}
+
+#articles .article {
+    width: auto !important;
+    float: none !important;
+    padding: 0 !important;
+    display: flex !important;
+}
+
+#articles .article > .card {
+    width: 100%;
+    height: 100% !important;
+    min-height: 390px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+#articles .article .card-image {
+    flex: 0 0 150px;
+}
+
+#articles .article .article-content {
+    flex: 1 1 auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+#articles .article .summary {
+    flex: 1 1 auto;
+}
+
+#articles .article .article-tags {
+    flex: 0 0 auto;
+    min-height: 46px;
+}
+
+@media (max-width: 992px) {
+    #articles .article-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    #articles .article-row { grid-template-columns: 1fr; }
+    #articles .article > .card { min-height: 0 !important; }
+}
+
+/* 最终卡片模型：固定三段高度，覆盖 Matery 早期的全局高度规则 */
+#articles .article > .card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+#articles .article > .card > a {
+    display: block;
+    height: 150px;
+    min-height: 0;
+}
+
+#articles .article > .card .card-image {
+    height: 150px !important;
+    min-height: 0;
+}
+
+#articles .article > .card .article-content {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    padding: 1rem 1.1rem !important;
+}
+
+#articles .article > .card .summary {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 9.9em;
+    margin: 0 !important;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    line-height: 1.65 !important;
+}
+
+#articles .article > .card .publish-info {
+    position: static !important;
+    height: 30px !important;
+    margin-top: .8rem !important;
+    padding-top: .55rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#articles .article > .card .article-tags {
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    overflow: hidden;
+    padding: .55rem 1.1rem !important;
+    white-space: nowrap;
+}
+
+#articles .article > .card .article-tags-empty {
+    visibility: hidden;
+}
+
+@media (max-width: 600px) {
+    #articles .article > .card {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+}
+
+/* 友情链接页面隐藏搜索按钮 */
+.friends .navbar-nav .search {
+    display: none !important;
+}
+
+/* 修复文章卡片高度不一致的问题 */
+.card {
+    height: auto !important;
+    min-height: 320px; /* 设置最小高度确保卡片一致 */
+}
+
+.card .card-content {
+    height: calc(100% - 150px); /* 调整内容区域高度以保持一致 */
+    overflow: hidden;
+}
+
+/* 调整卡片内容布局 */
+.card .card-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.card .card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 为文章标题设置固定高度 */
+.card .card-content .card-title {
+    height: 40px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 为文章摘要设置固定高度 */
+.card .card-content .summary {
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 调整文章信息显示区域 */
+.card .card-content .publish-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem !important;
+    font-size: 1rem;
+    border: 2px solid #4fc08d !important;
+    border-radius: 50px !important;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+
+.search-input:focus {
+    border-color: #0f9d58 !important;
+    box-shadow: 0 2px 16px rgba(15, 157, 88, 0.2) !important;
+}
+
+.search-icon {
+    position: absolute !important;
+    left: 1.2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #999 !important;
+    font-size: 1.2rem !important;
+    z-index: 10 !important;
+}
+
+
+
+/* 隐藏首页的"友链"部分 */
+#friends {
+    display: none !important;
+}
+
+/* 调整首页文章卡片的样式，让卡片间距离更紧凑 */
+.index-card {
+    margin: 0.8rem 0 !important; /* 减少卡片垂直间距 */
+}
+
+/* 调整每篇文章卡片的样式，让卡片更紧凑 */
+.card {
+    margin: 0.3rem 0 !important; /* 进一步减少卡片垂直间距 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* 更轻的阴影效果 */
+    border-radius: 8px !important; /* 更小的圆角 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 添加平滑过渡效果 */
+}
+
+.card:hover {
+    transform: translateY(-5px) !important; /* 悬停时轻微上浮 */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important; /* 悬停时加强阴影 */
+}
+
+/* 调整文章卡片内的元素间距 */
+.card .card-content {
+    padding: 0.8rem !important; /* 减少卡片内容内边距 */
+}
+
+/* 调整文章标题样式 */
+.card .card-content .card-title {
+    font-size: 1.3rem !important; /* 减小标题字体 */
+    line-height: 1.3 !important;
+    margin: 0.3rem 0 !important; /* 减小标题上下间距 */
+}
+
+/* 调整文章摘要样式 */
+.archive-content {
+    font-size: 0.85rem !important; /* 减小摘要字体 */
+    margin: 0.2rem 0 !important; /* 减小摘要间距 */
+    line-height: 1.4 !important;
+}
+
+/* 调整文章元信息样式 */
+.card .card-content .post-meta {
+    font-size: 0.75rem !important; /* 减小元信息字体 */
+    margin: 0.2rem 0 !important; /* 减小元信息间距 */
+}
+
+/* 调整文章特色图片容器 */
+.card .card-image {
+    height: 100px !important; /* 统一设置图片高度 */
+    overflow: hidden !important;
+}
+
+/* 代码块相关样式 */
+pre[class*="language-"],
+code[class*="language-"] {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.6;
+    font-size: 0.95em; /* 适当缩小字体尺寸 */
+}
+
+pre[class*="language-"] {
+    padding: 1rem 0.8rem !important; /* 减小内边距 */
+    overflow-x: auto; /* 允许水平滚动 */
+    max-width: 100% !important; /* 强制限制最大宽度 */
+    width: 100% !important; /* 强制宽度为容器的100% */
+}
+
+/* 修复表格形式的代码块 - 使用更高优先级 */
+figure.highlight {
+    margin: 1rem 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    position: relative !important;
+    border-radius: 0.35rem !important;
+    max-width: 100% !important; /* 限制代码块最大宽度 */
+    width: 100% !important; /* 固定宽度与页面文字宽度一致 */
+    display: block !important;
+}
+
+figure.highlight table {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important; /* 限制表格最大宽度 */
+    table-layout: fixed !important; /* 确保表格能够适当缩放 */
+    border-collapse: collapse !important;
+    word-break: break-word !important; /* 确保单词可以折行 */
+    display: table !important;
+}
+
+figure.highlight tbody {
+    display: table-row-group !important;
+}
+
+figure.highlight tr {
+    display: table-row !important;
+}
+
+figure.highlight td {
+    display: table-cell !important;
+    padding: 0 !important;
+    line-height: 1.6rem !important;
+    vertical-align: top !important; /* 确保单元格内容垂直对齐 */
+}
+
+/* 隐藏行号列 - 不显示行号 */
+figure.highlight .gutter {
+    display: none !important; /* 隐藏行号列 */
+}
+
+/* 调整代码列以占据全部宽度 */
+figure.highlight .code {
+    padding-left: 0.5rem !important;
+    width: 100% !important; /* 调整代码区域宽度为全部 */
+    word-break: break-word !important; /* 确保代码内容可以折行 */
+    white-space: pre-wrap !important; /* 允许预格式化文本折行 */
+    vertical-align: top !important;
+    overflow-wrap: break-word !important;
+}
+
+figure.highlight .code .line {
+    padding: 0 0.4rem !important;
+    line-height: 1.6rem !important;
+    word-break: break-word !important; /* 确保长行折断 */
+    white-space: pre-wrap !important; /* 保持格式化的同时允许折行 */
+    max-width: 100% !important; /* 限制单行最大宽度 */
+    display: inline-block !important;
+    min-width: 100% !important;
+}
+
+/* 针对命令行代码块的特殊处理 */
+pre.language-bash,
+pre.language-sh,
+pre.language-shell,
+code.language-bash,
+code.language-sh,
+code.language-shell {
+    word-break: break-all !important; /* 对于命令行，强制折行 */
+    white-space: pre-wrap !important;
+    max-width: 100% !important;
+}
+
+/* 针对行号较少的代码块优化 */
+.highlight:not(.line-numbers) {
+    overflow-x: auto !important;
+}
+
+.highlight:not(.line-numbers) pre {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+
+/* 针对不同屏幕尺寸进行优化 */
+@media only screen and (max-width: 600px) {
+    figure.highlight {
+        margin: 0.8rem -1rem !important; /* 在小屏幕上扩展到边缘 */
+        border-radius: 0 !important; /* 小屏幕上移除边框圆角 */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    figure.highlight .code {
+        padding-left: 0.3rem !important;
+    }
+
+    pre[class*="language-"] {
+        padding: 0.8rem 0.5rem !important;
+        font-size: 0.85em !important;
+    }
+}
+
+/* 确保所有代码块都能正确折行 */
+code {
+    font-size: 0.95em !important; /* 保持代码字体大小一致 */
+    max-width: 100% !important; /* 限制代码最大宽度 */
+    overflow-wrap: break-word !important; /* 允允长单词折行 */
+}
+
+/* 针对没有使用表格结构的简单pre块 */
+pre:not(.line-numbers) {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+}
+
+/* 专门针对命令行代码块的处理 */
+.highlight.bash .code,
+.highlight.shell .code,
+.highlight.sh .code {
+    max-width: 100% !important;
+    word-break: break-word !important;
+}
+
+/* 强制所有代码元素的宽度 */
+code[class*="language-"],
+pre[class*="language-"],
+figure.highlight,
+figure.highlight table,
+figure.highlight .code {
+    width: 100% !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+
+/* 隐藏首页的"我的梦想"内容 */
+.dream {
+    display: none !important;
+}
+
+/* 隐藏首页的推荐文章部分 */
+.recommend .title,
+.recommend .recommended-posts {
+    display: none !important;
+}
+
+/* 友情链接页面隐藏搜索按钮 */
+.friends .navbar-nav .search {
+    display: none !important;
+}
+
+/* 修复文章卡片高度不一致的问题 */
+.card {
+    height: auto !important;
+    min-height: 320px; /* 设置最小高度确保卡片一致 */
+}
+
+.card .card-content {
+    height: calc(100% - 150px); /* 调整内容区域高度以保持一致 */
+    overflow: hidden;
+}
+
+/* 调整卡片内容布局 */
+.card .card-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.card .card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 为文章标题设置固定高度 */
+.card .card-content .card-title {
+    height: 40px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 为文章摘要设置固定高度 */
+.card .card-content .summary {
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 调整文章信息显示区域 */
+.card .card-content .publish-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+/* 首页大图高度调整 */
+.bg-cover {
+    height: 30vh;
+}
+
+.index-cover {
+    height: 40vh;
+}
+
+/* 首页搜索框样式 */
+.home-search-box {
+    margin: 1.2rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: none; /* 移除边框 */
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.search-input-container:focus-within {
+    border-color: #0f9d58; /* 焦点时改变边框颜色 */
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin-left: 0; /* 移除左侧边距，因为没有图标了 */
+}
+
+.search-icon {
+    color: #999;
+    position: absolute;
+    left: 2rem; /* 固定位置确保图标与文字对齐 */
+}
+
+.search-clear {
+    position: absolute;
+    right: 2rem; /* 固定位置确保右对齐 */
+    color: #ccc;
+    cursor: pointer;
+    display: none;
+}
+
+.search-clear:hover {
+    color: #999;
+}
+
+.home-search-result {
+    position: absolute;
+    left: 0;
+    width: 87.5%; /* 下拉框宽度小于搜索框 */
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* 默认隐藏，由JavaScript控制显示 */
+    display: none;
+    margin: 1.2rem auto;
+}
+
+.home-search-result.show {
+    display: block;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-title {
+    display: block;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.search-result-title:hover {
+    color: #0f9d58;
+}
+
+.search-result-content {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.search-keyword {
+    color: #0f9d58;
+    font-weight: bold;
+    background-color: rgba(15, 157, 88, 0.1);
+}
+
+
+/* Mermaid图表优化样式 - 控制尺寸和居中 */
+.mermaid {
+    text-align: center !important;
+    margin: 1.5rem auto !important;
+    display: block !important;
+    /* 限制最大宽度，避免图表过大 */
+    max-width: 800px !important;
+    width: auto !important;
+}
+
+/* Mermaid SVG容器尺寸控制 */
+.mermaid svg {
+    display: block !important;
+    margin: 0 auto !important;
+    /* 限制SVG的最大宽度 */
+    max-width: 100% !important;
+    /* 限制SVG的最大高度 */
+    max-height: 600px !important;
+    height: auto !important;
+    /* 保持宽高比 */
+    aspect-ratio: auto !important;
+}
+
+/* 代码块格式的Mermaid图表样式优化 */
+pre.language-mermaid {
+    text-align: center !important;
+    margin: 1.5rem auto !important;
+    display: block !important;
+    /* 限制预格式化块的最大宽度 */
+    max-width: 800px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 1rem !important;
+    overflow-x: auto !important;
+}
+
+pre.language-mermaid code {
+    background: transparent !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    white-space: pre-wrap !important;
+}
+
+/* 为不同图表类型设置特定的尺寸限制 */
+.mermaid[data-processor*="graph"] svg {
+    /* 流程图的最大尺寸 */
+    max-width: 700px !important;
+    max-height: 500px !important;
+}
+
+.mermaid[data-processor*="sequence"] svg {
+    /* 时序图的最大尺寸 */
+    max-width: 900px !important;
+    max-height: 400px !important;
+}
+
+.mermaid[data-processor*="class"] svg {
+    /* 类图的最大尺寸 */
+    max-width: 700px !important;
+    max-height: 600px !important;
+}
+
+.mermaid[data-processor*="gantt"] svg {
+    /* 甘特图允许更宽 */
+    max-width: 1000px !important;
+    max-height: 500px !important;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .mermaid {
+        max-width: 700px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mermaid {
+        max-width: 100% !important;
+        margin: 1rem auto !important;
+        padding: 0.5rem !important;
+    }
+    
+    .mermaid svg {
+        max-width: 100% !important;
+        max-height: 400px !important;
+        height: auto !important;
+    }
+    
+    pre.language-mermaid {
+        max-width: 100% !important;
+        padding: 0.5rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mermaid svg {
+        max-height: 300px !important;
+    }
+}
+
+/* 修复代码块展开/收起功能 */
+.code-area {
+    position: relative !important;
+    margin: 1rem 0 !important;
+    overflow: visible !important; /* 确保子元素不会被裁剪 */
+}
+
+/* 调整展开/收起按钮位置，避免与复制按钮冲突 */
+.code-expand {
+    position: absolute !important;
+    top: 8px !important;
+    right: 55px !important; /* 调整到复制按钮左侧 */
+    cursor: pointer !important;
+    z-index: 9999 !important; /* 确保按钮在最上层 */
+    font-size: 16px !important;
+    transition: transform 0.3s ease, opacity 0.2s ease !important;
+    background: transparent !important; /* 移除背景 */
+    color: #666 !important;
+    border: none !important; /* 移除边框 */
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    padding: 2px !important;
+}
+
+.code-expand:hover {
+    opacity: 0.7 !important;
+    color: #333 !important;
+    transform: scale(1.1) !important;
+}
+
+/* 收起状态的样式 */
+.code-closed .code-expand {
+    transform: rotate(-180deg) !important;
+    /* 关键修复：确保收起状态时按钮仍然可见 */
+    top: 8px !important;
+    right: 55px !important; /* 保持一致的位置 */
+    z-index: 9999 !important;
+}
+
+/* 确保复制按钮不被遮挡并调整其样式 */
+.code_copy {
+    position: absolute !important;
+    top: 8px !important;
+    right: 15px !important; /* 保持原来的位置 */
+    z-index: 9998 !important; /* 比展开按钮低一级，但仍然很高 */
+    cursor: pointer !important;
+    font-size: 16px !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+    background: transparent !important; /* 移除背景 */
+    color: #666 !important;
+    border: none !important; /* 移除边框 */
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    padding: 2px !important;
+    filter: none !important; /* 移除原来的filter */
+}
+
+.code_copy:hover {
+    opacity: 0.7 !important;
+    color: #333 !important;
+    transform: scale(1.1) !important;
+}
+
+/* 确保两个按钮之间有合适的间距 */
+.code-area {
+    min-height: 42px !important; /* 确保有足够空间显示按钮 */
+}
+
+/* 收起时隐藏代码内容 */
+.code-closed pre {
+    max-height: 60px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.code-closed pre::after {
+    content: "..." !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 25px !important;
+    background: linear-gradient(transparent, var(--global-bg-color, #fff) 70%) !important;
+    display: block !important;
+    padding-bottom: 5px !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: #666 !important;
+}
+
+/* 确保代码块有正确的结构 */
+pre code {
+    display: block !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 针对 markdown-it 渲染器的特殊处理 */
+.highlight pre {
+    position: relative !important;
+    margin: 0 !important;
+}
+
+/* 确保代码块可以正确收起和展开 */
+.code-closed .highlight pre {
+    max-height: 60px !important;
+    overflow: hidden !important;
+}
+
+/* 针对代码块区域的背景色适配 */
+.code-area .highlight {
+    background: #f6f8fa !important;
+    border-radius: 6px !important;
+    padding: 1px !important;
+}
+
+/* 确保代码块区域不会影响按钮的可见性 */
+.code-area .code-expand {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* 在代码块收起时，确保按钮在可见区域 */
+.code-closed .code-expand {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+}
+
+/* 优化代码块字体显示 */
+pre code,
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+    tab-size: 4 !important;
+}
+
+/* 针对不同代码块的特殊优化 */
+.highlight pre,
+.highlight pre code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+}
+
+/* 移除PrismJS可能的粗体样式 */
+.token.bold,
+.token.important {
+    font-weight: normal !important;
+}
+
+/* 确保代码块内容正常显示 */
+pre[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+}
+
+/* 修复可能的字体继承问题 */
+.token {
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 确保代码块内的文本不会被意外加粗 */
+code .token,
+pre .token,
+.highlight .token {
+    font-weight: normal !important;
+}
+
+/* 更全面的代码块样式统一 */
+/* 覆盖所有可能的代码块选择器 */
+pre,
+code,
+pre code,
+code pre,
+.highlight,
+.highlight pre,
+.highlight code,
+pre[class*="language-"],
+code[class*="language-"],
+[class*="highlight-"] pre,
+[class*="highlight-"] code,
+table.highlighttable pre,
+table.highlighttable code,
+figure.highlight pre,
+figure.highlight code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+}
+
+/* 针对所有token类的样式重置 */
+.token,
+[class*="token-"],
+[class*="token"] {
+    font-family: inherit !important;
+    font-weight: normal !important;
+    font-size: inherit !important;
+}
+
+/* 移除所有可能的特殊样式 */
+.token.keyword,
+.token.string,
+.token.number,
+.token.comment,
+.token.function,
+.token.operator,
+.token.class-name,
+.token.property,
+.token.punctuation,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.inserted,
+.token.deleted,
+.token.entity,
+.token.url,
+.token.selector,
+.token.attr-name,
+.token.attr-value,
+.token.char,
+.token.namespace,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    font-weight: normal !important;
+    font-family: inherit !important;
+}
+
+/* 确保GFM（GitHub Flavored Markdown）代码块样式一致 */
+.gist .gist-data .gist-syntax {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+/* 超级强制的代码块样式覆盖 - 解决JavaScript等语言字体过大问题 */
+pre code,
+pre code[class*="language-"],
+pre[class*="language-"] code,
+code[class*="language-"],
+.highlight pre,
+.highlight code,
+figure.highlight pre,
+figure.highlight code,
+table.highlighttable pre,
+table.highlighttable td.code pre,
+table.highlighttable td.code code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+}
+
+/* 覆盖PrismJS可能的全局设置 */
+code[class*="language-"] *,
+pre[class*="language-"] *,
+.token *,
+[class*="language-"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 针对JavaScript的特殊处理 */
+.language-javascript,
+[class*="language-javascript"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+.language-javascript *,
+[class*="language-javascript"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 针对TypeScript的特殊处理 */
+.language-typescript,
+[class*="language-typescript"] {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Source Code Pro', 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+.language-typescript *,
+[class*="language-typescript"] * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 超级强制 - 覆盖所有PrismJS token的字体样式 */
+/* 使用超高优先级选择器确保覆盖所有语法高亮的字体变化 */
+pre code .token,
+pre[class*="language-"] .token,
+code[class*="language-"] .token,
+.highlight .token,
+figure.highlight .token,
+table.highlighttable .token,
+.language-javascript .token,
+.language-typescript .token,
+.language-json .token,
+.language-python .token,
+.language-css .token,
+.language-html .token,
+.language-bash .token,
+.language-scss .token,
+.language-xml .token,
+.language-yaml .token,
+.token.token.token,
+.token.token.token.token,
+div[class*="code"] .token,
+span.token,
+[class*="token"] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    word-spacing: inherit !important;
+}
+
+/* 特别针对函数名、关键字等的强制覆盖 */
+.token.function,
+.token.function .token,
+.token.keyword,
+.token.keyword .token,
+.token.class-name,
+.token.class-name .token,
+.token.constructor,
+.token.constructor .token,
+.token.title,
+.token.title .token,
+.token.selector,
+.token.selector .token,
+.token.tag,
+.token.tag .token,
+.token.attr-name,
+.token.attr-name .token,
+.token.property,
+.token.property .token,
+.token.method,
+.token.method .token,
+.token.variable,
+.token.variable .token,
+.token.parameter,
+.token.parameter .token {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+/* 超级强制重置 - 使用更高优先级 */
+body pre code .token,
+body pre[class*="language-"] .token,
+body code[class*="language-"] .token,
+body .token,
+body span.token,
+body .highlight .token,
+body figure.highlight .token {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+    line-height: inherit !important;
+}
+
+/* 最终保险 - 使用通用选择器覆盖所有可能的情况，但排除按钮 */
+pre code *,
+pre[class*="language-"] *,
+code[class*="language-"] *,
+.highlight *,
+figure.highlight *,
+table.highlighttable * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: normal !important;
+}
+
+/* 恢复按钮的FontAwesome图标样式 */
+pre code .fa,
+pre[class*="language-"] .fa,
+code[class*="language-"] .fa,
+.highlight .fa,
+figure.highlight .fa,
+table.highlighttable .fa,
+pre code .fas,
+pre[class*="language-"] .fas,
+code[class*="language-"] .fas,
+.highlight .fas,
+figure.highlight .fas,
+table.highlighttable .fas,
+pre code .far,
+pre[class*="language-"] .far,
+code[class*="language-"] .far,
+.highlight .far,
+figure.highlight .far,
+table.highlighttable .far,
+pre code .fab,
+pre[class*="language-"] .fab,
+code[class*="language-"] .fab,
+.highlight .fab,
+figure.highlight .fab,
+table.highlighttable .fab,
+pre code .fal,
+pre[class*="language-"] .fal,
+code[class*="language-"] .fal,
+.highlight .fal,
+figure.highlight .fal,
+table.highlighttable .fal,
+pre code i[class*="fa"],
+pre[class*="language-"] i[class*="fa"],
+code[class*="language-"] i[class*="fa"],
+.highlight i[class*="fa"],
+figure.highlight i[class*="fa"],
+table.highlighttable i[class*="fa"] {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-size: inherit !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 特别恢复代码块按钮的样式 */
+.code-expand,
+.code-copy,
+.code-copy-btn,
+.copy-btn,
+.copy-button,
+button[class*="copy"],
+button[class*="Copy"],
+i.code-expand,
+i.code-copy,
+i[class*="code-expand"],
+i[class*="code-copy"] {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+}
+
+.code-expand:before,
+.code-copy:before,
+i.code-expand:before,
+i.code-copy:before {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* 但保留颜色高亮 - 只重置字体相关属性 */
+.token {
+    /* 字体属性被上面的规则覆盖为统一值 */
+}
+
+/* 首页卡片最终收口：必须放在文件末尾，覆盖历史遗留规则 */
+#articles .article > .card {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 360px !important;
+    min-height: 360px !important;
+    max-height: 360px !important;
+    display: grid !important;
+    grid-template-rows: 140px minmax(0, 1fr) 46px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+#articles .article > .card > a,
+#articles .article > .card .card-image {
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+}
+
+#articles .article > .card .article-content {
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: .8rem 1.1rem !important;
+}
+
+#articles .article > .card .summary,
+#articles .article > .card .card-content .summary {
+    height: auto !important;
+    max-height: 6.2em !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 4 !important;
+    overflow: hidden !important;
+    line-height: 1.55 !important;
+}
+
+#articles .article > .card .publish-info,
+#articles .article > .card .card-content .publish-info {
+    position: static !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    margin: .45rem 0 0 !important;
+    padding-top: .45rem !important;
+    flex: 0 0 28px !important;
+}
+
+#articles .article > .card .article-tags {
+    box-sizing: border-box !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    padding: .5rem 1.1rem !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 600px) {
+    #articles .article > .card {
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
+    }
+}

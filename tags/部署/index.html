@@ -1,0 +1,631 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="标签: 部署, AI, ETL, 大数据, 技术, 学习, 编程">
+    <meta name="description" content="这里是huhuhuhr的技术博客，记录学习历程和技术心得">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>标签: 部署 | huhuhuhr</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/css/site-v2.css">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="huhuhuhr" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">huhuhuhr</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <!-- <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li> -->
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">huhuhuhr</div>
+        <div class="logo-desc">
+            
+            这里是huhuhuhr的技术博客，记录学习历程和技术心得
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huhuhuhr-1" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huhuhuhr-1" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <main class="content site-index-page taxonomy-posts-page">
+    <section class="container site-index-shell" aria-labelledby="taxonomy-title">
+        <header class="site-index-heading">
+            <h1 id="taxonomy-title">#部署</h1>
+            <span>1 篇文章</span>
+        </header>
+        <div class="site-index-list">
+    
+    
+    <article class="site-index-item">
+        <time datetime="2025-12-07">2025-12-07</time>
+        <div>
+            <h2><a href="/2025/12/07/0004-sealos-shi-zhan/">sealos实战</a></h2>
+            <p>Sealos实战：从零开始部署和管理Kubernetes集群 概述 本文档详细介绍了如何使用Sealos在多台服务器上部署和管理Kubernetes集群，包括环境准备、集群部署、应用部署、配置管理、扩容、容灾、升级和回滚等完整运维流程。我们将以三台服务器为例，展示从零开始构建到运维整个Kubernetes集群的完整过程。 1. 环境准备 1.1 服务器规划 我们使用三台服务器作为示例： Master节点（控制平面）：192.168.1.100 Worker节点1：192.168.1.101 Worker节点2：192.168.1.102 1.2 前提条件 在所有服务器上准备以下环境： 操作系统：Ubuntu 20.04 LTS 或 CentOS 8.x 硬件配置： CPU：至少2核 内存：至少4GB 磁盘：至少40GB 网络配置： 服务器之间网络互通 关闭防火墙或开放必要端口 SSH访问：确保可以从任一节点SSH到其他节点 1.3 系统准备命令 在所有节点上执行以下命令： # 关闭防火墙（生产环境建议配置具体规则）sudo ufw disable # Ubuntusudo systemctl stop firewalld # CentOSsudo systemctl disable firewalld# 关闭Swapsudo swapoff -asudo sed -i &#39;/ swap / s/^\(.*\)$/#\1/g&#39; /etc/fstab# 允许iptables转发sudo modprobe overlaysudo modprobe br_netfiltercat &amp;lt;&amp;lt;EOF | sudo tee /etc/modules-load.d/k8s.confoverlaybr_netfilterEOFcat &amp;lt;&amp;lt;EOF | sudo tee /etc/sysctl.d/k8s.confnet.bridge.bridge-nf-call-iptables = 1net.bridge.bridge-nf-call-ip6tables = 1net.ipv4.ip_forward = 1EOFsudo sysctl --system# 安装Dockercurl -fsSL https://get.docker.com | bash -s docker --mirror Aliyunsudo systemctl enable dockersudo systemctl start docker# 设置国内镜像源（可选，提高拉取速度）sudo mkdir -p /etc/dockercat &amp;lt;&amp;lt;EOF | sudo tee /etc/docker/daemon.json{ &#34;registry-mirrors&#34;: [ &#34;https://docker.mirrors.ustc.edu.cn&#34;, &#34;https://hub-mirror.c.163.com&#34; ], &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;]}EOFsudo systemctl restart docker 2. 安装Sealos 在Master节点（192.168.1.100）上安装Sealos： # 安装sealoswget -c https://ghproxy.com/github.com/labring/sealos/releases/download/v4.4.0/sealos_4.4.0_linux_amd64.tar.gz \ -O - | sudo tar -zx -C /usr/local/bin# 为sealos添加执行权限sudo chmod +x /usr/local/bin/sealos# 验证安装sealos version 3. 创建Clusterfile定义集群 创建一个名为Clusterfile的文件来定义集群配置： apiVersion: apps.sealos.io/v1beta1kind: Clustermetadata: name: my-clusterspec: image: - kubernetes:v1.25.0 - calico:v3.24.1 hosts: - ips: - &#34;192.168.1.100&#34; # Master节点IP roles: [ &#34;master&#34;, &#34;control-plane&#34; ] - ips: - &#34;192.168.1.101&#34; # Worker节点IP 1 - &#34;192.168.1.102&#34; # Worker节点IP 2 roles: [ &#34;node&#34; ] 这个配置文件定义了： 使用Kubernetes v1.25.0版本 使用Calico作为CNI网络插件 一台Master节点和两台Worker节点 4. 部署Kubernetes集群 在Master节点上运行以下命令部署集群： # 使用Clusterfile部署集群sealos run -f Clusterfile# 或者直接使用命令行参数部署sealos run kubernetes:v1.25.0 calico:v3.24.1 \ --masters 192.168.1.100 \ --nodes 192.168.1.101,192.168.1.102 部署完成后，Sealos会： 安装Kubernetes组件 配置etcd集群 初始化Master节点 加入Worker节点 配置网络插件Calico 验证集群状态： # 如果sealos自动配置了kubectlkubectl get nodes# 或者使用以下命令获取集群访问信息sealos kubeconfig -f Clusterfile --host 192.168.1.100 预期输出： NAME STATUS ROLES AGE VERSION192.168.1.100 Ready control-plane,master 5m v1.25.0192.168.1.101 Ready &amp;lt;none&amp;gt; 4m v1.25.0192.168.1.102 Ready &amp;lt;none&amp;gt; 4m v1.25.0 5. 理解Pod和Node的分配机制 5.1 Node（节点） Node是集群中的工作机器（物理机或虚拟机），负责运行Pod。在我们的例子中： 192.168.1.100：Master节点，具有控制平面角色 192.168.1.101和192.168.1.102：Worker节点，用于运行工作负载 5.2 Pod（容器组） Pod是Kubernetes中最小的部署单元，通常包含一个或多个紧密相关的容器。 5.3 调度机制 Kubernetes调度器（kube-scheduler）负责决定Pod在哪个Node上运行。它考虑以下因素： 资源需求：CPU、内存等 节点标签（Labels）和节点选择器（Node Selector） 污点（Taints）和容忍度（Tolerations） 亲和性（Affinity）和反亲和性（Anti-Affinity） 6. 部署应用到集群 6.1 准备Docker镜像 假设我们有一个名为my-web-app:latest的Docker镜像，包含一个简单的Web应用。 首先，确保镜像在所有节点上都可用： # 在所有节点上拉取镜像sudo docker pull my-registry/my-web-app:latest# 或者在一台机器上保存镜像为tar文件，然后分发到其他节点docker save -o my-web-app.tar my-registry/my-web-app:latestscp my-web-app.tar user@192.168.1.101:~/scp my-web-app.tar user@192.168.1.102:~/# 在其他节点上加载镜像docker load -i my-web-app.tar 6.2 创建应用部署配置 创建一个名为web-app-deployment.yaml的文件： apiVersion: apps/v1kind: Deploymentmetadata: name: my-web-app namespace: defaultspec: replicas: 2 # 初始副本数 selector: matchLabels: app: my-web-app template: metadata: labels: app: my-web-app spec: containers: - name: web-container image: my-registry/my-web-app:latest ports: - containerPort: 80 env: - name: ENV value: &#34;production&#34; resources: requests: memory: &#34;64Mi&#34; cpu: &#34;250m&#34; limits: memory: &#34;128Mi&#34; cpu: &#34;500m&#34;---apiVersion: v1kind: Servicemetadata: name: my-web-app-servicespec: selector: app: my-web-app ports: - protocol: TCP port: 80 targetPort: 80 type: LoadBalancer # 或者使用NodePort或ClusterIP 6.3 通过Sealos部署应用 使用Sealos可以创建应用包来部署应用，也可以使用kubectl直接应用YAML配置： 方法1：使用kubectl # 应用YAML配置kubectl apply -f web-app-deployment.yaml# 验证部署kubectl get deploymentskubectl get podskubectl get services 方法2：使用Sealos应用包 首先创建应用包（Application Package）： # 创建应用包目录结构mkdir my-web-app-pkgcd my-web-app-pkg# 创建Kubefile定义应用包cat &amp;gt; Kubefile &amp;lt;&amp;lt; EOFFROM scratchCOPY web-app-deployment.yaml .CMD [&#34;kubectl apply -f web-app-deployment.yaml&#34;]EOF# 构建应用包镜像sealos build -t my-registry/my-web-app-pkg:latest .# 推送镜像到仓库（如果需要）sealos push my-registry/my-web-app-pkg:latest# 运行应用包sealos run my-registry/my-web-app-pkg:latest 7. 配置参数注入 7.1 通过ConfigMap注入配置 创建一个ConfigMap来存储配置参数： # 创建ConfigMapkubectl create configmap app-config \ --from-literal=database.host=192.168.1.200 \ --from-literal=database.port=3306 \ --from-literal=app.mode=production 更新Deployment以使用ConfigMap： apiVersion: apps/v1kind: Deploymentmetadata: name: my-web-appspec: replicas: 2 selector: matchLabels: app: my-web-app template: metadata: labels: app: my-web-app spec: containers: - name: web-container image: my-registry/my-web-app:latest ports: - containerPort: 80 env: - name: DATABASE_HOST valueFrom: configMapKeyRef: name: app-config key: database.host - name: DATABASE_PORT valueFrom: configMapKeyRef: name: app-config key: database.port - name: APP_MODE valueFrom: configMapKeyRef: name: app-config key: app.mode volumeMounts: - name: config-volume mountPath: /etc/config volumes: - name: config-volume configMap: name: app-config 7.2 通过Secret注入敏感配置 创建一个Secret来存储敏感信息（如密码、密钥）： # 创建Secretkubectl create secret generic app-secret \ --from-literal=db-password=supersecretpassword \ --from-literal=api-key=your-api-key 更新Deployment以使用Secret： apiVersion: apps/v1kind: Deploymentmetadata: name: my-web-appspec: replicas: 2 selector: matchLabels: app: my-web-app template: metadata: labels: app: my-web-app spec: containers: - name: web-container image: my-registry/my-web-app:latest ports: - containerPort: 80 env: - name: DATABASE_HOST valueFrom: configMapKeyRef: name: app-config key: database.host - name: DB_PASSWORD valueFrom: secretKeyRef: name: app-secret key: db-password - name: API_KEY valueFrom: secretKeyRef: name: app-secret key: api-key 8. 节点扩容 8.1 扩容Worker节点 当需要增加Worker节点来提供更多的计算资源时： 在新的服务器上准备环境（按照1.3节的系统准备命令） 使用Sealos添加节点： # 添加新的Worker节点sealos add --nodes 192.168.1.103# 验证节点是否加入集群kubectl get nodes 8.2 扩容应用Pod 增加应用的副本数： # 扩容到5个副本kubectl scale deployment my-web-app --replicas=5# 或者直接编辑Deploymentkubectl edit deployment my-web-app 9. 容灾策略 9.1 高可用Master节点 为避免Master节点单点故障，我们可以部署高可用集群： # 使用三个Master节点部署高可用集群sealos run kubernetes:v1.25.0 calico:v3.24.1 \ --masters 192.168.1.100,192.168.1.103,192.168.1.104 \ --nodes 192.168.1.101,192.168.1.102 9.2 备份和恢复 定期备份etcd数据和Kubernetes清单： # 备份etcdETCDCTL_API=3 etcdctl snapshot save /tmp/etcd-snapshot-$(date +%Y%m%d).db \ --endpoints=https://127.0.0.1:2379 \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key# 使用Velero备份和恢复# 安装Velerokubectl apply -f https://github.com/vmware-tanzu/velero/releases/latest/download/velero-install.yaml# 创建备份velero backup create my-backup --selector app=my-web-app 9.3 健康检查和监控 配置Liveness和Readiness探针： apiVersion: apps/v1kind: Deploymentmetadata: name: my-web-appspec: replicas: 2 selector: matchLabels: app: my-web-app template: metadata: labels: app: my-web-app spec: containers: - name: web-container image: my-registry/my-web-app:latest ports: - containerPort: 80 livenessProbe: httpGet: path: /health port: 80 initialDelaySeconds: 30 periodSeconds: 10 readinessProbe: httpGet: path: /ready port: 80 initialDelaySeconds: 5 periodSeconds: 5 10. 应用升级和回滚 10.1 应用升级 滚动更新 使用滚动更新策略进行应用升级： # 更新部署的镜像kubectl set image deployment/my-web-app web-container=my-registry/my-web-app:v2.0# 查看升级进度kubectl rollout status deployment/my-web-app# 查看升级历史kubectl rollout history deployment/my-web-app 使用Helm进行升级（可选） 如果使用Helm管理应用： # 更新Helm Charthelm upgrade my-release my-chart --set image.tag=v2.0 10.2 升级失败回滚 如果新版本出现问题，可以快速回滚： # 查看升级历史kubectl rollout history deployment/my-web-app# 回滚到上一个版本kubectl rollout undo deployment/my-web-app# 回滚到指定版本kubectl rollout undo deployment/my-web-app --to-revision=2 10.3 集群升级 升级整个Kubernetes集群： # 使用Sealos升级集群sealos run kubernetes:v1.26.0 calico:v3.25.0 \ --masters 192.168.1.100 \ --nodes 192.168.1.101,192.168.1.102 11. 实战案例总结 通过以上步骤，我们完成了一个完整的Sealos实战流程： 环境准备：在三台服务器上配置系统环境 集群部署：使用Sealos快速部署Kubernetes集群 应用部署：将Docker镜像部署到集群中 配置管理：通过ConfigMap和Secret注入配置参数 节点扩容：添加新的Worker节点和应用Pod 容灾策略：配置高可用、备份和健康检查 升级回滚：实现应用和集群的升级与回滚 这种基于Sealos的部署方式大大简化了Kubernetes集群的部署和管理复杂度，使得运维团队可以更专注于应用本身，而不是基础设施的复杂性。 12. Kubernetes核心概念和术语 在深入了解问题排查之前，让我们先梳理Kubernetes的层级结构和核心概念，从大到小排列： 12.1 集群（Cluster） 定义：由一个或多个节点组成的容器化应用平台 实际例子：我们前面创建的名为my-cluster的Kubernetes集群 映射：一个完整的Kubernetes环境，包含控制平面和工作节点 对应命令：# 查看集群信息kubectl cluster-info# 检查集群组件状态kubectl get componentstatuses# 查看集群节点kubectl get nodes# 查看集群版本信息kubectl version# 检查集群健康状况kubectl top nodes 12.2 命名空间（Namespace） 定义：集群中的虚拟子分区，用于隔离资源 实际例子：default、kube-system、kube-public等 映射：类似于操作系统的文件夹，用于组织和隔离不同环境的资源 对应命令：# 查看所有命名空间kubectl get namespaces# 创建命名空间kubectl create namespace my-namespace# 在指定命名空间中操作资源kubectl get pods -n my-namespace# 查看命名空间详细信息kubectl describe namespace my-namespace 12.3 节点（Node） 定义：集群中的工作机器，可以是物理机或虚拟机 实际例子：我们使用的三台服务器（192.168.1.100、192.168.1.101、192.168.1.102） 映射：192.168.1.100（Master节点）、192.168.1.101和192.168.1.102（Worker节点） 对应命令：# 查看所有节点kubectl get nodes# 查看节点详细信息kubectl describe node &amp;lt;node-name&amp;gt;# 查看节点资源使用情况kubectl top nodes# 标记节点不可调度kubectl cordon &amp;lt;node-name&amp;gt;# 标记节点可调度kubectl uncordon &amp;lt;node-name&amp;gt;# 安全驱逐节点上的Pod（用于维护）kubectl drain &amp;lt;node-name&amp;gt; --ignore-daemonsets# 查看节点事件kubectl get events --field-selector involvedObject.kind=Node 12.4 Pod 定义：Kubernetes中最小的部署单元，可包含一个或多个紧密相关的容器 实际例子：my-web-app-7d5b9c8f4c-xyz12 这个Pod 映射：一个逻辑主机，包含一个或多个共享存储、网络和规格定义的容器 深入理解： Pod不是Docker Compose服务组：一个Pod通常对应一个应用实例，而不是多个相关服务 紧密相关容器：Pod中的多个容器需要共享存储和网络，协同完成一个任务 例如：主应用容器 + 日志收集容器（如Filebeat） 例如：主应用容器 + 代理容器（如Envoy） 例如：主应用容器 + Sidecar容器（如Istio Proxy） 共享资源： 网络：Pod内所有容器共享IP地址和端口空间 存储：Pod内所有容器可以共享存储卷 生命周期：Pod中的容器一起启动、停止和重启 Docker Compose到Kubernetes的映射： Docker Compose中的一个服务 → Kubernetes中的一个Pod Docker Compose中的多个服务 → Kubernetes中的多个Pod + Service 对应命令：# 查看Podkubectl get pods -n &amp;lt;namespace&amp;gt;# 查看Pod详细信息kubectl describe pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看Pod日志kubectl logs &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 实时查看Pod日志kubectl logs -f &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 进入Pod容器kubectl exec -it &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- bash# 查看Pod YAML配置kubectl get pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml# 删除Pod（Deployment会自动重建）kubectl delete pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看Pod资源使用情况kubectl top pods -n &amp;lt;namespace&amp;gt; 12.5 容器（Container） 定义：运行应用的轻量级虚拟化环境 实际例子：my-web-app Pod中的web-container 映射：Docker容器，运行具体的应用程序 对应命令：# 查看Pod中的容器kubectl get pods -n &amp;lt;namespace&amp;gt; -o jsonpath=&#39;{.items[*].spec.containers[*].name}&#39;# 查看特定容器的日志kubectl logs &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 进入特定容器kubectl exec -it &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- bash# 查看容器镜像kubectl get pods -n &amp;lt;namespace&amp;gt; -o jsonpath=&#39;{.items[*].spec.containers[*].image}&#39;# 查看容器资源限制kubectl describe pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; 12.6 服务（Service） 定义：定义一组Pod的逻辑集合和访问策略，提供稳定的网络端点 实际例子：my-web-app-service，为my-web-app的Pod提供稳定的访问地址 映射：类似负载均衡器或代理，为一组Pod提供稳定的IP和DNS名称 深入理解： 服务发现：通过标签选择器（label selector）发现后端Pod 负载均衡：在后端Pod间分发流量，但不使用传统负载均衡算法 稳定端点：即使Pod被重新调度，Service的IP和DNS名称保持不变 服务类型： ClusterIP：仅在集群内部访问 NodePort：在集群节点上开放端口 LoadBalancer：创建外部负载均衡器 ExternalName：将服务映射到外部DNS名称 与Docker Compose的映射： Docker Compose服务间的连接 → Kubernetes中使用Service Docker Compose的links功能 → Kubernetes中使用Service DNS名称 对应命令：# 查看服务kubectl get services -n &amp;lt;namespace&amp;gt;# 查看服务详细信息kubectl describe service &amp;lt;service-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看服务端点（后端Pod IP）kubectl get endpoints &amp;lt;service-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看服务YAML配置kubectl get service &amp;lt;service-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml# 测试服务连通性kubectl run test-pod --image=busybox --rm -it --restart=Never -- nslookup &amp;lt;service-name&amp;gt;.&amp;lt;namespace&amp;gt;.svc.cluster.local# 端口转发到服务kubectl port-forward service/&amp;lt;service-name&amp;gt; 8080:80 -n &amp;lt;namespace&amp;gt; 12.7 控制器（Controller） 定义：确保Pod按照预期状态运行的资源对象 实际例子：Deployment、StatefulSet、DaemonSet等 映射：Deployment控制器确保my-web-app始终有2个副本运行 深入理解： 控制器类型： Deployment：管理无状态应用，支持滚动更新和回滚 StatefulSet：管理有状态应用，提供稳定的网络标识和持久存储 DaemonSet：确保所有节点运行一个Pod副本 Job/CronJob：管理一次性任务和定时任务 Pod调度与容灾： 通过污点（Taints）和容忍度（Tolerations）控制Pod调度到特定节点 通过节点亲和性（Node Affinity）和反亲和性（Node Anti-Affinity）控制Pod部署位置 通过Pod反亲和性避免相同应用的Pod运行在同一节点上，实现容灾 与Docker Compose的映射： Docker Compose的replicas → Kubernetes中的Deployment replicas Docker Compose的restart policy → Kubernetes的Pod重启策略 对应命令：# 查看Deploymentkubectl get deployments -n &amp;lt;namespace&amp;gt;# 查看Deployment详细信息kubectl describe deployment &amp;lt;deployment-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 扩容Deploymentkubectl scale deployment &amp;lt;deployment-name&amp;gt; --replicas=5 -n &amp;lt;namespace&amp;gt;# 更新Deployment镜像kubectl set image deployment/&amp;lt;deployment-name&amp;gt; &amp;lt;container-name&amp;gt;=&amp;lt;new-image&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看Deployment升级历史kubectl rollout history deployment &amp;lt;deployment-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 回滚Deploymentkubectl rollout undo deployment &amp;lt;deployment-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 暂停/恢复Deployment rolloutkubectl rollout pause deployment &amp;lt;deployment-name&amp;gt; -n &amp;lt;namespace&amp;gt;kubectl rollout resume deployment &amp;lt;deployment-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看控制器管理的Podkubectl get pods -l &amp;lt;label-key&amp;gt;=&amp;lt;label-value&amp;gt; -n &amp;lt;namespace&amp;gt; 12.8 配置和存储资源 ConfigMap：存储非敏感配置数据 Secret：存储敏感数据如密码、密钥 PersistentVolume/PersistentVolumeClaim：提供持久化存储 对应命令：# ConfigMap命令# 查看ConfigMapkubectl get configmaps -n &amp;lt;namespace&amp;gt;# 查看ConfigMap详细信息kubectl describe configmap &amp;lt;configmap-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 创建ConfigMapkubectl create configmap &amp;lt;configmap-name&amp;gt; --from-literal=key1=value1 --from-literal=key2=value2 -n &amp;lt;namespace&amp;gt;# 从文件创建ConfigMapkubectl create configmap &amp;lt;configmap-name&amp;gt; --from-file=config.properties -n &amp;lt;namespace&amp;gt;# Secret命令# 查看Secretkubectl get secrets -n &amp;lt;namespace&amp;gt;# 查看Secret详细信息kubectl describe secret &amp;lt;secret-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 创建Secretkubectl create secret generic &amp;lt;secret-name&amp;gt; --from-literal=key1=value1 -n &amp;lt;namespace&amp;gt;# 从文件创建Secretkubectl create secret generic &amp;lt;secret-name&amp;gt; --from-file=ssh-privatekey=/path/to/key -n &amp;lt;namespace&amp;gt;# 查看Secret内容（编码后的）kubectl get secret &amp;lt;secret-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml# PersistentVolume/PersistentVolumeClaim命令# 查看PersistentVolumekubectl get pv# 查看PersistentVolumeClaimkubectl get pvc -n &amp;lt;namespace&amp;gt;# 查看PersistentVolume详细信息kubectl describe pv &amp;lt;pv-name&amp;gt;# 查看PersistentVolumeClaim详细信息kubectl describe pvc &amp;lt;pvc-name&amp;gt; -n &amp;lt;namespace&amp;gt; 13. 常见问题排查 在运维Kubernetes集群和应用时，掌握常见问题排查方法非常重要。以下是几个关键的排查入口和技巧： 13.1 从集群状态开始排查 首先检查集群整体状态： # 检查节点状态kubectl get nodes# 确保所有节点处于Ready状态# 检查核心组件状态kubectl get cs # (已弃用，使用下面的命令)kubectl get componentstatuses# 查看所有命名空间kubectl get namespaces# 检查命名空间中的资源kubectl get all --all-namespaces 12.2 检查Pod状态和事件 Pod是最基本的部署单元，是排查问题的起点： # 查看Pod状态kubectl get pods -n &amp;lt;namespace&amp;gt;# 查看Pod详细信息和事件kubectl describe pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 关注Events部分，通常包含错误信息# 检查Pod的YAML定义kubectl get pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml 12.3 查看应用日志 查看应用容器的日志是排查问题的重要手段： # 查看Pod中主容器的日志kubectl logs &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看Pod中指定容器的日志（多容器Pod）kubectl logs &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看最近的日志（例如最后100行）kubectl logs &amp;lt;pod-name&amp;gt; --tail=100 -n &amp;lt;namespace&amp;gt;# 实时查看日志流kubectl logs -f &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 查看过去一小时的日志kubectl logs &amp;lt;pod-name&amp;gt; --since=1h -n &amp;lt;namespace&amp;gt;# 查看重启前的容器日志kubectl logs &amp;lt;pod-name&amp;gt; --previous -n &amp;lt;namespace&amp;gt; 12.4 进入容器调试 当需要直接进入容器内部进行调试时： # 进入容器执行交互式命令kubectl exec -it &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- bash# 在容器中执行单个命令kubectl exec &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- ls -la /# 进入多容器Pod中的指定容器kubectl exec -it &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- sh 12.5 检查资源使用情况 查看Pod和节点的资源使用情况： # 查看Pod的资源使用情况kubectl top pods -n &amp;lt;namespace&amp;gt;# 查看节点的资源使用情况kubectl top nodes# 获取Pod的详细资源配额kubectl describe pod &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 在&#34;Conditions&#34;和&#34;QoS&#34;部分查看资源相关信息 12.6 检查服务和网络 排查服务访问和网络连接问题： # 查看服务状态kubectl get svc -n &amp;lt;namespace&amp;gt;# 查看服务详细信息kubectl describe svc &amp;lt;service-name&amp;gt; -n &amp;lt;namespace&amp;gt;# 测试服务连通性（在集群内部）kubectl run test-pod --image=busybox --rm -it --restart=Never -- nslookup &amp;lt;service-name&amp;gt;.&amp;lt;namespace&amp;gt;.svc.cluster.local# 端口转发进行本地测试kubectl port-forward &amp;lt;pod-name&amp;gt; 8080:80 -n &amp;lt;namespace&amp;gt; 12.7 检查配置和密钥 验证配置和密钥是否正确挂载到Pod中： # 查看ConfigMap内容kubectl get configmap &amp;lt;configmap-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml# 查看Secret内容（注意敏感信息）kubectl get secret &amp;lt;secret-name&amp;gt; -n &amp;lt;namespace&amp;gt; -o yaml# 在Pod中检查挂载的配置kubectl exec -it &amp;lt;pod-name&amp;gt; -n &amp;lt;namespace&amp;gt; -- ls /etc/config 12.8 排查常见问题 Pod处于Pending状态 检查是否有足够的资源 检查节点选择器和污点容忍度配置 Pod处于CrashLoopBackOff状态 查看容器日志 检查启动脚本和配置 检查资源限制是否过小 Pod处于ImagePullBackOff状态 检查镜像名称和标签是否正确 检查镜像仓库访问权限 服务无法访问 检查Service和Pod的标签选择器是否匹配 检查端口配置是否正确 验证网络策略是否有误 12.9 使用Sealos排查集群问题 # 检查Sealos集群状态sealos status# 在节点上执行命令sealos exec --hosts 192.168.1.100 &#34;systemctl status kubelet&#34;# 查看集群证书信息sealos cert# 检查节点是否正常kubectl get nodes -o wide 13. 最佳实践 安全：始终使用RBAC控制访问权限，定期更新证书和密钥 监控：部署Prometheus和Grafana等监控工具 日志：使用EFK（Elasticsearch, Fluentd, Kibana）收集和分析日志 备份：定期备份重要数据和配置 网络策略：配置网络策略以限制Pod间通信 资源管理：使用ResourceQuota和LimitRange控制资源使用 通过遵循这些最佳实践，可以构建一个安全、可靠、高效且易于维护的Kubernetes集群。</p>
+            <div class="site-index-item__taxonomies">
+                
+                
+                    
+                        <a href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/">#容器化</a>
+                        
+                    
+                        <a href="/tags/%E8%BF%90%E7%BB%B4/">#运维</a>
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                
+            </div>
+        </div>
+        <a class="site-index-item__open" href="/2025/12/07/0004-sealos-shi-zhan/" aria-label="阅读：sealos实战">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </article>
+    
+</div>
+
+    </section>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/about" target="_blank">huhuhuhr</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">28.7k</span>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/huhuhuhr-1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:757033301@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+
+</body>
+
+</html>
