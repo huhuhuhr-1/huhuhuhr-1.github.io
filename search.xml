@@ -131,11 +131,11 @@
       
         <tags>
             
-            <tag> 运维 </tag>
-            
             <tag> k8s </tag>
             
             <tag> sealos </tag>
+            
+            <tag> 运维 </tag>
             
             <tag> 问答 </tag>
             
@@ -156,15 +156,15 @@
       
         <tags>
             
-            <tag> 容器化 </tag>
-            
-            <tag> 运维 </tag>
-            
             <tag> k8s </tag>
             
             <tag> sealos </tag>
             
+            <tag> 运维 </tag>
+            
             <tag> 部署 </tag>
+            
+            <tag> 容器化 </tag>
             
         </tags>
       
@@ -183,15 +183,15 @@
       
         <tags>
             
-            <tag> 运维 </tag>
-            
             <tag> k8s </tag>
-            
-            <tag> sealos </tag>
             
             <tag> docker </tag>
             
+            <tag> sealos </tag>
+            
             <tag> kubectl </tag>
+            
+            <tag> 运维 </tag>
             
         </tags>
       
@@ -210,15 +210,15 @@
       
         <tags>
             
+            <tag> 运维 </tag>
+            
+            <tag> 容器化 </tag>
+            
             <tag> Kubernetes </tag>
             
             <tag> Sealos </tag>
             
             <tag> 本地部署 </tag>
-            
-            <tag> 容器化 </tag>
-            
-            <tag> 运维 </tag>
             
         </tags>
       
